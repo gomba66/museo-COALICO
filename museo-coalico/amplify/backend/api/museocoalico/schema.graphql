@@ -1,0 +1,13 @@
+type Todo @model {
+  id: ID!
+  name: String
+  year: Int
+  creation: String
+  link: String
+  published: Boolean
+  region: String
+  description: String
+  category: AWSJSON
+  subcategory: AWSJSON
+  file: AWSJSON
+}
