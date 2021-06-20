@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-museocoalico-dev-101949-authRole",
+      "UnauthRoleArn": "arn:aws:iam::023368555007:role/amplify-museocoalico-dev-101949-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::023368555007:role/amplify-museocoalico-dev-101949-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-museocoalico-dev-101949-deployment",
+      "UnauthRoleName": "amplify-museocoalico-dev-101949-unauthRole",
+      "StackName": "amplify-museocoalico-dev-101949",
+      "StackId": "arn:aws:cloudformation:us-east-2:023368555007:stack/amplify-museocoalico-dev-101949/cbafd700-d111-11eb-bd28-0ae4b0720876",
+      "AmplifyAppId": "d13g4oc8wm94fl"
+    },
+    "categories": {
+      "auth": {
+        "museocoalicoe58b73c8": {}
+      }
+    }
+  }
+}

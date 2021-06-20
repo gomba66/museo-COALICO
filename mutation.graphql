@@ -1,0 +1,34 @@
+mutation createPost {
+  createPost(input: {
+    name: "Libro \"susurros del corazón\""
+    year: 2013
+    creation: "12/02/2013"
+    link: ""
+    published: false
+    region: "Nacional"
+    description: "\"Susurros del corazón\" es un libro que contiene ideas de niños y niñas afectados por el conflicto, partícipes de una audiencia pública con el Congreso de la República el Día de las Manos Rojas (febrero 12 de 2013) con motivo de las conversaciones para la firma del acuerdo de paz. "
+    category: {
+      "category": "Gestos de vida"
+    }
+    subcategory: {
+      subcategory: "Niñez en el acuerdo de paz",
+      subcategory1: "Día de las Manos Rojas",
+      subcategory2: "Acciones por la paz",
+      subcategory3: "Creaciones de niños, niñas y jóvenes"
+    }
+    file: {file: ""}
+  }) {
+      id
+      name
+      year
+      creation
+      link
+      published
+      region
+      location
+      description
+      category
+      subcategory
+      file
+  }
+}
