@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
+export const createPost = /* GraphQL */ `
   mutation CreateTodo(
     $input: CreateTodoInput!
     $condition: ModelTodoConditionInput
@@ -67,3 +67,25 @@ export const deleteTodo = /* GraphQL */ `
     }
   }
 `;
+export const getPost = /* GraphQL */ `
+  mutation getTodo(
+    $input: getTodoInput!
+    $condition: ModelTodoConditionInput
+  ) {
+    getodo(input: $input, condition: $condition) {
+      id
+      name
+      year
+      creation
+      link
+      published
+      region
+      description
+      category
+      subcategory
+      file
+      createdAt
+      updatedAt
+    }
+  }
+`
