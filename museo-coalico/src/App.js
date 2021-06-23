@@ -10,7 +10,13 @@ import { listTodos } from './graphql/queries';
 // src/App.js, import the withAuthenticator component
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid';
+
+import {
+  HashRouter,
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -52,39 +58,49 @@ function App() {
     Storage.put(uuid(), file).then (() => fetchImages())
   }
   return (
-    <div>
-      <h1>Museo Coalico</h1>
-      {
-        posts.map(post => (
-          <div key={post.id}>
-            <h3>{post.name}</h3>
-            <p>{post.location}</p>
-            <p>{post.year}</p>
-            <p>{post.creation}</p>
-            <p>{post.link}</p>
-            <p>{post.published}</p>
-            <p>{post.region}</p>
-            <p>{post.description}</p>
-            <p>{post.category}</p>
-            <p>{post.subcategory}</p>
-            <p>{post.file}</p>
-          </div>
-        ))
-      }
-      <div>
-        <h1>Photo Album</h1>
-        <span>Add new image</span>
-        <input
-          type="file"
-          accept='image/png'
-          onChange={onChange}
-        />
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-          { images.map(image => <img src={image} style={{width: 400, marginBottom: 10}} />) }
+    <>
+    <HashRouter>
+        <div className={contentStyle}>
+          <Header />
+          <hr className={dividerStyle} />
+          <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
+          <Switch>
+            <Route exact path="/" >
+              <Posts posts={posts} />
+            </Route>
+            <Route path="/post/:id" >
+              <Post />
+            </Route>
+          </Switch>
         </div>
-      </div>
-      <AmplifySignOut />
-    </div>
+        <h1>Museo Coalico</h1>
+        {
+          posts.map(post => (
+            <div key={post.id}>
+              <h3>{post.name}</h3>
+              <p>{post.location}</p>
+              <p>{post.year}</p>
+              <p>{post.creation}</p>
+              <p>{post.link}</p>
+              <p>{post.published}</p>
+              <p>{post.region}</p>
+              <p>{post.description}</p>
+              <p>{post.category}</p>
+              <p>{post.subcategory}</p>
+              <p>{post.file}</p>
+            </div>
+          ))
+        }
+        <AmplifySignOut />
+      </HashRouter>
+      { showOverlay && (
+        <CreatePost
+          updateOverlayVisibility={updateOverlayVisibility}
+          updatePosts={setPostState}
+          posts={posts}
+        />
+      )}
+  </>
   )
 }
 
