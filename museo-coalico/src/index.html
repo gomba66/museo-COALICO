@@ -64,14 +64,20 @@
         <main class="no-padding position-relative w-100">
 
 
-            <img id="marco" class="pt-1 d-none d-md-block" src="/museo-coalico/src/assets/marcos/marco-general.png" alt="background marco" height="100%" width="100%">
-            <img id="marco" class="pt-1 d-md-none" src="/museo-coalico/src/assets/marcos/marco-general-mobile.png" alt="background marco" height="100%" width="100%">
+            <div>
+                <img id="marco" class="pt-1 d-none d-md-block" src="/museo-coalico/src/assets/marcos/marco-general.png" alt="background marco" height="100%" width="100%">
+            </div>
+            <div>
+                <img id="marco" class="pt-1 d-md-none" src="/museo-coalico/src/assets/marcos/marco-general-mobile.png" alt="background marco" height="100%" width="100%">
+            </div>
 
             <div id="encabezado" class="position-absolute row">
-                <div class="col-md-6">
-                    <h1>Heridas del <br class="d-md-none"> conflicto</h1>
+                <div class="col-md-5">
+                    <h1 id="titulo">Heridas del conflicto</h1>
                 </div>
-                
+                <div class="col-md-1">
+                    <img id="logo-cat" src="/museo-coalico/src/assets/iconos/heridas-del-conflicto.png" alt="Logo categoría">
+                </div>
                 <div class="col-md-6">
                     <img id="elementos" src="/museo-coalico/src/assets/elementos/nina1.png" alt="Niña fondo">
                 </div>
@@ -178,7 +184,7 @@
                 <!-- Grid column -->
                 <div class="col-md-2 col-lg-3 col-xl-2 mx-auto mb-4">
                     <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
+                    <h6 class="text-uppercase font-weight-bold mb-4">
                     Salas
                     </h6>
                     <p>
@@ -204,7 +210,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                     <!-- Content -->
-                    <h6 class="text-uppercase fw-bold mb-4">
+                    <h6 class="text-uppercase font-weight-bold mb-4">
                     <i class="fas fa-gem me-3"></i>
                     <br>
                     </h6>
@@ -230,7 +236,7 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
+                    <h6 class="text-uppercase font-weight-bold mb-4">
                     Contacto
                     </h6>
                     <p class="text-secondary">
@@ -242,7 +248,19 @@
                         +57 310 2001719
                     </p>
                 </div>
+                
                 <!-- Grid column -->
+                </div>
+                <div class="row d-flex justify-content-between align-items-center pb-4">
+                    <div class="col-4">
+                        <img id="patrocinio-logo-1" src="/museo-coalico/src/assets/logos/patrocinio_1.png" alt="logo patrocinio">
+                    </div>
+                    <div class="col-4">
+                        <img id="patrocinio-logo-2" src="/museo-coalico/src/assets/logos/patrocinio_2.png" alt="logo patrocinio">
+                    </div>
+                    <div class="col-4">
+                        <img id="patrocinio-logo" src="/museo-coalico/src/assets/logos/patrocinio_3.png" alt="logo patrocinio">
+                    </div>
                 </div>
                 <!-- Grid row -->
             </div>
@@ -251,10 +269,13 @@
         
             <!-- Copyright -->
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            <a href="/"> <img src="assets/logos/logo-museo.png" alt="Museo logo" width="150" height="40"> </a>
-            <br>
-            Made by
-            <a class="text-reset fw-bold" href="http://coalico.org">COALICO</a>
+                <div class="pb-4">
+                    <a href="/"> <img src="assets/logos/logo-museo.png" alt="Museo logo" width="150" height="40"> </a>
+                </div>
+                <div>
+                    Made by
+                    <a class="text-reset fw-bold" href="http://coalico.org">COALICO</a>    
+                </div>
             </div>
             <!-- Copyright -->
         </footer>
