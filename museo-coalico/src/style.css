@@ -1,0 +1,205 @@
+@font-face {
+    font-family: "Club Type W01 Medium";
+    src: url(/museo-coalico/src/assets/Club\ Type\ W01\ Medium.ttf);
+}
+
+:root{
+    /*shine*/
+    --duration: 5s;
+    --text-color: rgba(255, 255, 255, 0.3);
+    --bgr-color: #333;
+    /*Logo colors*/
+    --color-logo-red: #c4001d;
+    --color-logo-blue: #0000a6;
+    --color-logo-yellow: #fabe00;
+    /*Title colors*/
+    --color-red: #fe0000;
+    --color-orange: #fe6c01;
+    --color-yellow: #fed300;
+    --color-blue: #0ae3cf;
+    --color-green: #05cd5c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(/museo-coalico/src/assets/fondos/fondo.png);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main h1 {
+    font-family: "Club Type W01 Medium";  
+    font-size: 11vw;
+    color: var(--color-logo-yellow);
+    text-shadow: 9px 9px 10px black;
+    padding: 0 5.8vw 0 15%;
+}
+
+main p {
+    color: white;
+    top: 20%;
+}
+
+#marco {
+    z-index: 100;
+
+}
+
+#elementos {
+    top: 0;
+    z-index: 200;
+    height: 50vh;
+    width: 20em;
+}
+
+#logo-cat {
+    max-width: 9vw;
+    max-height: 9vh;
+}
+
+#patrocinio-logo-1 {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#patrocinio-logo-2 {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#patrocinio-logo-3 {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#encabezado
+{
+    top: 20%;
+    left: 50px;
+    right: 50px;
+}
+
+#card {
+    top: 20%;
+    left: 50px;
+    right: 50px;
+    z-index: 300;
+}
+
+#slider {
+    top: 50%;
+    left: 8vw;
+    right: 8vw;
+    display: none;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media screen and (min-width: 576px)
+{
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px)
+{
+    main h1 {
+        font-size: 5vw;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px)
+{
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px)
+{
+
+}
+
+/* .shine, .chrome {
+	font-size: 3em;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.shine {
+    background: #FFB42F -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+    -webkit-background-size: 150px;
+    background-size: 150px;
+    color: rgba(255, 255, 255, 0.3);
+    -webkit-background-clip: var(--text-color);
+    background-clip: var(--text-color);
+    -webkit-animation-name: shine;
+    animation-name: shine;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+.chrome {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+	-webkit-background-size: 200px;
+    background-size: 200px;
+	color: var(--text-color);
+	-webkit-background-clip: var(--text-color);
+    background-clip: var(--text-color);
+	-webkit-animation-name: shine;
+    animation-name: shine;
+	-webkit-animation-duration: var(--duration);
+    animation-duration: var(--duration);
+	-webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+} */
