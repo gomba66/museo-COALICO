@@ -4,12 +4,20 @@
 }
 
 :root{
+    /*shine*/
     --duration: 5s;
     --text-color: rgba(255, 255, 255, 0.3);
     --bgr-color: #333;
-    --color-red: #c4001d;
-    --color-blue: #0000a6;
-    --color-yellow: #fabe00;
+    /*Logo colors*/
+    --color-logo-red: #c4001d;
+    --color-logo-blue: #0000a6;
+    --color-logo-yellow: #fabe00;
+    /*Title colors*/
+    --color-red: #fe0000;
+    --color-orange: #fe6c01;
+    --color-yellow: #fed300;
+    --color-blue: #0ae3cf;
+    --color-green: #05cd5c;
 }
 
 html {
@@ -27,14 +35,14 @@ body {
 main h1 {
     font-family: "Club Type W01 Medium";  
     font-size: 11vw;
-    color: var(--color-yellow);
+    color: var(--color-logo-yellow);
     text-shadow: 9px 9px 10px black;
-    display: flex;
-    padding: 0 8vw 0 80px;
+    padding: 0 5.8vw 0 15%;
 }
 
-body p {
+main p {
     color: white;
+    top: 20%;
 }
 
 #marco {
@@ -42,17 +50,52 @@ body p {
 
 }
 
+#elementos {
+    top: 0;
+    z-index: 200;
+    height: 50vh;
+    width: 20em;
+}
+
+#logo-cat {
+    max-width: 9vw;
+    max-height: 9vh;
+}
+
+#patrocinio-logo-1 {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#patrocinio-logo-2 {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#patrocinio-logo-3 {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#encabezado
+{
+    top: 20%;
+    left: 50px;
+    right: 50px;
+}
+
 #card {
     top: 20%;
     left: 50px;
     right: 50px;
-    z-index: 2;
+    z-index: 300;
 }
 
 #slider {
     top: 50%;
-    left: 50px;
-    right: 50px;
+    left: 8vw;
+    right: 8vw;
+    display: none;
 }
 
 .swiper-container {
