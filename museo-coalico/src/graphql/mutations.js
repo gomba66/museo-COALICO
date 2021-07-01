@@ -18,6 +18,7 @@ export const createPost = /* GraphQL */ `
       category
       subcategory
       file
+      image
       createdAt
       updatedAt
     }
