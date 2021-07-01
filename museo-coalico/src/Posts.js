@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { API, Auth, Storage } from 'aws-amplify';
+import { v4 as uuid } from 'uuid';
 
 export function Posts({ posts = [] }) {
   const [images, setImages] = useState([])
@@ -17,32 +18,65 @@ export function Posts({ posts = [] }) {
       return signedImage
     }))
     setImages(s3images)
+  };
+  function onChange(e) {
+    console.log("hol")
+    if (!e.target.files[0]) return
+    const file = e.target.files[0];
+    // upload the image then fetch and rerender images
+    Storage.put(uuid(), file).then (() => fetchImages())
   }
+  // window.onload = function() {
+  //       const urlPosts = window.location.pathname
+  //       console.log(urlPosts)
+  //   /*     const urlHome = window.location.href.indexOf('/') */
+  //         if (urlPosts === "/posts") {
+  //           //Hide the element.
+  //           document.querySelectorAll('#container360')[0].style.display = 'none';
+  //         }
+  //       }
   return (
     <>
       <h1>Posts</h1>
-      {posts.map((post) => (
-        <Link to={`/post/${post.id}`} className={linkStyle} key={post.id}>
+      {posts.map((post) => {
+      
+        const { id, name, location, year, creation, link, published, region, description, category, subcategory, file } =  post;
+
+          let pr = JSON.parse(category);
+          console.log(pr[0]?.category1);
+        return (
+        <Link to={`/post/${id}`} className={linkStyle} key={id}>
           <div key={post.id} className={postContainer}>
             <h1>Texto de prueba</h1>
-            <h1 className={postTitleStyle}>{post.name}</h1>
+            <h1 className={postTitleStyle}>{name}</h1>
             { images.map(image => <img src={image} style={{width: 400, marginBottom: 10}} alt="Any text" />) }
-            <h3>{post.name}</h3>
-            <p>{post.location}</p>
-            <p>{post.year}</p>
-            <p>{post.creation}</p>
-            <p>{post.link}</p>
-            <p>{post.published}</p>
-            <p>{post.region}</p>
-            <p>{post.description}</p>
-            <p>{post.category}</p>
-            <p>{post.subcategory}</p>
-            <p>{post.file}</p>
+            <h3>{name}</h3>
+            <p>{location}</p>
+            <p>{year}</p>
+            <p>{creation}</p>
+            <p>{link}</p>
+            <p>{published}</p>
+            <p>{region}</p>
+            <p>{description}</p>
+            <p>{category[0]}</p>
+            <p>{subcategory}</p>
+            <p>{file}</p>
           </div>
         </Link>
-      ))}
+        )
+      })
+    }
+    <div>
+      <h1>Photo Album</h1>
+      <span>Add new image</span>
+      <input
+        type="file"
+        accept='image/png'
+        onChange={onChange}
+      />
+    </div>
     </>
-  );
+  )
 }
 
 const postTitleStyle = css`
@@ -68,3 +102,4 @@ const imageStyle = css`
   width: 100%;
   max-width: 400px;
 `;
+
