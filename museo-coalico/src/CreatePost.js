@@ -43,7 +43,7 @@ export function CreatePost({
   /* 4. Save the post  */
   async function save() {
     try {
-      const { 
+      let { 
         name,
         year,
         creation,
@@ -53,16 +53,30 @@ export function CreatePost({
         description,
         category,
         subcategory,
-        file,
-        image } = formState;
-      if ( !name || !year || !creation || !link || !published || !region || !description || !category || !subcategory || !file || !image.name) return;
+        file } = formState;
+        
+        category = JSON.stringify(category);
+        subcategory = JSON.stringify(subcategory);
+        file = JSON.stringify(file);
+
+        console.log(formState)
+      if ( !name || 
+        !year || 
+        !creation || 
+        !link || 
+        !published || 
+        !region || 
+        !description || 
+        !category || 
+        !subcategory || 
+        !file) return;
       updateFormState(currentState => ({ ...currentState, saving: true }));
       const postId = uuid();
-      const postInfo = { name, year, creation, link, published, region, description, category, subcategory, file, image: formState.image.name, id: postId };
+      const postInfo = { name, year, creation, link, published, region, description, category, subcategory, file, image: formState.image, id: postId };
 
-      await Storage.put(formState.image.name, formState.image.fileInfo);
+      await Storage.put(formState.image, formState.image.fileInfo);
       await API.graphql({
-        query: createPost, variables: { input: postInfo }
+        mutations: createPost, variables: { input: postInfo }
       });
       updatePosts([...posts, { ...postInfo, image: formState.file }]);
       updateFormState(currentState => ({ ...currentState, saving: false }));
@@ -84,7 +98,6 @@ export function CreatePost({
         category,
         subcategory,
         file,
-        image
       <input
         placeholder="Nombre de la pieza"
         name="name"

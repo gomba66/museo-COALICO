@@ -8,6 +8,7 @@ export function Post() {
   const [loading, updateLoading] = useState(true);
   const [post, updatePost] = useState(null);
   const { id } = useParams();
+
   useEffect(() => {
     fetchPost();
   }, []);
@@ -17,7 +18,8 @@ export function Post() {
         query: getPost,
         variables: { id },
       });
-      const currentPost = postData.data.getPost;
+      console.log(postData);
+      const currentPost = postData.data.getTodo;
       const image = await Storage.get(currentPost.image);
 
       currentPost.image = image;
@@ -27,9 +29,10 @@ export function Post() {
       console.log("error: ", err);
     }
   }
-  if (loading) return <h3>Loading...</h3>;
   console.log("post: ", post);
   return (
+    <>
+    {loading ? <h3>Loading</h3> :
     <>
     <h1>Texto de prueba en Post</h1>
       <h1 className={titleStyle}>{post.name}</h1>
@@ -44,7 +47,10 @@ export function Post() {
       <p className={locationStyle}>{post.subcategory}</p>
       <p className={locationStyle}>{post.file}</p>
       <img alt="post" src={post.image} className={imageStyle} />
+      </>
+    }
     </>
+
   );
 }
 

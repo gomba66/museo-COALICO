@@ -3,7 +3,8 @@
 import {
   HashRouter,
   Switch,
-  Route
+  Route,
+  BrowserRouter
 } from "react-router-dom";
 
 import React, { useState, useEffect } from 'react';
@@ -13,28 +14,25 @@ import { API, Auth, Storage } from 'aws-amplify';
 
 
 // src/App.js, import the withAuthenticator component
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-
-import { v4 as uuid } from 'uuid';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
 // import query definition
 import { listPosts } from './graphql/queries'
 
-import Button from './Button';
 import { Post } from './Post';
 import { Posts } from './Posts';
-import { CreatePost } from './CreatePost'
 import { Header } from './Header';
+import { Footer } from './Footer';
 
 function Router() {
   /* create a couple of pieces of initial state */
-  const [showOverlay, updateOverlayVisibility] = useState(false);
   const [posts, updatePosts] = useState([])
   useEffect(() => {
     fetchPosts();
     checkUser();
   }, []);
   async function fetchPosts() {
+    
     try {
       let postData = await API.graphql({ query: listPosts, variables: { limit: 100 }});
       let postsArray = postData.data.listTodos.items
@@ -44,6 +42,7 @@ function Router() {
       post.image = imageKey;
       return post;
     }));
+
     /* update the posts array in the local state */
     setPostState(postsArray);
     } catch (err) {
@@ -72,48 +71,28 @@ function Router() {
     }))
     setImages(s3images)
   }
-  function onChange(e) {
-    if (!e.target.files[0]) return
-    const file = e.target.files[0];
-    // upload the image then fetch and rerender images
-    Storage.put(uuid(), file).then (() => fetchImages())
-  }
+//   window.onload = function() {
+// //     const urlPosts = window.location.href.indexOf('/')
+// // /*     const urlHome = window.location.href.indexOf('/') */
+// //       if (!urlPosts) {
+// //         //Hide the element.
+//         document.querySelectorAll('#container360')[0].style.display = 'block';
+//       // }
+//     }
+  
   return (
     <div>
-      <HashRouter>
+      <BrowserRouter >
         <Header />
-        <h1>Museo Coalico</h1>
-        <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
         <Switch>
-          <Route exact path="/" >
+          <Route exact path="/posts" >
             <Posts posts={posts} />
           </Route>
           <Route exact path="/post/:id" >
             <Post />
           </Route>
         </Switch>
-        <hr />
-        <div>
-          <h1>Photo Album</h1>
-          <span>Add new image</span>
-          <input
-            type="file"
-            accept='image/png'
-            onChange={onChange}
-          />
-        </div>
-        <hr />
-        <hr />
-        <Post />
-        <AmplifySignOut />
-        { showOverlay && (
-            <CreatePost
-              updateOverlayVisibility={updateOverlayVisibility}
-              updatePosts={setPostState}
-              posts={posts}
-            />
-        )}
-      </HashRouter>
+      </BrowserRouter>
     </div>
   )
 }
