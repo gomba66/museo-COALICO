@@ -84,7 +84,6 @@ function Router() {
     <div>
       <BrowserRouter >
         <Header />
-        <Footer />
         <Switch>
           <Route exact path="/posts" >
             <Posts posts={posts} />
