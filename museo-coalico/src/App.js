@@ -12,10 +12,6 @@ import React, { useState, useEffect } from 'react';
 // import API from Amplify library
 import { API, Auth, Storage } from 'aws-amplify';
 
-
-// src/App.js, import the withAuthenticator component
-import { withAuthenticator } from '@aws-amplify/ui-react';
-
 // import query definition
 import { listPosts } from './graphql/queries'
 
@@ -23,6 +19,7 @@ import { Post } from './Post';
 import { Posts } from './Posts';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import UserDash from './UserDash';
 
 function Router() {
   /* create a couple of pieces of initial state */
@@ -70,16 +67,7 @@ function Router() {
       return signedImage
     }))
     setImages(s3images)
-  }
-//   window.onload = function() {
-// //     const urlPosts = window.location.href.indexOf('/')
-// // /*     const urlHome = window.location.href.indexOf('/') */
-// //       if (!urlPosts) {
-// //         //Hide the element.
-//         document.querySelectorAll('#container360')[0].style.display = 'block';
-//       // }
-//     }
-  
+  }  
   return (
     <div>
       <BrowserRouter >
@@ -91,10 +79,13 @@ function Router() {
           <Route exact path="/post/:id" >
             <Post />
           </Route>
+          <Route exact path="/admin">
+            <UserDash />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
   )
 }
 
-export default withAuthenticator(Router);
+export default Router;
