@@ -1,35 +1,22 @@
-// src/App.js
-
-import {
-  HashRouter,
-  Switch,
-  Route,
-  BrowserRouter
-} from "react-router-dom";
-
 import React, { useState, useEffect } from 'react';
-
-// import API from Amplify library
+import Button from './Button';
+import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
+import { CreatePost } from './CreatePost'
 import { API, Auth, Storage } from 'aws-amplify';
-
 // import query definition
 import { listPosts } from './graphql/queries'
+import { v4 as uuid } from 'uuid';
 
-import { Post } from './Post';
-import { Posts } from './Posts';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import UserDash from './UserDash';
-
-function Router() {
-  /* create a couple of pieces of initial state */
+function UserDash() {
+  const [showOverlay, updateOverlayVisibility] = useState(true);
   const [posts, updatePosts] = useState([])
+  const [images, setImages] = useState([])
   useEffect(() => {
     fetchPosts();
     checkUser();
+    fetchImages();
   }, []);
   async function fetchPosts() {
-    
     try {
       let postData = await API.graphql({ query: listPosts, variables: { limit: 100 }});
       let postsArray = postData.data.listTodos.items
@@ -39,8 +26,7 @@ function Router() {
       post.image = imageKey;
       return post;
     }));
-
-    /* update the posts array in the local state */
+        /* update the posts array in the local state */
     setPostState(postsArray);
     } catch (err) {
       console.log({ err })
@@ -54,10 +40,6 @@ function Router() {
     console.log('user: ', user);
     console.log('user attributes: ', user.attributes);
   }
-  const [images, setImages] = useState([])
-  useEffect(() => {
-    fetchImages()
-  }, [])
   async function fetchImages() {
     // Fetch list of images from S3
     let s3images = await Storage.list('')
@@ -67,29 +49,44 @@ function Router() {
       return signedImage
     }))
     setImages(s3images)
-  }  
+  };
+  function onChange(e) {
+    if (!e.target.files[0]) return
+    const file = e.target.files[0];
+    // upload the image then fetch and rerender images
+    Storage.put(uuid(), file).then (() => fetchImages())
+  }
+  window.onload = function() {
+    const url = window.location.href.indexOf('/admin')
+    if (url) {
+      //Hide the element.
+      document.querySelectorAll('.container360')[0].style.display = 'none';
+    }
+  }
   return (
     <div>
-      <BrowserRouter >
-        <Header />
-        
-        <Switch>
-          <Route exact path="/posts" >
-            <Posts posts={posts} />
-          </Route>
-          <Route exact path="/post/:id" >
-            <Post />
-          </Route>
-          <Route exact path="/admin">
-            <UserDash />
-          </Route>
-        </Switch>
-        <div>
-{/*           <Footer /> */}
-        </div>
-      </BrowserRouter>
+      <div className="h-100">
+        <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
+        <AmplifySignOut />
+        <h1>Photo Album</h1>
+        <span>Add new image</span>
+        <input
+          type="file"
+          accept='image/png'
+          onChange={onChange}
+          />
+      </div>
+        { showOverlay && (
+          <CreatePost
+            updateOverlayVisibility={updateOverlayVisibility}
+            updatePosts={setPostState}
+            posts={posts}
+          />
+        )}   
     </div>
   )
 }
 
-export default Router;
+export default withAuthenticator(UserDash);
+
+

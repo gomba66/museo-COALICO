@@ -2,58 +2,19 @@ import React from 'react';
 import { css } from '@emotion/css';
 import { Link } from 'react-router-dom';
 import logo from './assets/logos/logo-peque.png'
-import Button from './Button';
-import { CreatePost } from './CreatePost'
-import { useState, useEffect } from 'react';
-// import API from Amplify library
-import { API, Auth, Storage } from 'aws-amplify';
-// import query definition
-import { listPosts } from './graphql/queries'
-import { AmplifySignOut } from '@aws-amplify/ui-react';
 
 export function Header() {
-  const [showOverlay, updateOverlayVisibility] = useState(false);
-  const [posts, updatePosts] = useState([])
-  useEffect(() => {
-    fetchPosts();
-    checkUser();
-  }, []);
-  async function fetchPosts() {
-    try {
-      let postData = await API.graphql({ query: listPosts, variables: { limit: 100 }});
-      let postsArray = postData.data.listTodos.items
-      /* map over the image keys in the posts array, get signed image URLs for each image */
-      postsArray = await Promise.all(postsArray.map(async post => {
-      const imageKey = await Storage.get(post.image);
-      post.image = imageKey;
-      return post;
-    }));
-
-    /* update the posts array in the local state */
-    setPostState(postsArray);
-    } catch (err) {
-      console.log({ err })
-    }
-  }
-  async function setPostState(postsArray) {
-    updatePosts(postsArray);
-  }
-  async function checkUser() {
-    const user = await Auth.currentAuthenticatedUser();
-    console.log('user: ', user);
-    console.log('user attributes: ', user.attributes);
-  }
   return (
     <div className={headerContainer}>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className={navHeight + " navbar navbar-expand-lg navbar-light bg-light"}>
         <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'}} to="/">
-          <img src={ logo } alt="Museo logo" width="110" height="30" />
+          <img className="ml-3" src={ logo } alt="Museo logo" width="140" height="45" />
         </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse pr-5" id="navbarNavDropdown">
-        <ul className="navbar-nav">
+        <ul className={navItemsRight + ' navbar-nav ml-4'}>
           <li className="nav-item active">
             <Link to="/" className="nav-link">Inicio<span className="sr-only">(current)</span></Link>
           </li>
@@ -77,23 +38,26 @@ export function Header() {
             <Link to="/" className="nav-link" href="#">Quiénes somos</Link>
           </li>
         </ul>
-        <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
-        <AmplifySignOut />
         </div>
       </nav>
-      { showOverlay && (
-        <CreatePost
-          updateOverlayVisibility={updateOverlayVisibility}
-          updatePosts={setPostState}
-          posts={posts}
-        />
-      )}
     </div>
   )
 }
 
 const headerContainer = css`
   padding-top: 0px;
+`
+const navItemsRight = css`
+@media (min-width: 991px) {
+  position: absolute;
+  right: 3%
+}
+`
+
+const navHeight = css`
+  @media (min-width: 991px) {
+    height: 80px;
+  }
 `
 
 const headerStyle = css`
