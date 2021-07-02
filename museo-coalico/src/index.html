@@ -16,6 +16,7 @@
 
         <!--Swiper-->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+        <link rel="stylesheet" href="/museo-coalico/src/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> 
         <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -63,26 +64,38 @@
         <!--Main-->
         <main class="no-padding position-relative w-100">
 
-
+            <!--Marcos-->
             <div>
                 <img id="marco" class="pt-1 d-none d-md-block" src="/museo-coalico/src/assets/marcos/marco-general.png" alt="background marco" height="100%" width="100%">
+                <img id="logo-cat" class="position-absolute" src="/museo-coalico/src/assets/iconos/heridas-del-conflicto.png" alt="Logo categoría">
             </div>
             <div>
                 <img id="marco" class="pt-1 d-md-none" src="/museo-coalico/src/assets/marcos/marco-general-mobile.png" alt="background marco" height="100%" width="100%">
             </div>
 
-            <div id="encabezado" class="position-absolute row">
-                <div class="col-md-5">
+            <!--Mobile - Título y niña-->
+            <div id="encabezado" class="row position-absolute d-flex">
+                <div class="col d-none d-sm-block d-md-none d-block d-sm-none">
+                    <div class="d-flex">
+                        <h1 id="titulo">Heridas del conflicto</h1>
+                        <img id="elementos-mobile" src="/museo-coalico/src/assets/elementos/nina1.png" alt="Niña fondo">
+                    </div>
+                </div>
+            </div>
+
+            <!--Desktop - Título y niña-->
+            <div id="encabezado" class="d-flex position-absolute row">
+                <div class="col-md-1"></div>
+                <div class="col-md-7 d-md-block d-none">
                     <h1 id="titulo">Heridas del conflicto</h1>
                 </div>
-                <div class="col-md-1">
-                    <img id="logo-cat" src="/museo-coalico/src/assets/iconos/heridas-del-conflicto.png" alt="Logo categoría">
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-4 d-md-block d-none d-flex">
                     <img id="elementos" src="/museo-coalico/src/assets/elementos/nina1.png" alt="Niña fondo">
                 </div>
             </div>
             
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
 
             <!-- Slider main container -->
             <div id="slider" class="position-absolute">
@@ -90,61 +103,54 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide">Slide 6</div>
-                        <div class="swiper-slide">Slide 7</div>
-                        <div class="swiper-slide">Slide 8</div>
-                        <div class="swiper-slide">Slide 9</div>
-                        <div class="swiper-slide">Slide 10</div>
+                        <div class="swiper-slide position-relative">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
+                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
+                        </div>
                     </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-                
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                
-                    <!-- If we need scrollbar -->
                     <script src="/museo-coalico/src/swiper-bundle.min.js"></script>
-
                 </div>
             </div>
-
-            <!--Cards section-->
-            <!-- <div id="card" class="d-flex justify-content-sm-around position-absolute">
-                <div class="d-flex card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Reportaje Niñas, Niños y Adolescentes</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    </div>
-                    
-                    <div class="d-flex card text-white bg-danger mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Reportaje Niñas, Niños y Adolescentes</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Danger card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    </div>
-        
-                    <div class="d-flex card text-white bg-warning mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Reportaje Niñas, Niños y Adolescentes</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Warning card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    </div>
-            </div>    -->
+            <div class="swiper-pagination position-absolute"></div>
+            
         </main>
 
-        <div>
-            
-        </div>
         <!-- Footer -->
         <footer class=" text-center text-lg-start bg-light text-muted">
             <!-- Section: Social media -->
@@ -259,7 +265,7 @@
                         <img id="patrocinio-logo-2" src="/museo-coalico/src/assets/logos/patrocinio_2.png" alt="logo patrocinio">
                     </div>
                     <div class="col-4">
-                        <img id="patrocinio-logo" src="/museo-coalico/src/assets/logos/patrocinio_3.png" alt="logo patrocinio">
+                        <img id="patrocinio-logo-3" src="/museo-coalico/src/assets/logos/patrocinio_3.png" alt="logo patrocinio">
                     </div>
                 </div>
                 <!-- Grid row -->
