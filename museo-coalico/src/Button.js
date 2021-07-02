@@ -17,7 +17,7 @@ const buttonStyle = type => css`
   width: 160px;
   font-weight: 600;
   font-size: 16px;
-  color: white;
+  color: grey;
   outline: none;
   border: none;
   margin-top: 5px;
