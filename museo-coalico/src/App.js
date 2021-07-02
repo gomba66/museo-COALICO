@@ -72,6 +72,7 @@ function Router() {
     <div>
       <BrowserRouter >
         <Header />
+        
         <Switch>
           <Route exact path="/posts" >
             <Posts posts={posts} />
@@ -83,6 +84,9 @@ function Router() {
             <UserDash />
           </Route>
         </Switch>
+        <div>
+{/*           <Footer /> */}
+        </div>
       </BrowserRouter>
     </div>
   )
