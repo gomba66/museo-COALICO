@@ -37,7 +37,7 @@ main h1 {
     font-size: 11vw;
     color: var(--color-logo-yellow);
     text-shadow: 9px 9px 10px black;
-    padding: 0 5.8vw 0 15%;
+    /* padding: 0 5.8vw 0 15%; */
 }
 
 main p {
@@ -47,19 +47,24 @@ main p {
 
 #marco {
     z-index: 100;
-
 }
 
 #elementos {
+    z-index: 150;
     top: 0;
-    z-index: 200;
-    height: 50vh;
-    width: 20em;
+}
+
+#elementos-mobile {
+    z-index: 150;
+    top: 0;
+    max-width: 600px;
+    max-height: 600px;
 }
 
 #logo-cat {
-    max-width: 9vw;
-    max-height: 9vh;
+    z-index: 150;
+    top: 5%;
+    left: 93%;
 }
 
 #patrocinio-logo-1 {
@@ -95,33 +100,8 @@ main p {
     top: 50%;
     left: 8vw;
     right: 8vw;
-    display: none;
 }
 
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
 
 /* Small devices (landscape phones, 576px and up)*/
 @media screen and (min-width: 576px)
@@ -135,18 +115,71 @@ main p {
     main h1 {
         font-size: 5vw;
     }
+    #elementos {
+        max-width: 96%;
+    }
+}
+
+/* Medium devices until 767.98px and down (Cellphone and tablet)*/
+@media screen and (max-width: 767.98px)
+{
+    #logo-cat{
+        max-width: 10vw;
+        max-height: 10vh;
+        top: 2.8%;
+        left: 84.5%;
+    }
+    #encabezado {
+        top: 10%;
+        left: 10%;
+        right: 0px;
+    }
+    #elementos-mobile {
+        width: 50%;
+    }
+    #elementos {
+        display: none;
+    }
+    main h1 {
+        width: 50%;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px)
 {
-
+    
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px)
 {
+    #logo-cat{
+        /* max-width: 7.3vw;
+        max-height: 7.3vh; */
+        max-width: 5.5%;
+        top: 4.3%;
+        left: 92.6%;
+    }
+}
 
+/* Medium devices between 767.98px and 991.98px */
+@media screen and (min-width: 767.98px) and (max-width: 991.98px)
+{
+    #logo-cat{
+        max-width: 5vw;
+        max-height: 5vh;
+    }    
+}
+
+/* Medium devices between 991.98px and 1199.98px */
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px)
+{
+    #logo-cat{
+        max-width: 5.7vw;
+        max-height: 5.7vh;
+
+    }
 }
 
 /* .shine, .chrome {
