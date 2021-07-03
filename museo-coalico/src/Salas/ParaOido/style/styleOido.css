@@ -28,10 +28,10 @@ body {
   background-size: cover;
 }
 
-div h1 {
+#oido {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
-  color: var(--color-blue) !important;
+  color: var(--color-red) !important;
   text-shadow: 9px 9px 10px black;
   /* padding: 0 5.8vw 0 15%; */
 }
@@ -80,7 +80,7 @@ main p {
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-  main h1 {
+  main #oido {
     font-size: 5vw;
   }
   #elementos {
@@ -107,7 +107,7 @@ main p {
   #elementos {
     display: none;
   }
-  main h1 {
+  main #oido {
     width: 50%;
   }
   main p {

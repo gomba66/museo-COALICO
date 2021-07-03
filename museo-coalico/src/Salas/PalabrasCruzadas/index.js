@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./style/style.css";
+import "../PalabrasCruzadas/style/stylePalabras.css";
 import "./style/swiper-bundle.min.css";
 const ParaOido = (props) => {
   window.onload = function () {
@@ -45,7 +45,7 @@ const ParaOido = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="titulo">Palabras cruzadas</h1>
+              <h1 id="palabras">Palabras cruzadas</h1>
               <img
                 id="elementos-mobile"
                 src={"assets/elementos/nino3.png"}
@@ -67,7 +67,7 @@ const ParaOido = (props) => {
         <div id="encabezado" className="d-flex position-absolute row">
           <div className="col-md-1"></div>
           <div className="col-md-7 d-md-block d-none">
-            <h1 id="titulo">Palabras cruzadas</h1>
+            <h1 id="palabras">Palabras cruzadas</h1>
             <p>
               Infórmate acerca de nuestra situación en un país en guerra. 
             </p>

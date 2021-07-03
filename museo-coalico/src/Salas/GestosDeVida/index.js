@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./style/style.css";
+import "../GestosDeVida/style/styleGestos.css";
 import "./style/swiper-bundle.min.css";
 const GestosDeVida = (props) => {
   window.onload = function () {
@@ -45,7 +45,7 @@ const GestosDeVida = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="titulo">Gestos de vida</h1>
+              <h1 id="gestos">Gestos de vida</h1>
               <img
                 id="elementos-mobile"
                 src={"assets/elementos/nina5.png"}
@@ -67,7 +67,7 @@ const GestosDeVida = (props) => {
         <div id="encabezado" className="d-flex position-absolute row">
           <div className="col-md-1"></div>
           <div className="col-md-7 d-md-block d-none">
-            <h1 id="titulo">Gestos de vida</h1>
+            <h1 id="gestos">Gestos de vida</h1>
             <p>
               Únete a nuestros esfuerzos por defender los derechos de la niñez y la adolescencia.
             </p>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./style/style.css";
+import "../DeCaminoALaJusticia/style/styleCamino.css";
 import "./style/swiper-bundle.min.css";
 const DeCaminoALaJusticia = (props) => {
   window.onload = function () {
@@ -45,7 +45,7 @@ const DeCaminoALaJusticia = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="titulo">De camino a la justicia</h1>
+              <h1 id="camino">De camino a la justicia</h1>
               <img
                 id="elementos-mobile"
                 src={"assets/elementos/nino10.png"}
@@ -67,7 +67,7 @@ const DeCaminoALaJusticia = (props) => {
         <div id="encabezado" className="d-flex position-absolute row">
           <div className="col-md-1"></div>
           <div className="col-md-7 d-md-block d-none">
-            <h1 id="titulo">De camino a la justicia</h1>
+            <h1 id="camino">De camino a la justicia</h1>
             <p>
               Que estos casos no queden en la impunidad.
             </p>

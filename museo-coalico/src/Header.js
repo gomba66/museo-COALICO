@@ -30,7 +30,7 @@ export function Header() {
             <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/de-camino-a-la-justicia" className="dropdown-item">De camino a la justicia</Link>
             <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/piezas-para-aprender" className="dropdown-item">Piezas para aprender</Link>
             <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/ojo-a-los-derechos" className="dropdown-item">Ojo a los derechos</Link>
-            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/dia-de-las-mano-rojas" className="dropdown-item">Día de las Manos Rojas</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/dia-de-las-manos-rojas" className="dropdown-item">Día de las Manos Rojas</Link>
           </div>
           </li>
           <li className="nav-item">

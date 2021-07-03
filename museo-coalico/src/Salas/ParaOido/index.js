@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./style/style.css";
+import "../ParaOido/style/styleOido.css";
 import "./style/swiper-bundle.min.css";
 const ParaOido = (props) => {
   window.onload = function () {
@@ -45,7 +45,7 @@ const ParaOido = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="titulo">Para oído</h1>
+              <h1 id="oido">Para oído</h1>
               <img
                 id="elementos-mobile"
                 src={"assets/elementos/nina4.png"}
@@ -67,7 +67,7 @@ const ParaOido = (props) => {
         <div id="encabezado" className="d-flex position-absolute row">
           <div className="col-md-1"></div>
           <div className="col-md-7 d-md-block d-none">
-            <h1 id="titulo">Para oído</h1>
+            <h1 id="oido">Para oído</h1>
             <p>
               Acércate a las noticias relacionadas con la niñez y el conflicto armado en nuestro país. 
             </p>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./style/style.css";
+import "../DiaDeLasManosRojas/style/styleManos.css";
 import "./style/swiper-bundle.min.css";
 const DiaDeLasManosRojas = (props) => {
   window.onload = function () {
@@ -45,7 +45,7 @@ const DiaDeLasManosRojas = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="titulo">Día de las manos rojas</h1>
+              <h1 id="manos">Día de las manos rojas</h1>
               <img
                 id="elementos-mobile"
                 src={"assets/elementos/nino9.png"}
@@ -67,7 +67,7 @@ const DiaDeLasManosRojas = (props) => {
         <div id="encabezado" className="d-flex position-absolute row">
           <div className="col-md-1"></div>
           <div className="col-md-7 d-md-block d-none">
-            <h1 id="titulo">Día de las manos rojas</h1>
+            <h1 id="manos">Día de las manos rojas</h1>
             <p>
               El 12 de febrero de cada año se conmemora el Día Internacional de las Manos Rojas, en contra de la vinculación de los niños y niñas a la guerra. 
             </p>

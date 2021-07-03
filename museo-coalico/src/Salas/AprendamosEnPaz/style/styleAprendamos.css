@@ -28,7 +28,7 @@ body {
   background-size: cover;
 }
 
-div h1 {
+#Aprendamos {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-blue);
@@ -80,7 +80,7 @@ main p {
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-  main h1 {
+  main #Aprendamos {
     font-size: 5vw;
   }
   #elementos {
@@ -107,7 +107,7 @@ main p {
   #elementos {
     display: none;
   }
-  main h1 {
+  main #Aprendamos {
     width: 50%;
   }
   main p {
