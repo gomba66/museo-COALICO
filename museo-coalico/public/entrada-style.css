@@ -1,0 +1,132 @@
+
+/* Desktop */
+#nave-desktop {
+    size: 150%;
+    max-width: auto;
+    max-height: auto;
+    padding-left: 5vh;
+}
+
+#logo-desktop {
+    margin-top: 10%;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+#gotitan-desktop {
+    margin-top: 15%;
+}
+
+#boton-desktop {
+    margin-top: 15%;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+
+/* Md */
+#logo-md {
+    height: fit-content;
+    width: fit-content;
+    margin-top: 5%;
+}
+
+#nave-md {
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+#boton-md {
+    max-width: 500px;
+    max-height: 30%;
+}
+
+#gotitan-md {
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+
+/* Cel */
+#logo-cel {
+    height: 80%;
+    width: 70%;
+    margin-top: 5%;
+}
+
+#nave-cel {
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+#boton-cel {
+    max-width: 500px;
+    max-height: 30%;
+}
+
+#gotitan-cel {
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+
+/* Large devices until (tablets, 768px and down) */
+@media screen and (min-width: 991.98px)
+{
+    #entrada {
+        background-size: 200%;
+    }
+}
+
+
+/* Medium devices until (tablets, 768px and down) */
+@media screen and (max-width: 768px)
+{
+    #logo-md {
+        display: flex;
+        justify-content: center;
+    }
+    #gotitan-md {
+        display: none;
+    }
+    #boton-md {
+        display: none;
+    }
+    #logo-desktop {
+        display: none;
+    }
+    #nave-desktop {
+        display: none;
+    }
+    #gotitan-desktop {
+        display: none;
+    }
+    #boton-desktop {
+        display: none;
+    }
+}
+
+/* Medium devices between 991.98px and 1199.98px */
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px)
+{
+    #entrada {
+        padding-top: 15%;
+    }
+}
+
+/* Large devices (desktops, 992px and down) */
+@media screen and (max-width: 992px)
+{
+    #logo-desktop {
+        display: none;
+    }
+    #nave-desktop {
+        display: none;
+    }
+    #gotitan-desktop {
+        display: none;
+    }
+    #boton-desktop {
+        display: none;
+    }
+}
