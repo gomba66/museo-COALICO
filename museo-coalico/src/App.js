@@ -17,6 +17,15 @@ import Footer from './Footer';
 import UserDash from './UserDash';
 import { Entrada } from './Entrada';
 import HeridasDelConflicto from './Salas/HeridasDelConflicto/index';
+import AprendamosEnPaz from './Salas/AprendamosEnPaz/index';
+import GestosDeVida from './Salas/GestosDeVida/index';
+import ParaOido from './Salas/ParaOido/index';
+import PalabrasCruzadas from './Salas/PalabrasCruzadas/index';
+import DeCaminoALaJusticia from './Salas/DeCaminoALaJusticia/index';
+import PiezasParaAprender from './Salas/PiezasParaAprender/index';
+import OjoALosDerechos from './Salas/OjoALosDerechos/index';
+import DiaDeLasManosRojas from './Salas/DiaDeLasManosRojas/index';
+
 
 function Router() {
   /* create a couple of pieces of initial state */
@@ -110,6 +119,38 @@ function Router() {
           </Route>
           <Route exact path="/heridas-del-conflicto">
             <HeridasDelConflicto />
+            <Footer />
+          </Route>
+          <Route exact path="/aprendamos-en-paz">
+            <AprendamosEnPaz />
+            <Footer />
+          </Route>
+          <Route exact path="/gestos-de-vida">
+            <GestosDeVida />
+            <Footer />
+          </Route>
+          <Route exact path="/para-oido">
+            <ParaOido />
+            <Footer />
+          </Route>
+          <Route exact path="/palabras-cruzadas">
+            <PalabrasCruzadas />
+            <Footer />
+          </Route>
+          <Route exact path="/de-camino-a-la-justicia">
+            <DeCaminoALaJusticia />
+            <Footer />
+          </Route>
+          <Route exact path="/piezas-para-aprender">
+            <PiezasParaAprender />
+            <Footer />
+          </Route>
+          <Route exact path="/ojo-a-los-derechos">
+            <OjoALosDerechos />
+            <Footer />
+          </Route>
+          <Route exact path="/dia-de-las-manos-rojas">
+            <DiaDeLasManosRojas />
             <Footer />
           </Route>
         </Switch>
