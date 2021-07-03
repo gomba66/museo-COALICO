@@ -16,7 +16,7 @@ import { Header } from './Header';
 import Footer from './Footer';
 import UserDash from './UserDash';
 import { Entrada } from './Entrada';
-import HeridasDelConflicto from './HeridasDelConflicto';
+import HeridasDelConflicto from './Salas/HeridasDelConflicto/index';
 
 function Router() {
   /* create a couple of pieces of initial state */
@@ -108,11 +108,10 @@ function Router() {
             <UserDash />
             <Footer />
           </Route>
-          <Route
-            exact
-            path="/heridas-del-conflicto"
-            component={HeridasDelConflicto}
-          />
+          <Route exact path="/heridas-del-conflicto">
+            <HeridasDelConflicto />
+            <Footer />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
