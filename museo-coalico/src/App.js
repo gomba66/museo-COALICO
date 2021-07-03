@@ -18,12 +18,14 @@ import { listPosts } from './graphql/queries'
 import { Post } from './Post';
 import { Posts } from './Posts';
 import { Header } from './Header';
-import { Footer } from './Footer';
+import Footer from './Footer';
 import UserDash from './UserDash';
+import { Entrada } from './Entrada';
 
 function Router() {
   /* create a couple of pieces of initial state */
   const [posts, updatePosts] = useState([])
+  const [isStart, setIsStart] = useState(true)
   useEffect(() => {
     fetchPosts();
     checkUser();
@@ -68,25 +70,48 @@ function Router() {
     }))
     setImages(s3images)
   }  
+  window.onload = function() {
+    const url = window.location.href.indexOf('/admin')
+    if (url) {
+      //Hide the element.
+      document.querySelectorAll('.container360')[0].style.display = 'none';
+    }
+  }
+  const Inicio = () => {
+    setIsStart(false);
+    document.querySelectorAll('.container360')[0].style.display = 'block';
+    console.log('====================================');
+    console.log("Saluton");
+    console.log('====================================');
+  }
   return (
     <div>
       <BrowserRouter >
         <Header />
-        
+        <Route exact path="/">
+          {
+            isStart ?
+              <div>
+                <Entrada entrar={Inicio} />
+                <Footer /> 
+              </div>
+            : null
+          }
+        </Route>
         <Switch>
           <Route exact path="/posts" >
             <Posts posts={posts} />
+            <Footer />
           </Route>
           <Route exact path="/post/:id" >
             <Post />
+            <Footer />
           </Route>
           <Route exact path="/admin">
             <UserDash />
+            <Footer />
           </Route>
         </Switch>
-        <div>
-{/*           <Footer /> */}
-        </div>
       </BrowserRouter>
     </div>
   )
