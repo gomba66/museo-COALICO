@@ -2,9 +2,9 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./style/style.css";
 import "./style/swiper-bundle.min.css";
-const HeridasDelConflicto = (props) => {
+const ParaOido = (props) => {
   window.onload = function () {
-    const url = window.location.href.indexOf("/heridas-del-conflicto");
+    const url = window.location.href.indexOf("/palabras-cruzadas");
     if (url) {
       //Hide the element.
       document.querySelectorAll(".container360")[0].style.display = "none";
@@ -26,7 +26,7 @@ const HeridasDelConflicto = (props) => {
           <img
             id="logo-cat"
             className="position-absolute"
-            src={"assets/iconos/heridas-del-conflicto.png"}
+            src={"assets/iconos/palabras-cruzadas.png"}
             alt="Logo categoría"
           />
         </div>
@@ -45,10 +45,10 @@ const HeridasDelConflicto = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="titulo">Heridas del conflicto</h1>
+              <h1 id="titulo">Palabras cruzadas</h1>
               <img
                 id="elementos-mobile"
-                src={"assets/elementos/nina1.png"}
+                src={"assets/elementos/nino3.png"}
                 alt="Niña fondo"
               />
             </div>
@@ -59,8 +59,7 @@ const HeridasDelConflicto = (props) => {
           className="position-absolute d-none d-sm-block d-md-none d-block d-sm-none"
         >
           <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit, magnis est
-            ornare
+            Infórmate acerca de nuestra situación en un país en guerra. 
           </p>
         </div>
 
@@ -68,16 +67,15 @@ const HeridasDelConflicto = (props) => {
         <div id="encabezado" className="d-flex position-absolute row">
           <div className="col-md-1"></div>
           <div className="col-md-7 d-md-block d-none">
-            <h1 id="titulo">Heridas del conflicto</h1>
+            <h1 id="titulo">Palabras cruzadas</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit, magnis est
-              ornare
+              Infórmate acerca de nuestra situación en un país en guerra. 
             </p>
           </div>
           <div className="col-md-4 d-md-block d-none d-flex">
             <img
               id="elementos"
-              src={"assets/elementos/nina1.png"}
+              src={"assets/elementos/nino3.png"}
               alt="Niña fondo"
             />
           </div>
@@ -181,7 +179,6 @@ const HeridasDelConflicto = (props) => {
                 </SwiperSlide>
               </Swiper>
             </div>
-
             <script src="../../swiper-bundle.min.js"></script>
           </div>
         </div>
@@ -190,4 +187,4 @@ const HeridasDelConflicto = (props) => {
   );
 };
 
-export default HeridasDelConflicto;
+export default ParaOido;

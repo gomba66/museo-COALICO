@@ -31,7 +31,7 @@ body {
 div h1 {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
-  color: var(--color-logo-yellow) !important;
+  color: var(--color-blue) !important;
   text-shadow: 9px 9px 10px black;
   /* padding: 0 5.8vw 0 15%; */
 }
