@@ -1,163 +1,150 @@
 @font-face {
-    font-family: "Club Type W01 Medium";
-    src: url(/museo-coalico/src/assets/Club\ Type\ W01\ Medium.ttf);
+  font-family: "Club Type W01 Medium";
+  src: url(/museo-coalico/src/assets/Club\ Type\ W01\ Medium.ttf);
 }
 
-:root{
-    /*shine*/
-    --duration: 5s;
-    --text-color: rgba(255, 255, 255, 0.3);
-    --bgr-color: #333;
-    /*Logo colors*/
-    --color-logo-red: #c4001d;
-    --color-logo-blue: #0000a6;
-    --color-logo-yellow: #fabe00;
-    /*Title colors*/
-    --color-red: #fe0000;
-    --color-orange: #fe6c01;
-    --color-yellow: #fed300;
-    --color-blue: #0ae3cf;
-    --color-green: #05cd5c;
+:root {
+  /*shine*/
+  --duration: 5s;
+  --text-color: rgba(255, 255, 255, 0.3);
+  --bgr-color: #333;
+  /*Logo colors*/
+  --color-logo-red: #c4001d;
+  --color-logo-blue: #0000a6;
+  --color-logo-yellow: #fabe00;
+  /*Title colors*/
+  --color-red: #fe0000;
+  --color-orange: #fe6c01;
+  --color-yellow: #fed300;
+  --color-blue: #0ae3cf;
+  --color-green: #05cd5c;
 }
 
 body {
-    background-image: url(/museo-coalico/src/assets/fondos/fondo.png);
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url(/museo-coalico/src/assets/fondos/fondo.png);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main h1 {
-    font-family: "Club Type W01 Medium";  
-    font-size: 11vw;
-    color: var(--color-logo-yellow);
-    text-shadow: 9px 9px 10px black;
-    /* padding: 0 5.8vw 0 15%; */
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-logo-yellow);
+  text-shadow: 9px 9px 10px black;
+  /* padding: 0 5.8vw 0 15%; */
 }
 
 main p {
-    font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
-    color: white;
-    top: 20%;
-    font-size: 2vw;
+  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+  color: white;
+  top: 20%;
+  font-size: 2vw;
 }
 /* Marco above the background */
 #marco {
-    z-index: 100;
+  z-index: 100;
 }
 
 /* Characters above the background (boys and girls) */
 #elementos {
-    z-index: 150;
-    top: 0;
+  z-index: 150;
+  top: 0;
 }
 /* Characters above the background (boys and girls) FOR MOBILE */
 #elementos-mobile {
-    z-index: 150;
-    top: 0;
-    max-width: 600px;
-    max-height: 600px;
+  z-index: 150;
+  top: 0;
+  max-width: 600px;
+  max-height: 600px;
 }
 
 /* Logo of the category (The logo up/right in the corner)*/
 #logo-cat {
-    z-index: 150;
-    top: 5%;
-    left: 93%;
+  z-index: 150;
+  top: 5%;
+  left: 93%;
 }
 
 /* Container of the title and the character(background) */
-#encabezado
-{
-    top: 20%;
-    left: 50px;
-    right: 50px;
+#encabezado {
+  top: 20%;
+  left: 50px;
+  right: 50px;
 }
 
-
 /* Small devices (landscape phones, 576px and up)*/
-@media screen and (min-width: 576px)
-{
-
+@media screen and (min-width: 576px) {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px)
-{
-    main h1 {
-        font-size: 5vw;
-    }
-    #elementos {
-        max-width: 96%;
-    }
+@media screen and (min-width: 768px) {
+  main h1 {
+    font-size: 5vw;
+  }
+  #elementos {
+    max-width: 96%;
+  }
 }
 
 /* Medium devices until 767.98px and down (Cellphone and tablet)*/
-@media screen and (max-width: 767.98px)
-{
-    #logo-cat{
-        max-width: 10vw;
-        max-height: 10vh;
-        top: 2.8%;
-        left: 84.5%;
-    }
-    #encabezado {
-        top: 10%;
-        left: 10%;
-        right: 0px;
-    }
-    #elementos-mobile {
-        width: 50%;
-    }
-    #elementos {
-        display: none;
-    }
-    main h1 {
-        width: 50%;
-    }
-    main p {
-        font-size: 4vw;
-    }
+@media screen and (max-width: 767.98px) {
+  #logo-cat {
+    max-width: 10vw;
+    max-height: 10vh;
+    top: 2.8%;
+    left: 84.5%;
+  }
+  #encabezado {
+    top: 10%;
+    left: 10%;
+    right: 0px;
+  }
+  #elementos-mobile {
+    width: 50%;
+  }
+  #elementos {
+    display: none;
+  }
+  main h1 {
+    width: 50%;
+  }
+  main p {
+    font-size: 4vw;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px)
-{
-    
+@media screen and (min-width: 992px) {
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px)
-{
-    #logo-cat{
-        /* max-width: 7.3vw;
+@media screen and (min-width: 1200px) {
+  #logo-cat {
+    /* max-width: 7.3vw;
         max-height: 7.3vh; */
-        max-width: 5.5%;
-        top: 4.3%;
-        left: 92.6%;
-    }
+    max-width: 5.5%;
+    top: 4.3%;
+    left: 92.6%;
+  }
 }
 
 /* Medium devices between 767.98px and 991.98px */
-@media screen and (min-width: 767.98px) and (max-width: 991.98px)
-{
-    #logo-cat{
-        max-width: 5vw;
-        max-height: 5vh;
-    }    
+@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
+  #logo-cat {
+    max-width: 5vw;
+    max-height: 5vh;
+  }
 }
 
 /* Medium devices between 991.98px and 1199.98px */
-@media screen and (min-width: 991.98px) and (max-width: 1199.98px)
-{
-    #logo-cat{
-        max-width: 5.7vw;
-        max-height: 5.7vh;
-
-    }
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px) {
+  #logo-cat {
+    max-width: 5.7vw;
+    max-height: 5.7vh;
+  }
 }
-
 
 /* Commented to shine the titles (FUTURE)*/
 /* .shine, .chrome {
