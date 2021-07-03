@@ -91,7 +91,6 @@ function Router() {
         </Switch>
         <div>{/* <Footer /> */}</div>
       </BrowserRouter>
-      <div>Test DANIEL</div>
     </div>
   );
 }

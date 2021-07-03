@@ -3,6 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "./style/style.css";
 import "./style/swiper-bundle.min.css";
 const HeridasDelConflicto = (props) => {
+  window.onload = function () {
+    const url = window.location.href.indexOf("/heridas-del-conflicto");
+    if (url) {
+      //Hide the element.
+      document.querySelectorAll(".container360")[0].style.display = "none";
+    }
+  };
   return (
     <div>
       <main className="no-padding position-relative w-100">
