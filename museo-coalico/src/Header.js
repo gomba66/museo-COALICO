@@ -23,7 +23,7 @@ export function Header() {
           </Link>
           <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}} to="/posts" className="dropdown-item">Aprendamos en paz</Link>
-            <Link to="/posts" className="dropdown-item">Heridas del conflicto</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}} to="/heridas-del-conflicto" className="dropdown-item">Heridas del conflicto</Link>
             <Link to="/posts" className="dropdown-item">Gestos de vida</Link>
             <Link to="/posts" className="dropdown-item">¡Para oído!</Link>
             <Link to="/posts" className="dropdown-item">Palabras cruzadas</Link>
