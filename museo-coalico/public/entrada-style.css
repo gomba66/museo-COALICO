@@ -1,14 +1,3 @@
-/*id of background*/
-#entrada {
-    background: no-repeat url(/museo-coalico/src/assets/fondos/fondo-espacio.png);
-    background-position: center;
-    background-size: cover;
-}
-
-body {
-    padding-top: 5%;
-}
-
 
 /* Desktop */
 #nave-desktop {

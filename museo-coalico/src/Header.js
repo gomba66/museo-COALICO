@@ -1,14 +1,13 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import { Link } from 'react-router-dom';
-import logo from './assets/logos/logo-peque.png'
 
 export function Header() {
   return (
     <div className={headerContainer}>
       <nav className={navHeight + " navbar navbar-expand-lg navbar-light bg-light"}>
         <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'}} to="/">
-          <img className="ml-3" src={ logo } alt="Museo logo" width="140" height="45" />
+          <img className="ml-3" src={"/assets/logos/logo-peque.png"} alt="Museo logo" width="140" height="45" />
         </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

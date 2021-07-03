@@ -2,29 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/css";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <>
       <div className={footerContainer}>
         <div className="text-center text-lg-start bg-light text-muted">
           <div className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div>
-              <Link to="" className="me-4 text-reset">
+              <Link to="/" className="me-4 text-reset">
                 <span className="fab fa-facebook-f"></span>
               </Link>
-              <Link to="" className="me-4 text-reset">
+              <Link to="/" className="me-4 text-reset">
                 <span className="fab fa-twitter"></span>
               </Link>
-              <Link to="" className="me-4 text-reset">
+              <Link to="/" className="me-4 text-reset">
                 <span className="fab fa-google"></span>
               </Link>
-              <Link to="" className="me-4 text-reset">
+              <Link to="/" className="me-4 text-reset">
                 <span className="fab fa-instagram"></span>
               </Link>
-              <Link to="" className="me-4 text-reset">
+              <Link to="/" className="me-4 text-reset">
                 <span className="fab fa-linkedin"></span>
               </Link>
-              <Link to="" className="me-4 text-reset">
+              <Link to="/" className="me-4 text-reset">
                 <span className="fab fa-github"></span>
               </Link>
             </div>
@@ -32,7 +32,7 @@ const Footer = (props) => {
           </div>
           {/* <!-- Section: Social media --> */}
           {/* <!-- Section: Links  --> */}
-          <div className="">
+          <div className="p-0">
             <div className="container text-center text-md-start mt-5">
               {/* <!-- Grid row --> */}
               <div className="row mt-3">
@@ -43,32 +43,32 @@ const Footer = (props) => {
                     Salas
                   </h6>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/aprendamos-en-paz" className="text-reset">
                       Aprendamos en paz
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/heridas-del-conflicto" className="text-reset">
                       Heridas del conflicto
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/gestos-de-vida" className="text-reset">
                       Gestos de vida
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/" className="text-reset">
                       A viva voz
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/a-viva-voz" className="text-reset">
                       ¡Para oído!
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/palabras-cruzadas" className="text-reset">
                       Palabras cruzadas
                     </Link>
                   </p>
@@ -80,27 +80,27 @@ const Footer = (props) => {
                     <span className="fas fa-gem me-3"></span>
                   </h6>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/de-camino-a-la-justicia" className="text-reset">
                       De camino a la justicia
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/piezas-para-aprender" className="text-reset">
                       Piezas para aprender
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/ojo-a-los-derechos" className="text-reset">
                       Ojo a los derechos
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="/cuento-contigo" className="text-reset">
                       Cuento contigo
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
+                    <Link to="dia-de-las-manos-rojas" className="text-reset">
                       Día de las Manos Rojas
                     </Link>
                   </p>
@@ -121,28 +121,27 @@ const Footer = (props) => {
                     +57 310 2001719
                   </p>
                 </div>
-
                 {/* <!-- Grid column --> */}
               </div>
               <div className="row d-flex justify-content-between align-items-center pb-4">
                 <div className="col-4">
-                  <spanmg
-                    id="patrocinio-logo-1"
-                    src="/museo-coalico/src/assets/logos/patrocinio_1.png"
+                  <img
+                    className={patrocinioLogo}
+                    src={"/assets/logos/patrocinio_1.png"}
                     alt="logo patrocinio"
                   />
                 </div>
                 <div className="col-4">
-                  <spanmg
-                    id="patrocinio-logo-2"
-                    src="/museo-coalico/src/assets/logos/patrocinio_2.png"
+                  <img
+                    className={patrocinioLogo}
+                    src={"/assets/logos/patrocinio_2.png"}
                     alt="logo patrocinio"
                   />
                 </div>
                 <div className="col-4">
-                  <spanmg
-                    id="patrocinio-logo"
-                    src="/museo-coalico/src/assets/logos/patrocinio_3.png"
+                  <img
+                    className={patrocinioLogo}
+                    src={"/assets/logos/patrocinio_3.png"}
                     alt="logo patrocinio"
                   />
                 </div>
@@ -152,11 +151,12 @@ const Footer = (props) => {
           </div>
           {/* <!-- Section: Links  --> */}
           {/* <!-- Copyright --> */}
-          <div className="text-center p-4" style={Copyright}>
+          <div className={Copyright + " text-center p-4"}>
             <div className="pb-4">
               <Link to="/">
-                <spanmg
-                  src="assets/logos/logo-museo.png"
+                <img
+                  className={footerLogo}
+                  src={"/assets/logos/logo-museo.png"}
                   alt="Museo logo"
                   width="150"
                   height="40"
@@ -166,7 +166,7 @@ const Footer = (props) => {
             <div>
               Made by
               <Link className="text-reset fw-bold" to="http://coalico.org">
-                COALICO
+                {" "}COALICO
               </Link>
             </div>
           </div>
@@ -174,15 +174,25 @@ const Footer = (props) => {
       </div>
     </>
   );
-};
+}
 
 const footerContainer = css`
-  position: fixed;
-  height: 100px;
-  bottom: 0;
+  position: sticky;
   width: 100%;
+  min-height: 100%
 `;
 const Copyright = css`
   background-color: rgba(0, 0, 0, 0.05);
 `;
-export default Footer;
+
+const patrocinioLogo = css`
+  max-width: 50%;
+  max-height: 50%;
+`;
+
+const footerLogo = css`
+  width: 150px;
+  height: 40px;
+`;
+
+export default Footer
