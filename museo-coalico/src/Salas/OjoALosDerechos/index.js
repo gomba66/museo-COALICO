@@ -2,9 +2,9 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./style/style.css";
 import "./style/swiper-bundle.min.css";
-const HeridasDelConflicto = (props) => {
+const OjoALosDerechos = (props) => {
   window.onload = function () {
-    const url = window.location.href.indexOf("/heridas-del-conflicto");
+    const url = window.location.href.indexOf("/ojo-a-los-derechos");
     if (url) {
       //Hide the element.
       document.querySelectorAll(".container360")[0].style.display = "none";
@@ -26,7 +26,7 @@ const HeridasDelConflicto = (props) => {
           <img
             id="logo-cat"
             className="position-absolute"
-            src={"assets/iconos/heridas-del-conflicto.png"}
+            src={"assets/iconos/ojo-a-los-derechos.png"}
             alt="Logo categoría"
           />
         </div>
@@ -45,10 +45,10 @@ const HeridasDelConflicto = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="titulo">Heridas del conflicto</h1>
+              <h1 id="titulo">Ojo a los derechos</h1>
               <img
                 id="elementos-mobile"
-                src={"assets/elementos/nina1.png"}
+                src={"assets/elementos/nina8.png"}
                 alt="Niña fondo"
               />
             </div>
@@ -59,7 +59,7 @@ const HeridasDelConflicto = (props) => {
           className="position-absolute d-none d-sm-block d-md-none d-block d-sm-none"
         >
           <p>
-            Así hemos padecido la crudeza de la violencia en nuestros territorios.
+            Monitoreo a la situación de niños, niñas y jóvenes en el conflicto colombiano.
           </p>
         </div>
 
@@ -67,15 +67,15 @@ const HeridasDelConflicto = (props) => {
         <div id="encabezado" className="d-flex position-absolute row">
           <div className="col-md-1"></div>
           <div className="col-md-7 d-md-block d-none">
-            <h1 id="titulo">Heridas del conflicto</h1>
+            <h1 id="titulo">Ojo a los derechos</h1>
             <p>
-              Así hemos padecido la crudeza de la violencia en nuestros territorios.
+              Monitoreo a la situación de niños, niñas y jóvenes en el conflicto colombiano.
             </p>
           </div>
           <div className="col-md-4 d-md-block d-none d-flex">
             <img
               id="elementos"
-              src={"assets/elementos/nina1.png"}
+              src={"assets/elementos/nina8.png"}
               alt="Niña fondo"
             />
           </div>
@@ -188,4 +188,4 @@ const HeridasDelConflicto = (props) => {
   );
 };
 
-export default HeridasDelConflicto;
+export default OjoALosDerechos;

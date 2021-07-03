@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "Club Type W01 Medium";
+  src: url(Club\ Type\ W01\ Medium.ttf);
+}
+
+:root {
+  /*shine*/
+  --duration: 5s;
+  --text-color: rgba(255, 255, 255, 0.3);
+  --bgr-color: #333;
+  /*Logo colors*/
+  --color-logo-red: #c4001d;
+  --color-logo-blue: #0000a6;
+  --color-logo-yellow: #fabe00;
+  /*Title colors*/
+  --color-red: #fe0000;
+  --color-orange: #fe6c01;
+  --color-yellow: #fed300;
+  --color-blue: #0ae3cf;
+  --color-green: #05cd5c;
+}
+
+body {
+  background-image: url("../../../assets/fondos/fondo.png");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div h1 {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-logo-yellow);
+  text-shadow: 9px 9px 10px black;
+  /* padding: 0 5.8vw 0 15%; */
+}
+
+main p {
+  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+  color: white;
+  top: 20%;
+  font-size: 2vw;
+}
+/* Marco above the background */
+#marco {
+  z-index: 100;
+}
+
+/* Characters above the background (boys and girls) */
+#elementos {
+  z-index: 150;
+  top: 0;
+}
+/* Characters above the background (boys and girls) FOR MOBILE */
+#elementos-mobile {
+  z-index: 150;
+  top: 0;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+/* Logo of the category (The logo up/right in the corner)*/
+#logo-cat {
+  z-index: 150;
+  top: 5%;
+  left: 93%;
+}
+
+/* Container of the title and the character(background) */
+#encabezado {
+  top: 20%;
+  left: 50px;
+  right: 50px;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media screen and (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  main h1 {
+    font-size: 5vw;
+  }
+  #elementos {
+    max-width: 96%;
+  }
+}
+
+/* Medium devices until 767.98px and down (Cellphone and tablet)*/
+@media screen and (max-width: 767.98px) {
+  #logo-cat {
+    max-width: 10vw;
+    max-height: 10vh;
+    top: 2.8%;
+    left: 84.5%;
+  }
+  #encabezado {
+    top: 10%;
+    left: 10%;
+    right: 0px;
+  }
+  #elementos-mobile {
+    width: 50%;
+  }
+  #elementos {
+    display: none;
+  }
+  main h1 {
+    width: 50%;
+  }
+  main p {
+    font-size: 4vw;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  #logo-cat {
+    /* max-width: 7.3vw;
+        max-height: 7.3vh; */
+    max-width: 5.5%;
+    top: 4.3%;
+    left: 92.6%;
+  }
+}
+
+/* Medium devices between 767.98px and 991.98px */
+@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
+  #logo-cat {
+    max-width: 5vw;
+    max-height: 5vh;
+  }
+}
+
+/* Medium devices between 991.98px and 1199.98px */
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px) {
+  #logo-cat {
+    max-width: 5.7vw;
+    max-height: 5.7vh;
+  }
+}
+
+/* Commented to shine the titles (FUTURE)*/
+/* .shine, .chrome {
+	font-size: 3em;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.shine {
+    background: #FFB42F -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+    -webkit-background-size: 150px;
+    background-size: 150px;
+    color: rgba(255, 255, 255, 0.3);
+    -webkit-background-clip: var(--text-color);
+    background-clip: var(--text-color);
+    -webkit-animation-name: shine;
+    animation-name: shine;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+.chrome {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+	-webkit-background-size: 200px;
+    background-size: 200px;
+	color: var(--text-color);
+	-webkit-background-clip: var(--text-color);
+    background-clip: var(--text-color);
+	-webkit-animation-name: shine;
+    animation-name: shine;
+	-webkit-animation-duration: var(--duration);
+    animation-duration: var(--duration);
+	-webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+} */
