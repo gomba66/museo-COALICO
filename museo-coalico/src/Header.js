@@ -22,15 +22,15 @@ export function Header() {
             Salas
           </Link>
           <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}} to="/posts" className="dropdown-item">Aprendamos en paz</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}} to="/aprendamos-en-paz" className="dropdown-item">Aprendamos en paz</Link>
             <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}} to="/heridas-del-conflicto" className="dropdown-item">Heridas del conflicto</Link>
-            <Link to="/posts" className="dropdown-item">Gestos de vida</Link>
-            <Link to="/posts" className="dropdown-item">¡Para oído!</Link>
-            <Link to="/posts" className="dropdown-item">Palabras cruzadas</Link>
-            <Link to="/posts" className="dropdown-item">De camino a la justicia</Link>
-            <Link to="/posts" className="dropdown-item">Piezas para aprender</Link>
-            <Link to="/posts" className="dropdown-item">Ojo a los derechos</Link>
-            <Link to="/posts" className="dropdown-item">Día de las Manos Rojas</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/gestos-de-vida" className="dropdown-item">Gestos de vida</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/para-oido" className="dropdown-item">¡Para oído!</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/palabras-cruzadas" className="dropdown-item">Palabras cruzadas</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/de-camino-a-la-justicia" className="dropdown-item">De camino a la justicia</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/piezas-para-aprender" className="dropdown-item">Piezas para aprender</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/ojo-a-los-derechos" className="dropdown-item">Ojo a los derechos</Link>
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'none'}}to="/dia-de-las-mano-rojas" className="dropdown-item">Día de las Manos Rojas</Link>
           </div>
           </li>
           <li className="nav-item">
