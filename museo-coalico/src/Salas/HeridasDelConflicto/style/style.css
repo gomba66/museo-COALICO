@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Club Type W01 Medium";
-  src: url(/museo-coalico/src/assets/Club\ Type\ W01\ Medium.ttf);
+  src: url(Club\ Type\ W01\ Medium.ttf);
 }
 
 :root {
@@ -21,14 +21,14 @@
 }
 
 body {
-  background-image: url(/museo-coalico/src/assets/fondos/fondo.png);
+  background-image: url("../../../assets/fondos/fondo.png");
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-main h1 {
+div h1 {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-logo-yellow);
