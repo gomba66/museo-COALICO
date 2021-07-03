@@ -8,19 +8,11 @@
         <link rel="icon" type="image/x-icon" href="/museo-coalico/src/assets/logos/favicon.ico">
         <link rel="icon" type="image/png" href="/museo-coalico/src/assets/logos/favicon-32x32.png">
         <link rel='stylesheet' href='/museo-coalico/src/style.css'>
-        <link rel="stylesheet" href="/museo-coalico/src/footer.css">
         <!--Bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-        <!--Swiper-->
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-        <link rel="stylesheet" href="/museo-coalico/src/swiper-bundle.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> 
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     </head>
     <body class="">
 
@@ -68,7 +60,6 @@
             <!--Marcos-->
             <div>
                 <img id="marco" class="pt-1 d-none d-md-block" src="/museo-coalico/src/assets/marcos/marco-general.png" alt="background marco" height="100%" width="100%">
-                <img id="logo-cat" class="position-absolute" src="/museo-coalico/src/assets/iconos/heridas-del-conflicto.png" alt="Logo categoría">
             </div>
             <div>
                 <img id="marco" class="pt-1 d-md-none" src="/museo-coalico/src/assets/marcos/marco-general-mobile.png" alt="background marco" height="100%" width="100%">
@@ -83,57 +74,18 @@
                     </div>
                 </div>
             </div>
-            <div id="p-mobile" class="position-absolute d-none d-sm-block d-md-none d-block d-sm-none">
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, magnis est ornare</p>
-            </div>
 
             <!--Desktop - Título y niña-->
             <div id="encabezado" class="d-flex position-absolute row">
-                <div class="col-md-1"></div>
-                <div class="col-md-7 d-md-block d-none">
+                <div class="col-md-12 d-md-block d-none">
                     <h1 id="titulo">Heridas del conflicto</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, magnis est ornare</p>
                 </div>
-                <div class="col-md-4 d-md-block d-none d-flex">
-                    <img id="elementos" src="/museo-coalico/src/assets/elementos/nina1.png" alt="Niña fondo">
-                </div>
-            </div>
-            
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- Slider main container -->
-            <div id="slider" class="position-absolute">
-                <div class="swiper-container">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div id="slide-1" class="swiper-slide position-relative">
-                            <h2 id="slider-title" class="position-absolute">Reportaje Niñas y Niños</h2>
-                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
-                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
-                        </div>
-                        <div id="slide-2" class="swiper-slide">
-                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/video-preview.png" alt="marco-slide">
-                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/video-elemento.png" alt="Imagen de audio">
-                        </div>
-                        <div id="slide-3" class="swiper-slide">
-                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/texto-preview.png" alt="marco-slide">
-                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/articulo-elemento.png" alt="Imagen de audio">
-                        </div>
-                        <div id="slide-4" class="swiper-slide">
-                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
-                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
-                        </div>
-                        <div id="slide-5" class="swiper-slide">
-                            <img id="marco-slides" src="/museo-coalico/src/assets/marcos/audio-preview.png" alt="marco-slide">
-                            <img class="position-absolute" id="img-ref" src="/museo-coalico/src/assets/img-ref/audio-elemento.png" alt="Imagen de audio">
-                        </div>
+                <div class="col-md-6 d-md-block d-none d-flex">
+                    <div>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
                     </div>
-                    <script src="/museo-coalico/src/swiper-bundle.min.js"></script>
                 </div>
-            </div>
-            
+            </div> 
         </main>
 
         <!-- Footer -->
@@ -261,7 +213,7 @@
             <!-- Copyright -->
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
                 <div class="pb-4">
-                    <a href="/"> <img id="footer-logo" src="assets/logos/logo-museo.png" alt="Museo logo"> </a>
+                    <a href="/"> <img src="assets/logos/logo-museo.png" alt="Museo logo" width="150" height="40"> </a>
                 </div>
                 <div>
                     Made by

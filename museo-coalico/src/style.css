@@ -20,10 +20,6 @@
     --color-green: #05cd5c;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-image: url(/museo-coalico/src/assets/fondos/fondo.png);
     height: 100%;
@@ -41,19 +37,22 @@ main h1 {
 }
 
 main p {
+    font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
     color: white;
     top: 20%;
+    font-size: 2vw;
 }
-
+/* Marco above the background */
 #marco {
     z-index: 100;
 }
 
+/* Characters above the background (boys and girls) */
 #elementos {
     z-index: 150;
     top: 0;
 }
-
+/* Characters above the background (boys and girls) FOR MOBILE */
 #elementos-mobile {
     z-index: 150;
     top: 0;
@@ -61,45 +60,19 @@ main p {
     max-height: 600px;
 }
 
+/* Logo of the category (The logo up/right in the corner)*/
 #logo-cat {
     z-index: 150;
     top: 5%;
     left: 93%;
 }
 
-#patrocinio-logo-1 {
-    max-width: 50%;
-    max-height: 50%;
-}
-
-#patrocinio-logo-2 {
-    max-width: 50%;
-    max-height: 50%;
-}
-
-#patrocinio-logo-3 {
-    max-width: 50%;
-    max-height: 50%;
-}
-
+/* Container of the title and the character(background) */
 #encabezado
 {
     top: 20%;
     left: 50px;
     right: 50px;
-}
-
-#card {
-    top: 20%;
-    left: 50px;
-    right: 50px;
-    z-index: 300;
-}
-
-#slider {
-    top: 50%;
-    left: 8vw;
-    right: 8vw;
 }
 
 
@@ -143,6 +116,9 @@ main p {
     main h1 {
         width: 50%;
     }
+    main p {
+        font-size: 4vw;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -182,6 +158,8 @@ main p {
     }
 }
 
+
+/* Commented to shine the titles (FUTURE)*/
 /* .shine, .chrome {
 	font-size: 3em;
 	margin: 0 auto;
