@@ -81,8 +81,12 @@ const PiezasParaAprender = (props) => {
           </div>
         </div>
 
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
+        <prevEl>
+          <div className="swiper-button-prev"></div>
+        </prevEl>
+        <nextEl>
+          <div className="swiper-button-next"></div>
+        </nextEl>
 
         {/* <!-- Slider main container --> */}
         <div id="slider" className="position-absolute">
@@ -93,13 +97,20 @@ const PiezasParaAprender = (props) => {
               <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
+                loopFillGroupWithBlank={true}
+                loop={true}
+                pagination={{
+                  "clickable": true
+                }}
                 breakpoints={{
                   768: {
                     slidesPerView: 3,
                   },
                 }}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
+                navigation= {{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}  
               >
                 {/* <div id="slide-1" className="swiper-slide position-relative"> */}
                 <SwiperSlide>
