@@ -1,7 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {Pagination, Navigation} from 'swiper/core';
 import "../AprendamosEnPaz/style/styleAprendamos.css";
 import "./style/swiper-bundle.min.css";
+
+
+SwiperCore.use([Pagination,Navigation]);
 const AprendamosEnPaz = (props) => {
   window.onload = function () {
     const url = window.location.href.indexOf("/aprendamos-en-paz");
@@ -81,8 +85,12 @@ const AprendamosEnPaz = (props) => {
           </div>
         </div>
 
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
+        <prevEl>
+          <div className="swiper-button-prev"></div>
+        </prevEl>
+        <nextEl>
+          <div className="swiper-button-next"></div>
+        </nextEl>
 
         {/* <!-- Slider main container --> */}
         <div id="slider" className="position-absolute">
@@ -93,13 +101,20 @@ const AprendamosEnPaz = (props) => {
               <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
+                loopFillGroupWithBlank={true}
+                loop={true}
+                pagination={{
+                  "clickable": true
+                }}
                 breakpoints={{
                   768: {
                     slidesPerView: 3,
                   },
                 }}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
+                navigation= {{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}               
               >
                 {/* <div id="slide-1" className="swiper-slide position-relative"> */}
                 <SwiperSlide>
