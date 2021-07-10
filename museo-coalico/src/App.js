@@ -28,6 +28,7 @@ import DiaDeLasManosRojas from './Salas/DiaDeLasManosRojas/index';
 import CuentoContigo from './Salas/CuentoContigo/index';
 import AVivaVoz from "./Salas/AVivaVoz/index";
 import PostBase from "./Salas/PostBase/index";
+import QuienesSomos from "./QuienesSomos";
 
 
 
@@ -123,6 +124,10 @@ function Router() {
           </Route>
           <Route exact path="/post-base">
             <PostBase />
+            <Footer />
+          </Route>
+          <Route exact path="/quienes-somos">
+            <QuienesSomos />
             <Footer />
           </Route>
           <Route exact path="/heridas-del-conflicto">
