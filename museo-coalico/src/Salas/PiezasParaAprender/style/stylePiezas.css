@@ -20,7 +20,7 @@
   --color-green: #05cd5c;
 }
 
-body {
+#body-posts {
   background-image: url("../../../assets/fondos/fondo.png");
   height: 100%;
   width: 100%;
@@ -42,6 +42,7 @@ main p {
   top: 20%;
   font-size: 2vw;
 }
+
 /* Marco above the background */
 #marco {
   z-index: 100;

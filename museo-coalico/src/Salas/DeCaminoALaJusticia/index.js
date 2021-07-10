@@ -11,7 +11,7 @@ const DeCaminoALaJusticia = (props) => {
     }
   };
   return (
-    <div>
+    <div id="body-posts">
       <main className="no-padding position-relative w-100">
         {/* <!--Marcos--> */}
         <div>
