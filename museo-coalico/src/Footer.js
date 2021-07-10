@@ -179,7 +179,7 @@ const Footer = () => {
 const footerContainer = css`
   position: sticky;
   width: 100%;
-  min-height: 100%
+  min-height: 100%;
 `;
 const Copyright = css`
   background-color: rgba(0, 0, 0, 0.05);
