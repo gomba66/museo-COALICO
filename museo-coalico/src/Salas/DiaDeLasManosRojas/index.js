@@ -1,5 +1,6 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+
+import PostsInFrames from "../../components/PostsInFrames";
 import "../DiaDeLasManosRojas/style/styleManos.css";
 import "./style/swiper-bundle.min.css";
 const DiaDeLasManosRojas = (props) => {
@@ -59,7 +60,9 @@ const DiaDeLasManosRojas = (props) => {
           className="position-absolute d-none d-sm-block d-md-none d-block d-sm-none"
         >
           <p>
-            El 12 de febrero de cada año se conmemora el Día Internacional de las Manos Rojas, en contra de la vinculación de los niños y niñas a la guerra. 
+            El 12 de febrero de cada año se conmemora el Día Internacional de
+            las Manos Rojas, en contra de la vinculación de los niños y niñas a
+            la guerra.
           </p>
         </div>
 
@@ -68,7 +71,9 @@ const DiaDeLasManosRojas = (props) => {
           <div className="col-md-7 d-md-block d-none ml-5 pl-5">
             <h1 id="manos">Día de las manos rojas</h1>
             <p>
-              El 12 de febrero de cada año se conmemora el Día Internacional de las Manos Rojas, en contra de la vinculación de los niños y niñas a la guerra. 
+              El 12 de febrero de cada año se conmemora el Día Internacional de
+              las Manos Rojas, en contra de la vinculación de los niños y niñas
+              a la guerra.
             </p>
           </div>
           <div className="col-md-4 d-md-block d-none d-flex">
@@ -93,101 +98,7 @@ const DiaDeLasManosRojas = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <Swiper
-                spaceBetween={30}
-                slidesPerView={1}
-                loopFillGroupWithBlank={true}
-                loop={true}
-                breakpoints={{
-                  1500: {
-                    slidesPerView: 4,
-                  },
-                  768: {
-                    slidesPerView: 3,
-                  },
-                }}
-                navigation= {{
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-                }}             
-              >
-                {/* <div id="slide-1" className="swiper-slide position-relative"> */}
-                <SwiperSlide>
-                  <h2 id="slider-title" className="position-absolute"></h2>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/audio-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/audio-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                {/* </div> */}
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/video-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/video-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/texto-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/articulo-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/audio-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/audio-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                {/* <div id="slide-2" className="swiper-slide"> */}
-                {/* </div> */}
-                {/* <div id="slide-3" className="swiper-slide"> */}
-                {/* </div> */}
-                {/* <div id="slide-4" className="swiper-slide"> */}
-                {/* </div> */}
-                {/* <div id="slide-5" className="swiper-slide"> */}
-                {/* </div> */}
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/audio-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/audio-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-              </Swiper>
+              <PostsInFrames posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>
