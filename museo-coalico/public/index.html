@@ -61,7 +61,8 @@
 		<div id="container360" class="container360" style="width:100%;height:100%;">
 		<br>Loading...<br><br>
 		</div>
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
+	
 			// create the panorama player with the container
 			pano=new pano2vrPlayer("container360");
 			// add the skin object
@@ -71,32 +72,7 @@
 			window.addEventListener("load", function() {
 				pano.readConfigUrlAsync("pano.xml");
 			});
-			if (window.navigator.userAgent.match(/AppleWebKit/i)) {
-				// fix for white borders, rotation on iPhone
-				function iosHfix(e) {
-					window.scrollTo(0, 1);
-					var container=document.getElementById("container360");
-					var oh=container.offsetHeight;
-					document.documentElement.style.setProperty('height', '100vh');
-					if (oh!=container.offsetHeight) {
-						container.style.setProperty('height',"100%");
-					} else {
-						container.style.setProperty('height',window.innerHeight+"px");
-					}
-					window.scrollTo(0, 0);
-					pano.setViewerSize(container.offsetWidth, container.offsetHeight);
-				};
-				setTimeout(iosHfix,0);	
-				setTimeout(iosHfix,100);	
-				window.addEventListener("resize", function() {
-					setTimeout(iosHfix,0);
-					// hide toolbar on iPad happens with a delay
-					setTimeout(iosHfix,500);
-					setTimeout(iosHfix,1000);
-					setTimeout(iosHfix,2000);
-				});
-			}
-		</script>
+		</script> -->
 		<noscript>
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
