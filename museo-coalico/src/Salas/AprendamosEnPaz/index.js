@@ -101,11 +101,11 @@ const AprendamosEnPaz = (props) => {
                 spaceBetween={30}
                 slidesPerView={1}
                 loopFillGroupWithBlank={true}
-                loop={true}
-                pagination={{
-                  "clickable": true
-                }}
+                loop={true}              
                 breakpoints={{
+                  1500: {
+                    slidesPerView: 4,
+                  },
                   768: {
                     slidesPerView: 3,
                   },

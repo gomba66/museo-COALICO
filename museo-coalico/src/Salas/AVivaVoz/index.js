@@ -96,10 +96,10 @@ const AVivaVoz = (props) => {
                 slidesPerView={1}
                 loopFillGroupWithBlank={true}
                 loop={true}
-                pagination={{
-                  "clickable": true
-                }}
                 breakpoints={{
+                  1500: {
+                    slidesPerView: 4,
+                  },
                   768: {
                     slidesPerView: 3,
                   },
