@@ -64,9 +64,9 @@ function UserDash() {
     }
   }
   return (
-    <div className="container vh-100">
-      <div className="">
-        <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
+    <div className="container-fluid vh-100">
+      <div className="container">
+        {/* <Button title="New Post" onClick={() => updateOverlayVisibility(true)} /> */}
         <AmplifySignOut />
         <h1>Photo Album</h1>
         <span>Add new image</span>
@@ -75,13 +75,16 @@ function UserDash() {
           accept='image/png'
           onChange={onChange}
           />
-      </div>
         { showOverlay && (
           <CreatePost
-            updatePosts={setPostState}
-            posts={posts}
+          updatePosts={setPostState}
+          posts={posts}
           />
         )}   
+      </div>
+      <div className="container-fluid">
+        
+      </div>
     </div>
   )
 }
