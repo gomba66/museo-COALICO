@@ -64,8 +64,8 @@ function UserDash() {
     }
   }
   return (
-    <div>
-      <div className="h-100">
+    <div className="container vh-100">
+      <div className="">
         <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
         <AmplifySignOut />
         <h1>Photo Album</h1>
@@ -78,7 +78,6 @@ function UserDash() {
       </div>
         { showOverlay && (
           <CreatePost
-            updateOverlayVisibility={updateOverlayVisibility}
             updatePosts={setPostState}
             posts={posts}
           />

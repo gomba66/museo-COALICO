@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { css } from '@emotion/css';
 import Button from './Button';
 import { v4 as uuid } from 'uuid';
-import { Storage, API, Auth } from 'aws-amplify';
+import { Storage, API, Auth, graphqlOperation } from 'aws-amplify';
 import { createPost } from './graphql/mutations';
 
 /* Initial state to hold form input, saving state */
@@ -16,15 +16,16 @@ const initialState = {
   description: '',
   category: '',
   subcategory: '',
-  file: {},
+  file: '',
   saving: false
 };
 
 export function CreatePost({
-  updateOverlayVisibility, updatePosts, posts
+  updatePosts, posts
 }) {
   /* 1. Create local state with useState hook */
   const [formState, updateFormState] = useState(initialState)
+  
 
   /* 2. onChangeText handler updates the form state when a user types into a form field */
   function onChangeText(e) {
@@ -36,8 +37,9 @@ export function CreatePost({
   function onChangeFile(e) {
     e.persist();
     if (! e.target.files[0]) return;
-    const image = { fileInfo: e.target.files[0], name: `${e.target.files[0].name}_${uuid()}`}
-    updateFormState(currentState => ({ ...currentState, file: URL.createObjectURL(e.target.files[0]), image }))
+    const fileUploaded = { fileInfo: e.target.files[0], name: `${uuid()}_${e.target.files[0].name}`}
+    fileUploaded.name = fileUploaded.name.replace(/\s/g, "_")
+    updateFormState(currentState => ({ ...currentState, file: URL.createObjectURL(e.target.files[0]), fileUploaded }))
   }
 
   /* 4. Save the post  */
@@ -57,9 +59,10 @@ export function CreatePost({
         
         category = JSON.stringify(category);
         subcategory = JSON.stringify(subcategory);
-        file = JSON.stringify(file);
+        file = JSON.stringify(formState.fileUploaded.name);
+        
 
-        console.log(formState)
+        console.log("formState ", formState)
       if ( !name || 
         !year || 
         !creation || 
@@ -72,16 +75,19 @@ export function CreatePost({
         !file) return;
       updateFormState(currentState => ({ ...currentState, saving: true }));
       const postId = uuid();
-      const postInfo = { name, year, creation, link, published, region, description, category, subcategory, file, image: formState.image, id: postId };
+      let postInfo = { name, year, creation, link, published, region, description, category, subcategory, file, id: postId };
 
-      await Storage.put(formState.image, formState.image.fileInfo);
-      await API.graphql({
-        mutations: createPost, variables: { input: postInfo }
-      });
-      updatePosts([...posts, { ...postInfo, image: formState.file }]);
+      const infoStorage = await Storage.put(formState.fileUploaded.name, formState.fileUploaded.fileInfo);
+      console.log('====================================');
+      console.log("infoStorage ", infoStorage);
+      console.log('====================================');
+      console.log('====================================');
+      console.log(postInfo);
+      console.log('====================================');
+      await API.graphql(graphqlOperation(createPost, { input: postInfo }));
+      updatePosts([...posts, { ...postInfo }]);
       updateFormState(currentState => ({ ...currentState, saving: false }));
-      updateOverlayVisibility(false);
-    } catch (err) {
+      } catch (err) {
       console.log('error: ', err);
     }
   }
@@ -154,11 +160,12 @@ export function CreatePost({
       />
       <input 
         type="file"
+        name="file"
         onChange={onChangeFile}
-      />
-      { formState.file && <img className={imageStyle} alt="preview" src={formState.file} /> }
+      /> 
+      { formState.file && <img className={fileStyle} alt="preview" src={formState.file} /> }
       <Button title="Create New Post" onClick={save} />
-      <Button type="cancel" title="Cancel" onClick={() => updateOverlayVisibility(false)} />
+      {/* <Button type="cancel" title="Cancel" onClick={() => updateOverlayVisibility(false)} /> */}
       { formState.saving && <p className={savingMessageStyle}>Saving post...</p> }
     </div>
   )
@@ -173,7 +180,7 @@ const inputStyle = css`
   border-radius: 4px;
 `
 
-const imageStyle = css`
+const fileStyle = css`
   height: 120px;
   margin: 10px 0px;
   object-fit: contain;
@@ -182,14 +189,13 @@ const imageStyle = css`
 const containerStyle = css`
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 420px;
-  position: fixed;
+  width: 60%;
+  height: 100%;
   left: 0;
   border-radius: 4px;
   top: 0;
-  margin-left: calc(50vw - 220px);
-  margin-top: calc(50vh - 230px);
+  margin-left: calc(50vw - 30vw);
+  /* margin-top: calc(50vh - 230px); */
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.125rem 0.25rem;
