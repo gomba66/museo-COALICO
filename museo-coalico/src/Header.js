@@ -36,7 +36,7 @@ export function Header() {
           </div>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-link" href="#">Quiénes somos</Link>
+            <Link to="/quienes-somos" className="nav-link" href="#">Quiénes somos</Link>
           </li>
         </ul>
         </div>
