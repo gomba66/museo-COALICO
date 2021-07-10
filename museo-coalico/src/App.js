@@ -25,7 +25,10 @@ import DeCaminoALaJusticia from './Salas/DeCaminoALaJusticia/index';
 import PiezasParaAprender from './Salas/PiezasParaAprender/index';
 import OjoALosDerechos from './Salas/OjoALosDerechos/index';
 import DiaDeLasManosRojas from './Salas/DiaDeLasManosRojas/index';
+import CuentoContigo from './Salas/CuentoContigo/index';
+import AVivaVoz from "./Salas/AVivaVoz/index";
 import PostBase from "./Salas/PostBase/index";
+
 
 
 function Router() {
@@ -156,6 +159,14 @@ function Router() {
           </Route>
           <Route exact path="/dia-de-las-manos-rojas">
             <DiaDeLasManosRojas />
+            <Footer />
+          </Route>
+          <Route exact path="/a-viva-voz">
+            <AVivaVoz />
+            <Footer />
+          </Route>
+          <Route exact path="/cuento-contigo">
+            <CuentoContigo />
             <Footer />
           </Route>
         </Switch>

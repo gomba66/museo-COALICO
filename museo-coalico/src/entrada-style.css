@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Club Type W01 Medium";
+    src: url(./assets/Club\ Type\ W01\ Medium.ttf);
+}
 
 /* Desktop */
 #nave-desktop {
@@ -129,4 +133,40 @@
     #boton-desktop {
         display: none;
     }
+    .button-entrada {
+        padding: 3px 75px 3px 75px
+    }
 }
+
+.button-entrada {
+    background: blue;
+    background-image: -webkit-linear-gradient(top, #0166da, #d8f9f9);
+    background-image: -moz-linear-gradient(top, #0166da, #d8f9f9);
+    background-image: -ms-linear-gradient(top, #0166da, #d8f9f9);
+    background-image: -o-linear-gradient(top, #0166da, #d8f9f9);
+    background-image: linear-gradient(to bottom, #0166da, #d8f9f9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: "Club Type W01 Medium";
+    color: white;
+    text-shadow: 4px 4px 7px black;
+    font-size: 26px;
+    padding: 3px 75px 3px 75px;
+    text-decoration: none;
+  }
+  
+  .button-entrada:hover {
+    background: black;
+    background-image: -webkit-linear-gradient(top, #013585, #6690d0);
+    background-image: -moz-linear-gradient(top, #013585, #6690d0);
+    background-image: -ms-linear-gradient(top, #013585, #6690d0);
+    background-image: -o-linear-gradient(top, #013585, #6690d0);
+    background-image: linear-gradient(to bottom, #013585, #6690d0);
+    text-decoration: none;
+  }
+  
+  .button-entrada:focus {
+    outline: none;
+  }
+  

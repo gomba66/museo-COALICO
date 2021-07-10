@@ -11,13 +11,13 @@ export function Entrada(props) {
                   <img id="logo-cel" className="d-none d-sm-block d-md-none d-block d-sm-none" src={"/assets/logos/logo-museo.png"} alt="Logo museo" />
               </div>
               <div className="d-flex justify-content-center col-12">
-                  <img id="nave-cel" className="d-none d-sm-block d-md-none d-block d-sm-none" src={"/assets/elementos/nave-sola.png"} alt="Máquina del tiempo" />
+                  <img className="nave-cel d-none d-sm-block d-md-none d-block d-sm-none" src={"/assets/elementos/nave-sola.png"} alt="Máquina del tiempo" />
               </div>
               <div className="d-flex justify-content-end col-6">
                   <img id="gotitan-cel" className="d-none d-sm-block d-md-none d-block d-sm-none" src={"/assets/elementos/gotitan-solo.png"} alt="Gotitán personaje" />
               </div>
               <div className="d-flex justify-content-start align-items-center col-6">
-                  <img onClick={() =>{props.entrar()}} id="boton-cel" className="d-none d-sm-block d-md-none d-block d-sm-none" src={"/assets/botones/boton-opcion-.png"} alt="Botón de entrada" />
+                  <button id="boton-cel" className="button-entrada d-none d-sm-block d-md-none d-block d-sm-none" onClick={() =>{props.entrar()}} alt="Botón de entrada">Entrar</button>
               </div>
           </div>
       </div>
@@ -35,7 +35,8 @@ export function Entrada(props) {
                       <img id="gotitan-md" className="d-none d-md-block d-lg-none" src={"/assets/elementos/gotitan-solo.png"} alt="Gotitán personaje" />
                   </div>
                   <div className="d-flex justify-content-start align-items-center col-6">
-                      <img onClick={() =>{props.entrar()}} id="boton-md" className="d-none d-md-block d-lg-none" src={"/assets/botones/boton-opcion-.png"} alt="Botón de entrada" />
+                      <button id="boton-md" className="button-entrada d-none d-md-block d-lg-none" onClick={() =>{props.entrar()}} alt="Botón de entrada">Entrar</button>
+
                   </div>
               </div>
           </div>
@@ -47,7 +48,8 @@ export function Entrada(props) {
               <div className="col">
                   <img id="logo-desktop" className="col-12" src={"/assets/logos/logo-museo.png"} alt="Logo museo" />
                   <img id="gotitan-desktop" className="col-5" src={"/assets/elementos/gotitan-solo.png"} alt="Gotitán personaje" />
-                  <img onClick={() =>{props.entrar()}} id="boton-desktop" className="col-5" src={"/assets/botones/boton-opcion-.png"} alt="Botón de entrada" />
+                  <button id="boton-desktop" className="button-entrada col-5" onClick={() =>{props.entrar()}} alt="Botón de entrada">Entrar</button>
+
               </div>
           </div>
       </div>
