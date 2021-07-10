@@ -21,6 +21,9 @@ export function Post() {
       console.log(postData);
       const currentPost = postData.data.getTodo;
       const image = await Storage.get(currentPost.image);
+      console.log('====================================');
+      console.log(image);
+      console.log('====================================');
 
       currentPost.image = image;
       updatePost(currentPost);
@@ -46,7 +49,7 @@ export function Post() {
       <p className={locationStyle}>{post.category}</p>
       <p className={locationStyle}>{post.subcategory}</p>
       <p className={locationStyle}>{post.file}</p>
-      <img alt="post" src={post.image} className={imageStyle} />
+      {/* <img alt="post" src={post.image} className={imageStyle} /> */}
       </>
     }
     </>
