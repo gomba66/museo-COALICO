@@ -65,8 +65,7 @@ const HeridasDelConflicto = (props) => {
 
         {/* <!--Desktop - Título y niña--> */}
         <div id="encabezado" className="d-flex position-absolute row">
-          <div className="col-md-1"></div>
-          <div className="col-md-7 d-md-block d-none">
+          <div className="col-md-7 d-md-block d-none ml-5 pl-5">
             <h1 id="heridas">Heridas del conflicto</h1>
             <p>
               Así hemos padecido la crudeza de la violencia en nuestros territorios.
@@ -99,10 +98,10 @@ const HeridasDelConflicto = (props) => {
                 slidesPerView={1}
                 loopFillGroupWithBlank={true}
                 loop={true}
-                pagination={{
-                  "clickable": true
-                }}
                 breakpoints={{
+                  1500: {
+                    slidesPerView: 4,
+                  },
                   768: {
                     slidesPerView: 3,
                   },
