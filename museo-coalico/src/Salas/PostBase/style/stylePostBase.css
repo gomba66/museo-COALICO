@@ -1,0 +1,142 @@
+@font-face {
+    font-family: "Club Type W01 Medium";
+    src: url(Club\ Type\ W01\ Medium.ttf)
+}
+
+:root{
+    /*shine*/
+    --duration: 5s;
+    --text-color: rgba(255, 255, 255, 0.3);
+    --bgr-color: #333;
+    /*Logo colors*/
+    --color-logo-red: #c4001d;
+    --color-logo-blue: #0000a6;
+    --color-logo-yellow: #fabe00;
+    /*Title colors*/
+    --color-red: #fe0000;
+    --color-orange: #fe6c01;
+    --color-yellow: #fed300;
+    --color-blue: #0ae3cf;
+    --color-green: #05cd5c;
+}
+
+#body-post {
+    background-image: url("../../../assets/fondos/fondo.png");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo-post {
+    font-family: "Club Type W01 Medium";  
+    font-size: 11vw;
+    color: var(--color-logo-yellow);
+    text-shadow: 9px 9px 10px black;
+}
+
+.p-post {
+    font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+    color: white;
+    top: 20%;
+    font-size: 2vw;
+}
+
+.scroll-p {
+    height: 48%;
+	width: 105%;
+    overflow-y: scroll;
+}
+
+/* Container of the title and the character(background) */
+#encabezado-p
+{
+    top: 15%;
+    left: 50px;
+    right: 50px;
+}
+
+@media screen and (max-width: 575.98px) {
+    #encabezado-p {
+        top: 22%;
+        left: 10%;
+        right: 10%;
+    }
+    .p-post {
+        font-size: 4vw;
+        max-width: 90%;
+    }
+    .scroll-p {
+        height: 35%;
+        width: 90%;
+        overflow-y: scroll;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px)
+{
+    .titulo-post {
+        font-size: 5vw;
+    }
+}
+
+/* Medium devices until 767.98px and down (Cellphone and tablet)*/
+@media screen and (max-width: 767.98px) and (min-width: 575.98px)
+{
+    #logo-cat{
+        max-width: 10vw;
+        max-height: 10vh;
+        top: 2.8%;
+        left: 84.5%;
+    }
+    .p-post {
+        font-size: 4vw;
+        max-width: 90%;
+    }
+    .titulo-post {
+        max-width: 90%;
+    }
+    #encabezado-p {
+        top: 25%;
+        left: 10%;
+        right: 0px;
+    }
+    .scroll-p {
+        height: 35%;
+        width: 90%;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
+    #encabezado-p {
+        top: 25%;
+        left: 5%;
+        right: 0px;
+    }
+}
+@media screen and (min-width: 991.98px) {
+    #encabezado-p {
+        top: 35%;
+        left: 5%;
+        right: 0px;
+    }
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+

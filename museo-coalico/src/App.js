@@ -25,6 +25,7 @@ import DeCaminoALaJusticia from './Salas/DeCaminoALaJusticia/index';
 import PiezasParaAprender from './Salas/PiezasParaAprender/index';
 import OjoALosDerechos from './Salas/OjoALosDerechos/index';
 import DiaDeLasManosRojas from './Salas/DiaDeLasManosRojas/index';
+import PostBase from "./Salas/PostBase/index";
 
 
 function Router() {
@@ -115,6 +116,10 @@ function Router() {
           </Route>
           <Route exact path="/admin">
             <UserDash />
+            <Footer />
+          </Route>
+          <Route exact path="/post-base">
+            <PostBase />
             <Footer />
           </Route>
           <Route exact path="/heridas-del-conflicto">
