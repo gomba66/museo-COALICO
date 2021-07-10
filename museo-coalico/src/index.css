@@ -21,3 +21,7 @@ code {
 .css-14vj0mx {
   height: 780px !important;
 }
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
