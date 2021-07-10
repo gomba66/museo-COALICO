@@ -1,11 +1,11 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {Pagination, Navigation} from 'swiper/core';
+import React, { useEffect, useState } from "react";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import PostsInFrames from "../../components/PostsInFrames";
 import "../AprendamosEnPaz/style/styleAprendamos.css";
 import "./style/swiper-bundle.min.css";
+import "../../index.css";
 
-
-SwiperCore.use([Pagination,Navigation]);
+SwiperCore.use([Pagination, Navigation]);
 const AprendamosEnPaz = (props) => {
   window.onload = function () {
     const url = window.location.href.indexOf("/aprendamos-en-paz");
@@ -63,7 +63,8 @@ const AprendamosEnPaz = (props) => {
           className="position-absolute d-none d-sm-block d-md-none d-block d-sm-none"
         >
           <p>
-            Conoce algunas de nuestras experiencias educativas para soñar un país distinto. 
+            Conoce algunas de nuestras experiencias educativas para soñar un
+            país distinto.
           </p>
         </div>
 
@@ -73,7 +74,8 @@ const AprendamosEnPaz = (props) => {
           <div className="col-md-7 d-md-block d-none">
             <h1 id="Aprendamos">Aprendamos en paz</h1>
             <p>
-              Conoce algunas de nuestras experiencias educativas para soñar un país distinto. 
+              Conoce algunas de nuestras experiencias educativas para soñar un
+              país distinto.
             </p>
           </div>
           <div className="col-md-4 d-md-block d-none d-flex">
@@ -98,101 +100,7 @@ const AprendamosEnPaz = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <Swiper
-                spaceBetween={30}
-                slidesPerView={1}
-                loopFillGroupWithBlank={true}
-                loop={true}
-                pagination={{
-                  "clickable": true
-                }}
-                breakpoints={{
-                  768: {
-                    slidesPerView: 3,
-                  },
-                }}
-                navigation= {{
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-                }}               
-              >
-                {/* <div id="slide-1" className="swiper-slide position-relative"> */}
-                <SwiperSlide>
-                  <h2 id="slider-title" className="position-absolute"></h2>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/audio-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/audio-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                {/* </div> */}
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/video-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/video-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/texto-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/articulo-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/audio-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/audio-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-                {/* <div id="slide-2" className="swiper-slide"> */}
-                {/* </div> */}
-                {/* <div id="slide-3" className="swiper-slide"> */}
-                {/* </div> */}
-                {/* <div id="slide-4" className="swiper-slide"> */}
-                {/* </div> */}
-                {/* <div id="slide-5" className="swiper-slide"> */}
-                {/* </div> */}
-                <SwiperSlide>
-                  <img
-                    id="marco-slides"
-                    src={"assets/marcos/audio-preview.png"}
-                    alt="marco-slide"
-                  />
-                  <img
-                    className="position-absolute"
-                    id="img-ref"
-                    src={"assets/img-ref/audio-elemento.png"}
-                    alt="Imagen de audio"
-                  />
-                </SwiperSlide>
-              </Swiper>
+              <PostsInFrames posts={props.posts} />
             </div>
             <script src="../../swiper-bundle.min.js"></script>
           </div>
