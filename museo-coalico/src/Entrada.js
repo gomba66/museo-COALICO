@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from '@emotion/css';
+import '../src/entrada-style.css'
 import entradaBackground from './assets/fondos/fondo-espacio.png';
 
 export function Entrada(props) {

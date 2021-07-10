@@ -66,8 +66,7 @@ const OjoALosDerechos = (props) => {
 
         {/* <!--Desktop - Título y niña--> */}
         <div id="encabezado" className="d-flex position-absolute row">
-          <div className="col-md-1"></div>
-          <div className="col-md-7 d-md-block d-none">
+          <div className="col-md-7 d-md-block d-none ml-5 pl-5">
             <h1 id="ojo">Ojo a los derechos</h1>
             <p>
               Monitoreo a la situación de niños, niñas y jóvenes en el conflicto
