@@ -15,8 +15,6 @@ export const getPost = /* GraphQL */ `
       category
       subcategory
       file
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -39,8 +37,6 @@ export const listPosts = /* GraphQL */ `
         category
         subcategory
         file
-        createdAt
-        updatedAt
       }
       nextToken
     }

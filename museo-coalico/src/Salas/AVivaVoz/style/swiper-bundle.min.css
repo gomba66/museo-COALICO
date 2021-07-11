@@ -37,7 +37,9 @@
 /* PNG Image inside the slides */
 #img-ref {
   z-index: 150;
-  width: 50%;
+  width: 40%;
+  left: 70px;
+  bottom: 10px;
 }
 
 /* Container (<div>) for #slider-title */
@@ -50,6 +52,10 @@
   top: 6%;
   right: 10%;
   font-size: 1.3vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 200px;
 }
 
 /* Container for .swiper-container to
@@ -103,6 +109,8 @@ manage his location in screen */
   #img-ref {
     z-index: 150;
     width: 50%;
+    left: 70px;
+    bottom: 10px;
   }
   .swiper-button-next,
   .swiper-button-prev {
@@ -127,7 +135,9 @@ manage his location in screen */
   }
   #img-ref {
     z-index: 150;
-    width: 50%;
+    width: 40%;
+    left: 70px;
+    bottom: 10px;
   }
 }
 
@@ -144,7 +154,9 @@ manage his location in screen */
   }
   #img-ref {
     z-index: 150;
-    width: 50%;
+    width: 40%;
+    left: 70px;
+    bottom: 10px;
   }
 }
 
@@ -182,7 +194,9 @@ manage his location in screen */
   }
   #img-ref {
     z-index: 150;
-    width: 50%;
+    width: 40%;
+    left: 70px;
+    bottom: 10px;
   }
 }
 
@@ -200,5 +214,7 @@ manage his location in screen */
   #img-ref {
     z-index: 150;
     width: 30%;
+    left: 70px;
+    bottom: 10px;
   }
 }
