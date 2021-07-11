@@ -30,7 +30,7 @@
 
 .titulo-post {
     font-family: "Club Type W01 Medium";  
-    font-size: 11vw;
+    font-size: 5vw;
     color: var(--color-logo-yellow);
     text-shadow: 9px 9px 10px black;
 }
@@ -63,13 +63,15 @@
         right: 10%;
     }
     .p-post {
-        font-size: 4vw;
-        max-width: 90%;
+        font-size: 3.5vw;
+        max-width: 95%;
     }
     .scroll-p {
-        height: 35%;
+        height: 100%;
         width: 90%;
         overflow-y: scroll;
+        line-height: 2.3vh;
+        margin: 10px;
     }
 }
 
@@ -77,7 +79,18 @@
 @media screen and (min-width: 768px)
 {
     .titulo-post {
-        font-size: 5vw;
+        font-size: 2.6vw;
+    }
+    .p-post {
+        font-size: 2vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 100%;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: 2.3vh;
+        margin: 10px;
     }
 }
 
@@ -103,25 +116,45 @@
         right: 0px;
     }
     .scroll-p {
-        height: 35%;
+        height: 110%;
         width: 90%;
         overflow-y: scroll;
+        line-height: 3.4vh;
+        margin: 10px;
     }
 }
 
 @media screen and (min-width: 767.98px) and (max-width: 991.98px) {
     #encabezado-p {
-        top: 25%;
-        left: 5%;
-        right: 0px;
+        top: 15%;
+        left: 3%;
+        right: 5%;
     }
 }
 @media screen and (min-width: 991.98px) {
     #encabezado-p {
-        top: 35%;
-        left: 5%;
+        top: 25%;
+        left: 3%;
         right: 0px;
     }
+    .p-post {
+        font-size: 2vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 90%;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: 3vh;
+        margin: 10px;
+    }
+    .titulo-post {
+        margin-left: 3rem;
+        margin-right: 3em;
+    }
+}
+::-webkit-scrollbar {
+    width: 0.6em;
 }
 
 ::-webkit-scrollbar-track {

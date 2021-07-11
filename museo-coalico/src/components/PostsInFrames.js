@@ -9,7 +9,7 @@ const PostsInFrames = (props) => {
   }, [props.posts]);
 
   const typeFrame = (post) => {
-    let formatImages = ["png", "jpg", "jpeg", "bmp", "HEIF"];
+    let formatImages = ["png", "jpg", "jpeg", "bmp", "HEIF", "svg"];
     let formatAudios = [
       "3pg",
       "aa",
@@ -92,7 +92,7 @@ const PostsInFrames = (props) => {
       frame = (
         <img
           id="marco-slides"
-          src={"assets/marcos/texto-preview.png"}
+          src={"assets/marcos/image-preview.png"}
           alt="marco-slide"
         />
       );
