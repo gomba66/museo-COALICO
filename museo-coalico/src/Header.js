@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import { css } from '@emotion/css';
 import { Link } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
+import { AmplifySignOut } from '@aws-amplify/ui-react';
 
 export function Header() {
+  let [userLoggedIn, setUserLoggedIn] = useState(null)
+  useEffect(() => {
+    let showLogOut = async authState => {
+      try {
+        let user = await Auth.currentAuthenticatedUser()
+        setUserLoggedIn(user)
+      } catch {
+        setUserLoggedIn(null)
+      }
+    }
+    showLogOut() // check manually the first time because we won't get a Hub event
+  }, []);
+
   return (
     <div className={headerContainer}>
       <nav className={navHeight + " navbar navbar-expand-lg navbar-light bg-light"}>
@@ -15,7 +30,11 @@ export function Header() {
         <div className="collapse navbar-collapse pr-5" id="navbarNavDropdown">
         <ul className={navItemsRight + ' navbar-nav ml-4'}>
           <li className="nav-item active">
-            <Link to="/" className="nav-link">Inicio<span className="sr-only">(current)</span></Link>
+            {
+              userLoggedIn ?
+              <AmplifySignOut /> :
+              <div></div>
+            }        
           </li>
           <li className="nav-item dropdown">
             <Link to="/" className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
