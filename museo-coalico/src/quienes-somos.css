@@ -1,4 +1,36 @@
+@font-face {
+    font-family: "Club Type W01 Medium";
+    src: url(./assets/Club\ Type\ W01\ Medium.ttf);
+}
+
+#body {
+    min-height: 100%;
+/*     background-image: url(./assets/fondos/fondo.png);*/
+    flex-direction: column;
+}
+
 .title {
+    font-family: "Club Type W01 Medium";
+    color: #010413;
+    font-size: 3em;
+}
+    .general-title {
+        font-size: 10vw;
+        color: white;
+        text-shadow: 1px 1px 4px #000000;
+    }
+
+.paragraph {
     font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
-    background-image: url(./assets/fondos/fondo.png);
+    font-size: 1.5em;
+
+}
+
+.banner {
+    background-image: url(./assets/fondos/banner-quienes-somos.jpeg);
+    min-height: 25vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
 }
