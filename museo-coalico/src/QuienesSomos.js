@@ -40,21 +40,21 @@ const QuienesSomos = (props) => {
                             <img className="card-img-top" src={nicolas} alt="Desarrollador" />
                             <div className="card-body">
                                 <h5 className="card-title">Nicolás Morán</h5>
-                                <p className="card-text">Desarrollador de la página</p>
+                                <p className="card-text">Desarrollador</p>
                             </div>
                         </div>
                         <div className="card">
                             <img className="card-img-top" src={doniben} alt="Desarrollador" />
                             <div className="card-body">
                                 <h5 className="card-title">Doniben Jimenez</h5>
-                                <p className="card-text">Desarrollador de la página</p>
+                                <p className="card-text">Desarrollador</p>
                             </div>
                         </div>
                         <div className="card">
                             <img className="card-img-top" src={joan} alt="Diseñador" />
                             <div className="card-body">
                                 <h5 className="card-title">Joan Barbosa</h5>
-                                <p className="card-text">Diseñador de la página</p>
+                                <p className="card-text">Diseñador</p>
                             </div>
                         </div>
                     </div>
@@ -63,14 +63,14 @@ const QuienesSomos = (props) => {
                             <img className="card-img-top" src={fernando} alt="Coordinador de contenidos de la página" />
                             <div className="card-body">
                                 <h5 className="card-title">Fernando Gonzáles</h5>
-                                <p className="card-text">Coordinador de contenidos de la página</p>
+                                <p className="card-text">Coordinador de contenidos</p>
                             </div>
                         </div>
                         <div className="card">
                             <img className="card-img-top" src={katerin} alt="Coordinador de contenidos de la página" />
                             <div className="card-body">
                                 <h5 className="card-title">Katerin Hernández</h5>
-                                <p className="card-text">Coordinador de contenidos de la página</p>
+                                <p className="card-text">Coordinador de contenidos</p>
                             </div>
                         </div>
                     </div>
