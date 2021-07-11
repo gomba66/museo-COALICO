@@ -35,18 +35,35 @@ export default function UpdateFileModal({ name, year, link, region, description,
   async function save() {
     try {
       let { 
-        name,
-        year,
-        link,
-        region,
-        description,
-        category,
-        subcategory,
-        file } = formState;
+        name = "",
+        year = "",
+        link = "",
+        region = "",
+        description = "",
+        category = "",
+        subcategory = "",
+        file = {} } = formState;
+
+      console.log('====================================');
+      console.log("formState --> ", formState.name);
+      console.log('====================================');
         
         category = JSON.stringify(category);
+        console.log('====================================');
+        console.log("CATEGORY --> ", category);
+        console.log('====================================');
         subcategory = JSON.stringify(subcategory);
-        file = JSON.stringify(formState.fileUploaded.name);
+        console.log('====================================');
+        console.log("SUBCATEGORY --> ", subcategory);
+        console.log('====================================');
+        if (formState.fileUploaded !== undefined) {
+        file = JSON.stringify(formState.fileUploaded);
+        } else {
+        file = JSON.stringify("");
+        }
+        console.log('====================================');
+        console.log("FILE --> ", file);
+        console.log('====================================');
         
 
         console.log("formState ", formState)
@@ -67,7 +84,7 @@ export default function UpdateFileModal({ name, year, link, region, description,
       console.log("infoStorage ", infoStorage);
       console.log('====================================');
       console.log('====================================');
-      console.log(postInfo);
+      console.log("PostInfo -->", postInfo);
       console.log('====================================');
       await API.graphql(graphqlOperation(updatePost, { input: postInfo }));
       updatePosts([...posts, { ...postInfo }]);
@@ -147,7 +164,7 @@ export default function UpdateFileModal({ name, year, link, region, description,
         onChange={onChangeFile}
       /> 
       { formState.file && <img className={fileStyle} alt="preview" src={formState.file} /> }
-      <Button title="Actualizar Post" onClick={save} />
+      <Button title="Actualizar Post" onClick={(e) => {e.preventDefault();save()}} />
       {/* <Button type="cancel" title="Cancel" onClick={() => updateOverlayVisibility(false)} /> */}
       { formState.saving && <p className={savingMessageStyle}>Guardando post...</p> }
     </div>

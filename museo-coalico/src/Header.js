@@ -37,7 +37,7 @@ export function Header() {
             }        
           </li>
           <li className="nav-item dropdown">
-            <Link to="/" className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <Link to="#" className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Salas
           </Link>
           <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
