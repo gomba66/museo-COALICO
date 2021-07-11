@@ -41,9 +41,9 @@ export function Posts({ posts = [] }) {
             <p>{published}</p>
             <p>{region}</p>
             <p>{description}</p>
-            <p>{category[0]}</p>
+            <p>{pr[0]?.category1}</p>
             <p>{subcategory}</p>
-            <p>{file}</p>
+            <img src={`https://coalico-images101949-dev.s3.us-east-2.amazonaws.com/public/${file}`} style={{width: 400, marginBottom: 10}}/>
           </div>
         </Link>
         )
