@@ -23,7 +23,7 @@ export const createPost = /* GraphQL */ `
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
+export const updatePost = /* GraphQL */ `
   mutation UpdateTodo(
     $input: UpdateTodoInput!
     $condition: ModelTodoConditionInput
@@ -40,8 +40,6 @@ export const updateTodo = /* GraphQL */ `
       category
       subcategory
       file
-      createdAt
-      updatedAt
     }
   }
 `;
