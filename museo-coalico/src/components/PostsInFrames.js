@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 const PostsInFrames = (props) => {
   const [renderedPosts, setRenderedPosts] = useState(null);
@@ -54,8 +55,9 @@ const PostsInFrames = (props) => {
     let formatDocs = ["pdf"];
 
     let format = returnFormat(post);
+    let frame = null;
     if (formatImages.includes(format)) {
-      return (
+      frame = (
         <>
           <img
             id="marco-slides"
@@ -71,7 +73,7 @@ const PostsInFrames = (props) => {
         </>
       );
     } else if (formatAudios.includes(format)) {
-      return (
+      frame = (
         <>
           <img
             id="marco-slides"
@@ -87,7 +89,7 @@ const PostsInFrames = (props) => {
         </>
       );
     } else if (formatImages.includes(format)) {
-      return (
+      frame = (
         <img
           id="marco-slides"
           src={"assets/marcos/texto-preview.png"}
@@ -95,7 +97,7 @@ const PostsInFrames = (props) => {
         />
       );
     } else if (formatVideos.includes(format)) {
-      return (
+      frame = (
         <>
           <img
             id="marco-slides"
@@ -111,7 +113,7 @@ const PostsInFrames = (props) => {
         </>
       );
     } else if (formatDocs.includes(format)) {
-      return (
+      frame = (
         <>
           <img
             id="marco-slides"
@@ -127,7 +129,7 @@ const PostsInFrames = (props) => {
         </>
       );
     } else {
-      return (
+      frame = (
         <>
           <img
             id="marco-slides"
@@ -143,6 +145,15 @@ const PostsInFrames = (props) => {
         </>
       );
     }
+    return (
+      <Link
+        to={`/post/${post.id}`}
+        style={{ textDecoration: "none" }}
+        key={post.id}
+      >
+        {frame}
+      </Link>
+    );
   };
 
   const returnFormat = (post) => {
@@ -178,15 +189,18 @@ const PostsInFrames = (props) => {
         >
           {props.posts.map((post, index) => {
             return (
-              <SwiperSlide key={index}>
-                <h2
-                  id="slider-title"
-                  className="position-absolute overflow-ellipsis"
-                >
-                  {post.name}
-                </h2>
-                {typeFrame(post)}
-              </SwiperSlide>
+              <>
+                <SwiperSlide key={index}>
+                  <h2
+                    id="slider-title"
+                    className="position-absolute overflow-ellipsis"
+                  >
+                    {post.name}
+                  </h2>
+
+                  {typeFrame(post)}
+                </SwiperSlide>
+              </>
             );
           })}
         </Swiper>
