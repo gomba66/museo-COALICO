@@ -5,7 +5,7 @@ const PostsInFrames = (props) => {
   const [renderedPosts, setRenderedPosts] = useState(null);
   useEffect(() => {
     renderPosts();
-    console.log(props.posts);
+    console.log("PROPS --->", props.posts);
   }, [props.posts]);
 
   const typeFrame = (post) => {
@@ -55,7 +55,7 @@ const PostsInFrames = (props) => {
     let formatDocs = ["pdf"];
 
     let format = returnFormat(post);
-    let frame = null;
+    let frame = "";
     if (formatImages.includes(format)) {
       frame = (
         <>
@@ -157,6 +157,9 @@ const PostsInFrames = (props) => {
   };
 
   const returnFormat = (post) => {
+    if (post.file == null) {
+      return "";
+    }
     let divided = post.file.split(".");
     let format = divided[divided.length - 1];
     format = format.replace('"', "");

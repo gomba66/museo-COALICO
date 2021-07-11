@@ -31,3 +31,6 @@ yarn-error.log*
 firebase.json
 
 .idea
+museo-coalico/amplify/backend/backend-config.json
+museo-coalico/amplify/backend/hosting/S3AndCloudFront/parameters.json
+museo-coalico/amplify/backend/hosting/S3AndCloudFront/template.json
