@@ -55,7 +55,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 200px;
+  width: 250px;
 }
 
 /* Container for .swiper-container to
@@ -118,7 +118,8 @@ manage his location in screen */
     height: 2em !important;
   }
   #slider-title {
-    font-size: 0.3vw;
+    font-size: 0.1vw;
+    width: 200px;
   }
 }
 
@@ -138,6 +139,9 @@ manage his location in screen */
     width: 40%;
     left: 70px;
     bottom: 10px;
+  }
+  #slider-title {
+    width: 350px;
   }
 }
 
@@ -170,7 +174,7 @@ manage his location in screen */
   #slider-title {
     font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
     color: #333;
-    font-size: 1.2em;
+    font-size: 1em;
     left: 21%;
   }
   #p-mobile {
