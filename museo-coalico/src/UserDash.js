@@ -20,10 +20,10 @@ function UserDash() {
     try {
       let postData = await API.graphql({ query: listPosts, variables: { limit: 100 }});
       let postsArray = postData.data.listTodos.items
-      /* map over the image keys in the posts array, get signed image URLs for each image */
+      /* map over the file keys in the posts array, get signed image URLs for each image */
       postsArray = await Promise.all(postsArray.map(async post => {
-      const imageKey = await Storage.get(post.image);
-      post.image = imageKey;
+      const fileKey = await Storage.get(post.file);
+      post.file = fileKey;
       return post;
     }));
         /* update the posts array in the local state */
@@ -64,9 +64,9 @@ function UserDash() {
     }
   }
   return (
-    <div className="container vh-100">
-      <div className="">
-        <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
+    <div className="container-fluid vh-100">
+      <div className="container">
+        {/* <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
         <AmplifySignOut />
         <h1>Photo Album</h1>
         <span>Add new image</span>
@@ -74,14 +74,52 @@ function UserDash() {
           type="file"
           accept='image/png'
           onChange={onChange}
-          />
-      </div>
+          /> */}
         { showOverlay && (
           <CreatePost
-            updatePosts={setPostState}
-            posts={posts}
+          updatePosts={setPostState}
+          posts={posts}
           />
         )}   
+      </div>
+      <h1 className="h1-heading">Inventario del museo</h1>
+      <hr />
+      {/* {posts.map((post) => { */}
+      <table className="table">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">título de la pieza</th>
+            <th scope="col">Año de creación</th>
+            <th scope="col">Link externo</th>
+            <th scope="col">Región</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Sala(s)</th>
+            <th scope="col">Subcategoría(s)</th>
+            <th scope="col">Archivo en S3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
