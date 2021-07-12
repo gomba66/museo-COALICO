@@ -157,10 +157,10 @@ const PostsInFrames = (props) => {
   };
 
   const returnFormat = (post) => {
-    if (post.file == null) {
+    if (post.file_list === null || post.file_list.length === 0) {
       return "";
     }
-    let divided = post.file.split(".");
+    let divided = post.file_list[0].split(".");
     let format = divided[divided.length - 1];
     format = format.replace('"', "");
     if (format.includes("[")) {
@@ -182,7 +182,7 @@ const PostsInFrames = (props) => {
               slidesPerView: 4,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 4,
             },
           }}
           navigation={{
@@ -198,7 +198,7 @@ const PostsInFrames = (props) => {
                     id="slider-title"
                     className="position-absolute overflow-ellipsis"
                   >
-                    {post.name}
+                    {post.title}
                   </h2>
 
                   {typeFrame(post)}

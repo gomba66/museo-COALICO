@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { API, Storage } from "aws-amplify";
 import { getPost } from "./graphql/queries";
-// import { PDFReader } from "reactjs-pdf-reader";
+import axios from "axios";
+import { PDFReader } from "reactjs-pdf-reader";
 
 export function Post() {
   const [loading, updateLoading] = useState(true);
@@ -15,24 +16,34 @@ export function Post() {
   // Create Document Component
 
   async function fetchPost() {
-    try {
-      const postData = await API.graphql({
-        query: getPost,
-        variables: { id },
+    //   try {
+    //     const postData = await API.graphql({
+    //       query: getPost,
+    //       variables: { id },
+    //     });
+    //     console.log(postData);
+    //     const currentPost = postData.data.getTodo;
+    //     const image = await Storage.get(currentPost.image);
+    //     console.log("====================================");
+    //     console.log(image);
+    //     console.log("====================================");
+    //     currentPost.image = image;
+    //     updatePost(currentPost);
+    //     updateLoading(false);
+    //   } catch (err) {
+    //     console.log("error: ", err);
+    //   }
+    axios
+      .get(
+        "https://m6cet1alej.execute-api.us-east-2.amazonaws.com/dev/getposts"
+      )
+      .then((res) => {
+        let posts = res.data;
+        let pieza = posts.filter((item) => item.id === id);
+        console.log("PIEZA=>>", pieza);
+        updatePost(pieza[0]);
+        updateLoading(false);
       });
-      console.log(postData);
-      const currentPost = postData.data.getTodo;
-      const image = await Storage.get(currentPost.image);
-      console.log("====================================");
-      console.log(image);
-      console.log("====================================");
-
-      currentPost.image = image;
-      updatePost(currentPost);
-      updateLoading(false);
-    } catch (err) {
-      console.log("error: ", err);
-    }
   }
 
   const typeFile = (post) => {
@@ -83,15 +94,19 @@ export function Post() {
 
     let format = returnFormat(post);
     let frame = "";
-    let url = post.file;
-    url = url.replace(/['"]+/g, "");
-
+    let url = null;
+    if (!post.link) {
+      url = post.file_list[0];
+    }
+    if (url) {
+      url = url.replace(/['"]+/g, "");
+    }
     if (formatImages.includes(format)) {
       frame = (
         <>
           <img
             className="position-absolute"
-            src={`https://coalico-images101949-dev.s3.us-east-2.amazonaws.com/public/${url}`}
+            src={`${url}`}
             width="350px"
             alt="Imagen"
           />
@@ -101,9 +116,7 @@ export function Post() {
       frame = (
         <>
           <audio>
-            <source
-              src={`https://coalico-images101949-dev.s3.us-east-2.amazonaws.com/public/${url}`}
-            />
+            <source src={`${url}`} />
           </audio>
         </>
       );
@@ -125,18 +138,15 @@ export function Post() {
     } else if (formatDocs.includes(format)) {
       frame = (
         <>
-          {/* <div style={{ overflow: "scroll", height: 600 }}>
-            <PDFReader
-              src={`https://coalico-images101949-dev.s3.us-east-2.amazonaws.com/public/${url}`}
-            />
-          </div> */}
-          <h3 style={{ color: "white" }}>File:</h3> {format}
+          <div style={{ overflow: "scroll", height: 600 }}>
+            <PDFReader url={url} />
+          </div>
         </>
       );
     } else {
       frame = (
         <>
-          <h3 style={{ color: "white" }}>File:</h3> {format}
+          <iframe width="400px" src={post.link} />
         </>
       );
     }
@@ -144,10 +154,10 @@ export function Post() {
   };
 
   const returnFormat = (post) => {
-    if (post.file == null) {
-      return "";
+    if (post?.file_list[0]?.length === 0 || post?.link) {
+      return null;
     }
-    let divided = post.file.split(".");
+    let divided = post.file_list[0].split(".");
     let format = divided[divided.length - 1];
     format = format.replace('"', "");
     if (format.includes("[")) {
@@ -185,7 +195,7 @@ export function Post() {
           {/* <!--Mobile - Título y párrafo--> */}
           <div id="encabezado-p" className="row position-absolute d-flex">
             <div className="col-12 d-none d-sm-block d-md-none d-block d-sm-none">
-              <h1 className="titulo-post">{post.name}</h1>
+              <h1 className="titulo-post">{post.title}</h1>
             </div>
             <div className="col-12 d-none d-sm-block d-md-none d-block d-sm-none">
               <div className="scroll-p">
@@ -197,7 +207,7 @@ export function Post() {
           {/* <!--Desktop - Título y párrafo--> */}
           <div id="encabezado-p" className="d-flex position-absolute row">
             <div className="col-12 d-md-block d-none">
-              <h1 className="titulo-post ml-5">{post.name}</h1>
+              <h1 className="titulo-post ml-5">{post.title}</h1>
             </div>
             <div className="col-5 d-md-block d-none ml-5">
               <div className="scroll-p">
