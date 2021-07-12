@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
 
-export function Header() {
+export function Header({setIsStart}) {
   let [userLoggedIn, setUserLoggedIn] = useState(null)
   useEffect(() => {
     let showLogOut = async authState => {
@@ -21,7 +21,7 @@ export function Header() {
   return (
     <div className={headerContainer}>
       <nav className={navHeight + " navbar navbar-expand-lg navbar-light bg-light"}>
-        <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'}} to="/">
+        <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; setIsStart(false)}} to="/">
           <img className="ml-3" src={"/assets/logos/logo-peque.png"} alt="Museo logo" width="140" height="45" />
         </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
