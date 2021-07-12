@@ -4,8 +4,9 @@ import { API, Storage } from "aws-amplify";
 import { getPost } from "./graphql/queries";
 import axios from "axios";
 import { PDFReader } from "reactjs-pdf-reader";
+import { Link } from 'react-router-dom';
 
-export function Post() {
+export function Post(props) {
   const [loading, updateLoading] = useState(true);
   const [post, updatePost] = useState(null);
   const { id } = useParams();
@@ -110,7 +111,8 @@ export function Post() {
           <img
             className="position-absolute"
             src={`${url}`}
-            width="350px"
+            width="75%"
+            margin-top= "80%"
             alt="Imagen"
           />
         </>
@@ -199,6 +201,14 @@ export function Post() {
               height="100%"
               width="100%"
             />
+{/*             <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+              <img
+                id="back-button"
+                src={"assets/botones/back.png"}
+                alt="Botón atrás"
+              />
+            </Link>
+            <div className="hover-back"></div> */}
           </div>
 
           {/* <!--Mobile - Título y párrafo--> */}
@@ -223,7 +233,7 @@ export function Post() {
                 <p className="p-post">{post.description}</p>
               </div>
             </div>
-            <div className="col-6 d-md-block d-none">{typeFile(post)}</div>
+            <div className="col">{typeFile(post)}</div>
           </div>
         </div>
       )}

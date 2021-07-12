@@ -206,8 +206,6 @@ main p {
 /* Extra large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
   #logo-cat {
-    /* max-width: 7.3vw;
-        max-height: 7.3vh; */
     max-width: 5.5%;
     top: 4.3%;
     left: 92.6%;

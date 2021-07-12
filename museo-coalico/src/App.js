@@ -122,7 +122,7 @@ function Router() {
             <Footer />
           </Route>
           <Route exact path="/post/:id">
-            <Post />
+            <Post setIsStart={setIsStart}/>
             <Footer />
           </Route>
           <Route exact path="/admin">
