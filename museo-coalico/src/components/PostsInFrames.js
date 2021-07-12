@@ -73,14 +73,14 @@ const PostsInFrames = (props) => {
         <>
           <img
             id="marco-slides"
-            src={"assets/marcos/texto-preview.png"}
-            alt="marco-slide"
+            src={"assets/marcos/image-preview.png"}
+            alt="Marco diapositiva"
           />
           <img
             className="position-absolute"
             id="img-ref"
-            src={"assets/img-ref/articulo-elemento.png"}
-            alt="Imagen de audio"
+            src={"assets/img-ref/image-elemento.png"}
+            alt="Referencia a imagen"
           />
         </>
       );
@@ -90,23 +90,15 @@ const PostsInFrames = (props) => {
           <img
             id="marco-slides"
             src={"assets/marcos/audio-preview.png"}
-            alt="marco-slide"
+            alt="Marco diapositiva"
           />
           <img
             className="position-absolute"
             id="img-ref"
             src={"assets/img-ref/audio-elemento.png"}
-            alt="Imagen de audio"
+            alt="Referencia a audio"
           />
         </>
-      );
-    } else if (formatImages.includes(format)) {
-      frame = (
-        <img
-          id="marco-slides"
-          src={"assets/marcos/image-preview.png"}
-          alt="marco-slide"
-        />
       );
     } else if (formatVideos.includes(format)) {
       frame = (
@@ -114,13 +106,13 @@ const PostsInFrames = (props) => {
           <img
             id="marco-slides"
             src={"assets/marcos/video-preview.png"}
-            alt="marco-slide"
+            alt="Marco diapositiva"
           />
           <img
             className="position-absolute"
             id="img-ref"
             src={"assets/img-ref/video-elemento.png"}
-            alt="Imagen de audio"
+            alt="Referencia a video"
           />
         </>
       );
@@ -130,13 +122,13 @@ const PostsInFrames = (props) => {
           <img
             id="marco-slides"
             src={"assets/marcos/texto-preview.png"}
-            alt="marco-slide"
+            alt="Marco diapositiva"
           />
           <img
             className="position-absolute"
             id="img-ref"
             src={"assets/img-ref/articulo-elemento.png"}
-            alt="Documento"
+            alt="Referencia a texto"
           />
         </>
       );
@@ -145,14 +137,14 @@ const PostsInFrames = (props) => {
         <>
           <img
             id="marco-slides"
-            src={"assets/marcos/video-preview.png"}
-            alt="marco-slide"
+            src={"assets/marcos/link-preview.png"}
+            alt="Marco diapositiva"
           />
           <img
             className="position-absolute"
             id="img-ref"
-            src={"assets/img-ref/video-elemento.png"}
-            alt="Imagen de audio"
+            src={"assets/img-ref/link-elemento.png"}
+            alt="Referencia a página web"
           />
         </>
       );
@@ -181,7 +173,7 @@ const PostsInFrames = (props) => {
               slidesPerView: 4,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
           navigation={{
