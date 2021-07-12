@@ -155,8 +155,6 @@ main p {
 }
 
 .hover-back {
-  background-color: cornsilk;
-  opacity: 0.3;
   border-radius: 60px;
   width: 4em;
   height: 4em;
@@ -166,6 +164,10 @@ main p {
   z-index: 300;
 }
 
+.hover-back:hover {
+  background-color: cornsilk;
+  opacity: 0.3;
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
@@ -225,7 +227,7 @@ main p {
     height: auto;
     top: 4.3%;
   }
-  .hover-back {
+  .hover-back:hover {
     width: 4.5vw;
     height: 4.5vw;
     left: 4.5%;
@@ -264,7 +266,7 @@ main p {
   #back-button {
     display: none;
   }
-  .hover-back {
+  .hover-back:hover {
     width: 15vw;
     height: 15vw;
     left: 1.2%;
@@ -324,7 +326,7 @@ main p {
     width: 5vw;
     height: auto;
   }
-  .hover-back {
+  .hover-back:hover {
     width: 4vw;
     height: 4vw;
     left: 4.5%;
@@ -342,7 +344,7 @@ main p {
     width: 5.7vw;
     height: auto;
   }
-  .hover-back {
+  .hover-back:hover {
     width: 4.3vw;
     height: 4.3vw;
     left: 4.5%;
