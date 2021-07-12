@@ -4,6 +4,7 @@ import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import "../style/styleCategory.css";
 import "../style/swiper-bundle.min.css";
 import "../../index.css";
+import { Link } from 'react-router-dom';
 
 SwiperCore.use([Pagination, Navigation]);
 
@@ -34,11 +35,13 @@ const AprendamosEnPaz = (props) => {
             src={"assets/iconos/aprendemos-en-paz.png"}
             alt="Logo categoría"
           />
-          <img
-            id="back-button"
-            src={"assets/botones/back.png"}
-            alt="Botón atrás"
-          />
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+              <img
+                id="back-button"
+                src={"assets/botones/back.png"}
+                alt="Botón atrás"
+              />
+          </Link>
           <div className="hover-back"></div>
         </div>
         <div>
