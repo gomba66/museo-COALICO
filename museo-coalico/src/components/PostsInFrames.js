@@ -5,8 +5,20 @@ const PostsInFrames = (props) => {
   const [renderedPosts, setRenderedPosts] = useState(null);
   useEffect(() => {
     renderPosts();
-    console.log("PROPS --->", props.posts);
   }, [props.posts]);
+
+  const returnFormat = (post) => {
+    if (post.file_list === undefined || post.file_list.length === 0) {
+      return "";
+    }
+    let divided = post.file_list[0].split(".");
+    let format = divided[divided.length - 1];
+    format = format.replace('"', "");
+    if (format.includes("[")) {
+      format = null;
+    }
+    return format;
+  };
 
   const typeFrame = (post) => {
     let formatImages = ["png", "jpg", "jpeg", "bmp", "HEIF", "svg"];
@@ -156,19 +168,6 @@ const PostsInFrames = (props) => {
     );
   };
 
-  const returnFormat = (post) => {
-    if (post.file_list === null || post.file_list.length === 0) {
-      return "";
-    }
-    let divided = post.file_list[0].split(".");
-    let format = divided[divided.length - 1];
-    format = format.replace('"', "");
-    if (format.includes("[")) {
-      format = null;
-    }
-    return format;
-  };
-
   const renderPosts = async () => {
     if (props.posts) {
       setRenderedPosts(
@@ -190,9 +189,10 @@ const PostsInFrames = (props) => {
             prevEl: ".swiper-button-prev",
           }}
         >
-          {props.posts.map((post, index) => {
-            return (
-              <>
+          {props.posts
+            .map((post, index) => {
+              return [
+                post,
                 <SwiperSlide key={index}>
                   <h2
                     id="slider-title"
@@ -202,10 +202,17 @@ const PostsInFrames = (props) => {
                   </h2>
 
                   {typeFrame(post)}
-                </SwiperSlide>
-              </>
-            );
-          })}
+                </SwiperSlide>,
+              ];
+            })
+            .filter(function (item) {
+              let cat_list = item[0].category.split(",");
+              console.log("CATEGORIAS: ", cat_list);
+              return item[0].category === props.sala;
+            })
+            .map((it) => {
+              return it[1];
+            })}
         </Swiper>
       );
     } else {

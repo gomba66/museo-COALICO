@@ -48,9 +48,6 @@ export default function UpdateFileModal({
     subcategory,
     file_list,
   ]);
-  useEffect(() => {
-    setFiles2({ length: file_list.length });
-  }, []);
   const [files2, setFiles2] = useState({ length: 0 });
   const [files, setFiles] = useState({ length: 0 });
   const [formState, setFormState] = useState("");
@@ -58,7 +55,11 @@ export default function UpdateFileModal({
   const [showPreview, setShowPreview] = useState(false);
   const [locationFiles, setLocationFiles] = useState([]);
   const [progress, setProgress] = useState(0);
-
+  
+  useEffect(() => {
+    setFiles2({ length: file_list.length });
+  }, []);
+  
   const handleUpload = async (file) => {
     let newFileName = uuid();
     const ReactS3Client = new S3(config);

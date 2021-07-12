@@ -7,6 +7,7 @@ import "../../index.css";
 
 SwiperCore.use([Pagination, Navigation]);
 const CuentoContigo = (props) => {
+  const sala = "Cuento contigo";
   window.onload = function () {
     const url = window.location.href.indexOf("/cuento-contigo");
     if (url) {
@@ -99,7 +100,7 @@ const CuentoContigo = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>

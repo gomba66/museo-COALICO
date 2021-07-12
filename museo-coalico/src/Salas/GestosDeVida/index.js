@@ -7,6 +7,7 @@ import "../../index.css";
 
 SwiperCore.use([Pagination, Navigation]);
 const GestosDeVida = (props) => {
+  const sala = "Gestos de vida";
   window.onload = function () {
     const url = window.location.href.indexOf("/gestos-de-vida");
     if (url) {
@@ -105,7 +106,7 @@ const GestosDeVida = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
             <script src="../../swiper-bundle.min.js"></script>
           </div>
