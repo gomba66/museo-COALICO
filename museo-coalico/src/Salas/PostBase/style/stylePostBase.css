@@ -56,24 +56,23 @@
     right: 50px;
 }
 
-@media screen and (max-width: 575.98px) {
-    #encabezado-p {
-        top: 22%;
-        left: 10%;
-        right: 10%;
-    }
-    .p-post {
-        font-size: 3.5vw;
-        max-width: 95%;
-    }
-    .scroll-p {
-        height: 70%;
-        width: 90%;
-        overflow-y: scroll;
-        line-height: 2.3vh;
-        margin: 10px;
-    }
+/* Button back */
+.hover-back {
+    border-radius: 60px;
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    z-index: 300;
 }
+
+.hover-back:hover {
+    background-color: cornsilk;
+    opacity: 0.3;
+}
+
+
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px)
@@ -94,37 +93,6 @@
     }
 }
 
-/* Medium devices until 767.98px and down (Cellphone and tablet)*/
-@media screen and (max-width: 767.98px) and (min-width: 575.98px)
-{
-    .p-post {
-        font-size: 4vw;
-        max-width: 90%;
-    }
-    .titulo-post {
-        max-width: 90%;
-    }
-    #encabezado-p {
-        top: 25%;
-        left: 10%;
-        right: 0px;
-    }
-    .scroll-p {
-        height: 60%;
-        width: 90%;
-        overflow-y: scroll;
-        line-height: 3.4vh;
-        margin: 10px;
-    }
-}
-
-@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
-    #encabezado-p {
-        top: 15%;
-        left: 3%;
-        right: 5%;
-    }
-}
 @media screen and (min-width: 991.98px) {
     #encabezado-p {
         top: 25%;
@@ -147,6 +115,95 @@
         margin-right: 3em;
     }
 }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    .hover-back:hover {
+        width: 4.5vw;
+        height: 4.5vw;
+        left: 4.5%;
+        top: 5.6%
+      }
+}
+@media screen and (max-width: 575.98px) {
+    #encabezado-p {
+        top: 22%;
+        left: 10%;
+        right: 10%;
+    }
+    .p-post {
+        font-size: 3.5vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 70%;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: 2.3vh;
+        margin: 10px;
+    }
+}
+
+/* Medium devices until 767.98px and down (Cellphone and tablet)*/
+@media screen and (max-width: 767.98px) {
+    .hover-back:hover {
+        width: 15vw;
+        height: 15vw;
+        left: 1.2%;
+        top: 0.7%
+      }
+}
+
+/* Medium devices until 767.98px and down (Cellphone and tablet)*/
+@media screen and (min-width: 575.98px) and (max-width: 767.98px)
+{
+    .p-post {
+        font-size: 4vw;
+        max-width: 90%;
+    }
+    .titulo-post {
+        max-width: 90%;
+    }
+    #encabezado-p {
+        top: 25%;
+        left: 10%;
+        right: 0px;
+    }
+    .scroll-p {
+        height: 60%;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: 3.4vh;
+        margin: 10px;
+    }
+}
+
+/* Medium devices between 767.98px and 991.98px */
+@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
+    #encabezado-p {
+        top: 15%;
+        left: 3%;
+        right: 5%;
+    }
+    .hover-back:hover {
+        width: 4vw;
+        height: 4vw;
+        left: 4.5%;
+        top: 5.5%
+    }
+}
+
+/* Medium devices between 991.98px and 1199.98px */
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px) {
+    .hover-back:hover {
+        width: 4.3vw;
+        height: 4.3vw;
+        left: 4.5%;
+        top: 6.4%
+    }
+}
+
+/* Scroll bar */
 ::-webkit-scrollbar {
     width: 0.6em;
 }

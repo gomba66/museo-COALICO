@@ -21,6 +21,8 @@ const PostBase = (props) => {
                     height="100%"
                     width="100%"
                 />
+
+          <div className="hover-back"></div>
             </div>
             <div>
                 <img
