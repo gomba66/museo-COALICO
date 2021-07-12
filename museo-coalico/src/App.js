@@ -29,6 +29,7 @@ import CuentoContigo from "./Salas/CuentoContigo/index";
 import AVivaVoz from "./Salas/AVivaVoz/index";
 import PostBase from "./Salas/PostBase/index";
 import QuienesSomos from "./QuienesSomos";
+import axios from "axios";
 
 function Router() {
   /* create a couple of pieces of initial state */
@@ -39,26 +40,34 @@ function Router() {
     checkUser();
   }, []);
   async function fetchPosts() {
-    try {
-      let postData = await API.graphql({
-        query: listPosts,
-        variables: { limit: 100 },
-      });
-      let postsArray = postData.data.listTodos.items;
-      /* map over the image keys in the posts array, get signed image URLs for each image */
-      postsArray = await Promise.all(
-        postsArray.map(async (post) => {
-          const imageKey = await Storage.get(post.image);
-          post.image = imageKey;
-          return post;
-        })
-      );
+    // try {
+    //   let postData = await API.graphql({
+    //     query: listPosts,
+    //     variables: { limit: 100 },
+    //   });
+    //   let postsArray = postData.data.listTodos.items;
+    //   /* map over the image keys in the posts array, get signed image URLs for each image */
+    //   postsArray = await Promise.all(
+    //     postsArray.map(async (post) => {
+    //       const imageKey = await Storage.get(post.image);
+    //       post.image = imageKey;
+    //       return post;
+    //     })
+    //   );
 
-      /* update the posts array in the local state */
-      setPostState(postsArray);
-    } catch (err) {
-      console.log({ err });
-    }
+    //   /* update the posts array in the local state */
+    //   setPostState(postsArray);
+    // } catch (err) {
+    //   console.log({ err });
+    // }
+    axios
+      .get(
+        "https://m6cet1alej.execute-api.us-east-2.amazonaws.com/dev/getposts"
+      )
+      .then((res) => {
+        console.log("POSTS=>>>", res.data);
+        updatePosts(res.data);
+      });
   }
   async function setPostState(postsArray) {
     updatePosts(postsArray);
