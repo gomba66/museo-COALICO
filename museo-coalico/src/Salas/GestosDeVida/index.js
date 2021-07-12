@@ -1,7 +1,11 @@
 import React from "react";
 import PostsInFrames from "../../components/PostsInFrames";
-import "../GestosDeVida/style/styleGestos.css";
-import "./style/swiper-bundle.min.css";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import "../style/styleCategory.css";
+import "../style/swiper-bundle.min.css";
+import "../../index.css";
+
+SwiperCore.use([Pagination, Navigation]);
 const GestosDeVida = (props) => {
   const sala = "Gestos de vida";
   window.onload = function () {
@@ -30,6 +34,12 @@ const GestosDeVida = (props) => {
             src={"assets/iconos/gestos-de-vida.png"}
             alt="Logo categoría"
           />
+          <img
+            id="back-button"
+            src={"assets/botones/back.png"}
+            alt="Botón atrás"
+          />
+          <div className="hover-back"></div>
         </div>
         <div>
           <img
