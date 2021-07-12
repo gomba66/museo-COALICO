@@ -98,7 +98,7 @@ function Router() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
+        <Header setIsStart={setIsStart} />
         <Route exact path="/">
           {isStart ? (
             <div>

@@ -4,6 +4,7 @@ import UpdateFileModal from "./updateFileModal"
 
 export function UpdateFiles({ name, year, link, region, description, category, subcategory, file, id }) {
   const [modal, setModal] = useState(false);
+	const [posts, updatePosts] = useState([]);
 
 	useEffect(() => {console.log(modal)}, [modal])
 
@@ -11,9 +12,7 @@ export function UpdateFiles({ name, year, link, region, description, category, s
 			<>
 			<tr>
 				<th scope="row">1</th>
-				<td><i class="bi bi-pencil-square" onClick={()=>{
-					setModal(!modal);
-				}}>
+				<td><i class="bi bi-pencil-square" onClick={() => setModal(!modal)}>
 				</i></td>
 				<td>{name}</td>
 				<td>{year}</td>
@@ -24,7 +23,10 @@ export function UpdateFiles({ name, year, link, region, description, category, s
 				<td>{subcategory}</td>
 				<td>{file}</td> 
 			</tr>
-				<UpdateFileModal {...{name, year, link, region, description, category, subcategory, file, id}} />
+				{modal ?
+					<UpdateFileModal {...{name, year, link, region, description, category, subcategory, file, id}} /> :
+					null
+            } 
 			</>
     )
 }
