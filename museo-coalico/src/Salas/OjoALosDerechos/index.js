@@ -1,7 +1,12 @@
 import React from "react";
 import PostsInFrames from "../../components/PostsInFrames";
-import "../OjoALosDerechos/style/styleOjo.css";
-import "./style/swiper-bundle.min.css";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import "../style/styleCategory.css";
+import "../style/swiper-bundle.min.css";
+import "../../index.css";
+import { Link } from 'react-router-dom';
+
+SwiperCore.use([Pagination, Navigation]);
 const OjoALosDerechos = (props) => {
   window.onload = function () {
     const url = window.location.href.indexOf("/ojo-a-los-derechos");
@@ -29,6 +34,14 @@ const OjoALosDerechos = (props) => {
             src={"assets/iconos/ojo-a-los-derechos.png"}
             alt="Logo categoría"
           />
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+              <img
+                id="back-button"
+                src={"assets/botones/back.png"}
+                alt="Botón atrás"
+              />
+          </Link>
+          <div className="hover-back"></div>
         </div>
         <div>
           <img

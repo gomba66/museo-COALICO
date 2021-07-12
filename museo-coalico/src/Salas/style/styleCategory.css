@@ -1,0 +1,343 @@
+@font-face {
+    font-family: "Club Type W01 Medium";
+    src: url(Club\ Type\ W01\ Medium.ttf);
+}
+
+:root {
+  /*shine*/
+  --duration: 5s;
+  --text-color: rgba(255, 255, 255, 0.3);
+  --bgr-color: #333;
+  /*Logo colors*/
+  --color-logo-red: #c4001d;
+  --color-logo-blue: #0000a6;
+  --color-logo-yellow: #fabe00;
+  /*Title colors*/
+  --color-red: #fe0000;
+  --color-orange: #fe6c01;
+  --color-yellow: #fed300;
+  --color-blue: #0ae3cf;
+  --color-green: #05cd5c;
+}
+
+#body-posts {
+  background-image: url("../../assets/fondos/fondo.png");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* id's by category */
+#voz {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-orange);
+  text-shadow: 9px 9px 10px black;
+}
+#Aprendamos {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-blue);
+  text-shadow: 9px 9px 10px black;
+}
+#contigo {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-blue);
+  text-shadow: 9px 9px 10px black;
+}
+#camino {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-logo-yellow);
+  text-shadow: 9px 9px 10px black;
+}
+#manos {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-red);
+  text-shadow: 9px 9px 10px black;
+}
+#gestos {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-green) !important;
+  text-shadow: 9px 9px 10px black;
+}
+#heridas {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-logo-yellow);
+  text-shadow: 9px 9px 10px black;
+}
+#ojo {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-yellow);
+  text-shadow: 9px 9px 10px black;
+}
+#palabras {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-blue);
+  text-shadow: 9px 9px 10px black;
+}
+#oido {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-red) !important;
+  text-shadow: 9px 9px 10px black;
+  /* padding: 0 5.8vw 0 15%; */
+}
+#piezas {
+  font-family: "Club Type W01 Medium";
+  font-size: 11vw;
+  color: var(--color-green);
+  text-shadow: 9px 9px 10px black;
+}
+
+main p {
+  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+  color: white;
+  top: 20%;
+  font-size: 2vw;
+}
+
+/* Marco above the background */
+#marco {
+  z-index: 100;
+}
+
+/* Characters above the background (boys and girls) */
+#elementos {
+  z-index: 150;
+  top: 0;
+}
+/* Characters above the background (boys and girls) FOR MOBILE */
+#elementos-mobile {
+  z-index: 150;
+  top: 0;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+/* Logo of the category (The logo up/right in the corner)*/
+#logo-cat {
+  z-index: 150;
+  top: 5%;
+  left: 93%;
+}
+
+#back-button {
+  z-index: 150;
+  top: 5%;
+  left: 4%;
+  width: 10vw;
+  height: 10vh;
+  position: absolute;
+}
+
+/* Container of the title and the character(background) */
+#encabezado {
+  top: 20%;
+  left: 50px;
+  right: 50px;
+}
+
+.hover-back {
+  border-radius: 60px;
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  left: 2%;
+  top: 1%;
+  z-index: 300;
+}
+
+.hover-back:hover {
+  background-color: cornsilk;
+  opacity: 0.3;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  #elementos {
+    max-width: 96%;
+  }
+
+  /* id's by category*/
+  main #voz {
+    font-size: 5vw;
+  }
+  main #Aprendamos {
+    font-size: 5vw;
+  }
+  main #contigo {
+    font-size: 5vw;
+  }
+  main #camino {
+    font-size: 5vw;
+  }
+  main #manos {
+    font-size: 5vw;
+  }
+  main #gestos {
+    font-size: 5vw;
+  }
+  main #heridas {
+    font-size: 5vw;
+  }
+  main #ojo {
+    font-size: 5vw;
+  }
+  main #palabras {
+    font-size: 5vw;
+  }
+  main #oido {
+    font-size: 5vw;
+  }
+  main #piezas {
+    font-size: 5vw;
+  }
+
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  #logo-cat {
+    /* max-width: 7.3vw;
+        max-height: 7.3vh; */
+    max-width: 5.5%;
+    top: 4.3%;
+    left: 92.6%;
+  }
+  #back-button {
+    width: 5.7%;
+    height: auto;
+    top: 4.3%;
+  }
+  .hover-back:hover {
+    width: 4.5vw;
+    height: 4.5vw;
+    left: 4.5%;
+    top: 5.6%
+  }
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media screen and (max-width: 576px) {
+  #logo-cat {
+    top: 1em;
+  }  
+}
+
+/* Medium devices until 767.98px and down (Cellphone and tablet)*/
+@media screen and (max-width: 767.98px) {
+  #logo-cat {
+    max-width: 10vw;
+    max-height: 10vh;
+    left: 84.5%;
+  }
+  #encabezado {
+    top: 10%;
+    left: 10%;
+    right: 0px;
+  }
+  #elementos-mobile {
+    width: 50%;
+  }
+  #elementos {
+    display: none;
+  }
+  main p {
+    font-size: 4vw;
+  }
+  #back-button {
+    display: none;
+  }
+  .hover-back:hover {
+    width: 15vw;
+    height: 15vw;
+    left: 1.2%;
+    top: 0.7%
+  }
+
+  /* id's by category */
+  main #voz {
+    width: 50%;
+  }
+  main #Aprendamos {
+    width: 50%;
+  }
+  main #contigo {
+    width: 50%;
+  }
+  main #camino {
+    width: 50%;
+  }
+  main #manos {
+    width: 50%;
+  }
+  main #gestos {
+    width: 50%;
+  }
+  main #heridas {
+    width: 50%;
+  }
+  main #ojo {
+    width: 50%;
+  }
+  main #palabras {
+    width: 50%;
+  }
+  main #oido {
+    width: 50%;
+  }
+  main #piezas {
+    width: 50%;
+  }
+}
+
+/* Small devices between 576px and 767.98px */
+@media screen and (min-width: 576px) and (max-width: 767.98px)  {
+  #logo-cat {
+    top: 1.5em;
+  }
+}
+
+/* Medium devices between 767.98px and 991.98px */
+@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
+  #logo-cat {
+    max-width: 5vw;
+    max-height: 5vh;
+  }
+  #back-button {
+    width: 5vw;
+    height: auto;
+  }
+  .hover-back:hover {
+    width: 4vw;
+    height: 4vw;
+    left: 4.5%;
+    top: 5.5%
+  }
+}
+
+/* Medium devices between 991.98px and 1199.98px */
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px) {
+  #logo-cat {
+    max-width: 5.7vw;
+    max-height: 5.7vh;
+  }
+  #back-button {
+    width: 5.7vw;
+    height: auto;
+  }
+  .hover-back:hover {
+    width: 4.3vw;
+    height: 4.3vw;
+    left: 4.5%;
+    top: 6.4%
+  }
+}

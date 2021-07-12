@@ -1,8 +1,14 @@
 import React from "react";
 import PostsInFrames from "../../components/PostsInFrames";
-import "../PalabrasCruzadas/style/stylePalabras.css";
-import "./style/swiper-bundle.min.css";
-const ParaOido = (props) => {
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import "../style/styleCategory.css";
+import "../style/swiper-bundle.min.css";
+import "../../index.css";
+import { Link } from 'react-router-dom';
+
+SwiperCore.use([Pagination, Navigation]);
+const PalabrasCruzadas = (props) => {
+  const sala = "Palabras cruzadas";
   window.onload = function () {
     const url = window.location.href.indexOf("/palabras-cruzadas");
     if (url) {
@@ -29,6 +35,14 @@ const ParaOido = (props) => {
             src={"assets/iconos/palabras-cruzadas.png"}
             alt="Logo categoría"
           />
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+              <img
+                id="back-button"
+                src={"assets/botones/back.png"}
+                alt="Botón atrás"
+              />
+          </Link>
+          <div className="hover-back"></div>
         </div>
         <div>
           <img
@@ -89,7 +103,7 @@ const ParaOido = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
             <script src="../../swiper-bundle.min.js"></script>
           </div>
@@ -99,4 +113,4 @@ const ParaOido = (props) => {
   );
 };
 
-export default ParaOido;
+export default PalabrasCruzadas;

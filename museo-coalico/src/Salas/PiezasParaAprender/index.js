@@ -1,8 +1,14 @@
 import React from "react";
 import PostsInFrames from "../../components/PostsInFrames";
-import "../PiezasParaAprender/style/stylePiezas.css";
-import "./style/swiper-bundle.min.css";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import "../style/styleCategory.css";
+import "../style/swiper-bundle.min.css";
+import "../../index.css";
+import { Link } from 'react-router-dom';
+
+SwiperCore.use([Pagination, Navigation]);
 const PiezasParaAprender = (props) => {
+  const sala = "Piezas para aprender";
   window.onload = function () {
     const url = window.location.href.indexOf("/piezas-para-aprender");
     if (url) {
@@ -29,6 +35,14 @@ const PiezasParaAprender = (props) => {
             src={"assets/iconos/piezas-para-aprender.png"}
             alt="Logo categoría"
           />
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+              <img
+                id="back-button"
+                src={"assets/botones/back.png"}
+                alt="Botón atrás"
+              />
+          </Link>
+          <div className="hover-back"></div>
         </div>
         <div>
           <img
@@ -95,7 +109,7 @@ const PiezasParaAprender = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>

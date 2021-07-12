@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
-import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import React from "react";
 import PostsInFrames from "../../components/PostsInFrames";
-import "../AprendamosEnPaz/style/styleAprendamos.css";
-import "./style/swiper-bundle.min.css";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import "../style/styleCategory.css";
+import "../style/swiper-bundle.min.css";
 import "../../index.css";
+import { Link } from 'react-router-dom';
 
 SwiperCore.use([Pagination, Navigation]);
+
 const AprendamosEnPaz = (props) => {
+  const sala = "Aprendemos en paz";
   window.onload = function () {
     const url = window.location.href.indexOf("/aprendamos-en-paz");
     if (url) {
@@ -33,6 +36,14 @@ const AprendamosEnPaz = (props) => {
             src={"assets/iconos/aprendemos-en-paz.png"}
             alt="Logo categoría"
           />
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+              <img
+                id="back-button"
+                src={"assets/botones/back.png"}
+                alt="Botón atrás"
+              />
+          </Link>
+          <div className="hover-back"></div>
         </div>
         <div>
           <img
@@ -49,7 +60,7 @@ const AprendamosEnPaz = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="Aprendamos">Aprendamos en paz</h1>
+              <h1 id="Aprendamos">{sala}</h1>
               <img
                 id="elementos-mobile"
                 src={"assets/elementos/nino6.png"}
@@ -99,7 +110,7 @@ const AprendamosEnPaz = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
             <script src="../../swiper-bundle.min.js"></script>
           </div>

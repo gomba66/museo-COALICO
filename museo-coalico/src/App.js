@@ -29,6 +29,7 @@ import CuentoContigo from "./Salas/CuentoContigo/index";
 import AVivaVoz from "./Salas/AVivaVoz/index";
 import PostBase from "./Salas/PostBase/index";
 import QuienesSomos from "./QuienesSomos";
+import axios from "axios";
 
 function Router() {
   /* create a couple of pieces of initial state */
@@ -39,26 +40,34 @@ function Router() {
     checkUser();
   }, []);
   async function fetchPosts() {
-    try {
-      let postData = await API.graphql({
-        query: listPosts,
-        variables: { limit: 100 },
-      });
-      let postsArray = postData.data.listTodos.items;
-      /* map over the image keys in the posts array, get signed image URLs for each image */
-      postsArray = await Promise.all(
-        postsArray.map(async (post) => {
-          const imageKey = await Storage.get(post.image);
-          post.image = imageKey;
-          return post;
-        })
-      );
+    // try {
+    //   let postData = await API.graphql({
+    //     query: listPosts,
+    //     variables: { limit: 100 },
+    //   });
+    //   let postsArray = postData.data.listTodos.items;
+    //   /* map over the image keys in the posts array, get signed image URLs for each image */
+    //   postsArray = await Promise.all(
+    //     postsArray.map(async (post) => {
+    //       const imageKey = await Storage.get(post.image);
+    //       post.image = imageKey;
+    //       return post;
+    //     })
+    //   );
 
-      /* update the posts array in the local state */
-      setPostState(postsArray);
-    } catch (err) {
-      console.log({ err });
-    }
+    //   /* update the posts array in the local state */
+    //   setPostState(postsArray);
+    // } catch (err) {
+    //   console.log({ err });
+    // }
+    axios
+      .get(
+        "https://m6cet1alej.execute-api.us-east-2.amazonaws.com/dev/getposts"
+      )
+      .then((res) => {
+        console.log("POSTS=>>>", res.data);
+        updatePosts(res.data);
+      });
   }
   async function setPostState(postsArray) {
     updatePosts(postsArray);
@@ -98,7 +107,7 @@ function Router() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
+        <Header setIsStart={setIsStart} />
         <Route exact path="/">
           {isStart ? (
             <div>
@@ -129,47 +138,47 @@ function Router() {
             <Footer />
           </Route>
           <Route exact path="/heridas-del-conflicto">
-            <HeridasDelConflicto posts={posts} />
+            <HeridasDelConflicto setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/aprendamos-en-paz">
-            <AprendamosEnPaz posts={posts} />
+            <AprendamosEnPaz setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/gestos-de-vida">
-            <GestosDeVida posts={posts} />
+            <GestosDeVida setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/para-oido">
-            <ParaOido posts={posts} />
+            <ParaOido setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/palabras-cruzadas">
-            <PalabrasCruzadas posts={posts} />
+            <PalabrasCruzadas setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/de-camino-a-la-justicia">
-            <DeCaminoALaJusticia posts={posts} />
+            <DeCaminoALaJusticia setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/piezas-para-aprender">
-            <PiezasParaAprender posts={posts} />
+            <PiezasParaAprender setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/ojo-a-los-derechos">
-            <OjoALosDerechos posts={posts} />
+            <OjoALosDerechos setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/dia-de-las-manos-rojas">
-            <DiaDeLasManosRojas posts={posts} />
+            <DiaDeLasManosRojas setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/a-viva-voz">
-            <AVivaVoz posts={posts} />
+            <AVivaVoz setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/cuento-contigo">
-            <CuentoContigo posts={posts} />
+            <CuentoContigo setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
         </Switch>
