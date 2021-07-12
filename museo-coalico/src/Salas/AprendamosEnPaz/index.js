@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 SwiperCore.use([Pagination, Navigation]);
 
 const AprendamosEnPaz = (props) => {
+  const sala = "Aprendemos en paz";
   window.onload = function () {
     const url = window.location.href.indexOf("/aprendamos-en-paz");
     if (url) {
@@ -59,7 +60,7 @@ const AprendamosEnPaz = (props) => {
         <div id="encabezado" className="row position-absolute d-flex">
           <div className="col d-none d-sm-block d-md-none d-block d-sm-none">
             <div className="d-flex">
-              <h1 id="Aprendamos">Aprendamos en paz</h1>
+              <h1 id="Aprendamos">{sala}</h1>
               <img
                 id="elementos-mobile"
                 src={"assets/elementos/nino6.png"}
@@ -109,7 +110,7 @@ const AprendamosEnPaz = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
             <script src="../../swiper-bundle.min.js"></script>
           </div>

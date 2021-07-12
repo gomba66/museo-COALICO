@@ -95,6 +95,9 @@ export function Post() {
     let format = returnFormat(post);
     let frame = "";
     let url = null;
+    if (post.link === undefined) {
+      return null;
+    }
     if (!post.link) {
       url = post.file_list[0];
     }
@@ -154,6 +157,12 @@ export function Post() {
   };
 
   const returnFormat = (post) => {
+    if (post.file_list === undefined) {
+      return null;
+    }
+    console.log('====================================');
+    console.log(post);
+    console.log('====================================');
     if (post?.file_list[0]?.length === 0 || post?.link) {
       return null;
     }

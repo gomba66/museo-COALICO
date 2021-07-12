@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 SwiperCore.use([Pagination, Navigation]);
 const PiezasParaAprender = (props) => {
+  const sala = "Piezas para aprender";
   window.onload = function () {
     const url = window.location.href.indexOf("/piezas-para-aprender");
     if (url) {
@@ -108,7 +109,7 @@ const PiezasParaAprender = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>

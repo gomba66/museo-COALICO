@@ -8,7 +8,9 @@ import { Link } from 'react-router-dom';
 
 SwiperCore.use([Pagination, Navigation]);
 
-const AVivaVoz = ({setIsStart, props}) => {
+const AVivaVoz = (props) => {
+  const sala = "A viva voz";
+
   window.onload = function () {
     const url = window.location.href.indexOf("/a-viva-voz");
     if (url) {
@@ -109,7 +111,7 @@ const AVivaVoz = ({setIsStart, props}) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>

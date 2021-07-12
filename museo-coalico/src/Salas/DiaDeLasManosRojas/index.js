@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 SwiperCore.use([Pagination, Navigation]);
 const DiaDeLasManosRojas = (props) => {
+  const sala = "Día de las Manos Rojas";
   window.onload = function () {
     const url = window.location.href.indexOf("/dia-de-las-manos-rojas");
     if (url) {
@@ -111,7 +112,7 @@ const DiaDeLasManosRojas = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>
