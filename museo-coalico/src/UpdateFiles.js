@@ -23,9 +23,9 @@ export function UpdateFiles({ name, year, link, region, description, category, s
 				<td>{subcategory}</td>
 				<td>{file}</td> 
 			</tr>
-						{modal ?
-							<UpdateFileModal {...{name, year, link, region, description, category, subcategory, file, id}} /> :
-							null
+				{modal ?
+					<UpdateFileModal {...{name, year, link, region, description, category, subcategory, file, id}} /> :
+					null
             } 
 			</>
     )
