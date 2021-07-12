@@ -5,6 +5,7 @@ import doniben from "./assets/quienes-somos/desarrollador-doniben.jpeg"
 import fernando from "./assets/quienes-somos/coordinador-fernando.jpeg"
 import joan from "./assets/quienes-somos/diseñador-joan.jpeg"
 import katerin from "./assets/quienes-somos/coordinador-kath.jpeg"
+import hilda from "./assets/quienes-somos/directora-hilda.jpeg"
 
 const QuienesSomos = (props) => {
     window.onload = function () {
@@ -21,18 +22,26 @@ const QuienesSomos = (props) => {
             </div>
             <div className="content container">
                 <div>
-                    <h2 className="title text-center mt-5">¿Qué es COALICO?</h2>
+                    <h2 className="title text-center mt-5">LA COALICO </h2>
                     <p className="paragraph text-center">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                        El objetivo de la Coalición contra la vinculación de niños, niñas y jóvenes al conflicto armado en Colombia (COALICO) es contribuir, desde un enfoque de derechos, a la disminución efectiva del uso, reclutamiento y vinculación de los niños, niñas y jóvenes al conflicto armado, mediante procesos de observación, prevención, protección e incidencia política frente a la sociedad, el Estado y la comunidad internacional.
                     </p>
                 </div>
 
                 <div>
-                    <h2 className="title text-center mt-5">¿Por qué se creó el museo?</h2>
+                    <h2 className="title text-center mt-5">EL MUSEO DE LA MEMORIA</h2>
                     <p className="paragraph text-center">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                    Mediante el desarrollo de un sistema tecnológico novedoso, nos encontramos en un espacio que nos trasportará a múltiples realidades que son parte de nuestra historia, la del país y la región, la de los grupos y los individuos, la del pasado y el presente. Recorreremos lugares desconocidos, tragedias que contrastan con la creatividad y la esperanza. Nos hallaremos ante acontecimientos que han marcado la búsqueda de la verdad y la justicia a lo largo de los años. Escucharemos los mensajes con los que la infancia y la juventud anuncian un modo de vivir diferente a la violencia. Viajaremos para volar y para seguir soñando. 
                     </p>
                 </div>
+
+                <div>
+                    <h2 className="title text-center mt-5">LA MÁQUINA DEL TIEMPO</h2>
+                    <p className="paragraph text-center">
+                    El tiempo es, ante todo, movimiento. En esta máquina no estamos por fuera, sino dentro de ese movimiento. Somos parte, nos movemos con cada pieza, al activar un botón o una palanca ya estamos en el interior de un universo que nos aloja y que nos invita al descubrimiento. Al tocar una pantalla, ya ingresamos a un territorio que contiene información, imágenes o voces, que nos llevan a explorar en distintas experiencias del pasado y del presente. Pero interactuamos para que cada quien ponga su sello, deje sus huellas, comparta sus emociones y pensamientos, quien se vaya vinculando al viaje irá dejando los signos de un nuevo amanecer, del nuevo tiempo que está por venir.
+                    </p>
+                </div>
+
                 <div>
                     <h2 className="title text-center mt-5">Colaboradores</h2>
                     <div className="card-deck mt-2">
@@ -51,26 +60,33 @@ const QuienesSomos = (props) => {
                             </div>
                         </div>
                         <div className="card">
-                            <img className="card-img-top" src={joan} alt="Diseñador" />
+                            <img className="card-img-top" src={joan} alt="Diseño web" />
                             <div className="card-body">
                                 <h5 className="card-title">Joan Barbosa</h5>
-                                <p className="card-text">Diseñador</p>
+                                <p className="card-text">Diseño web</p>
                             </div>
                         </div>
                     </div>
                     <div className="card-deck mt-3">
                         <div className="card">
-                            <img className="card-img-top" src={fernando} alt="Coordinador de contenidos de la página" />
+                            <img className="card-img-top" src={fernando} alt="Dirección del proyecto" />
                             <div className="card-body">
-                                <h5 className="card-title">Fernando Gonzáles</h5>
-                                <p className="card-text">Coordinador de contenidos</p>
+                                <h5 className="card-title">Fernando González Santos</h5>
+                                <p className="card-text">Dirección del proyecto</p>
                             </div>
                         </div>
                         <div className="card">
-                            <img className="card-img-top" src={katerin} alt="Coordinador de contenidos de la página" />
+                            <img className="card-img-top" src={katerin} alt="Dirección del proyecto" />
                             <div className="card-body">
-                                <h5 className="card-title">Katerin Hernández</h5>
-                                <p className="card-text">Coordinador de contenidos</p>
+                                <h5 className="card-title">Káterin de Alba Hernández Rodríguez</h5>
+                                <p className="card-text">Dirección del proyecto</p>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <img className="card-img-top" src={hilda} alt="Directora COALICO" />
+                            <div className="card-body">
+                                <h5 className="card-title">Hilda Molano</h5>
+                                <p className="card-text">Directora COALICO</p>
                             </div>
                         </div>
                     </div>
