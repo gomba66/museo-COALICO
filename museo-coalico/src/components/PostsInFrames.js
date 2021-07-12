@@ -207,8 +207,10 @@ const PostsInFrames = (props) => {
             })
             .filter(function (item) {
               let cat_list = item[0].category.split(",");
-              console.log("CATEGORIAS: ", cat_list);
-              return item[0].category === props.sala;
+              cat_list = cat_list.map((item) => {
+                return item.toLowerCase();
+              });
+              return cat_list.includes(props.sala.toLowerCase());
             })
             .map((it) => {
               return it[1];
