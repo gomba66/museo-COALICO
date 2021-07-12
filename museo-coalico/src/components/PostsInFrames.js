@@ -8,6 +8,19 @@ const PostsInFrames = (props) => {
     console.log("PROPS --->", props.posts);
   }, [props.posts]);
 
+  const returnFormat = (post) => {
+    if (post.file_list === undefined || post.file_list.length === 0) {
+      return "";
+    }
+    let divided = post.file_list[0].split(".");
+    let format = divided[divided.length - 1];
+    format = format.replace('"', "");
+    if (format.includes("[")) {
+      format = null;
+    }
+    return format;
+  };
+
   const typeFrame = (post) => {
     let formatImages = ["png", "jpg", "jpeg", "bmp", "HEIF", "svg"];
     let formatAudios = [
@@ -156,19 +169,6 @@ const PostsInFrames = (props) => {
     );
   };
 
-  const returnFormat = (post) => {
-    if (post.file_list === null || post.file_list.length === 0) {
-      return "";
-    }
-    let divided = post.file_list[0].split(".");
-    let format = divided[divided.length - 1];
-    format = format.replace('"', "");
-    if (format.includes("[")) {
-      format = null;
-    }
-    return format;
-  };
-
   const renderPosts = async () => {
     if (props.posts) {
       setRenderedPosts(
@@ -191,7 +191,8 @@ const PostsInFrames = (props) => {
           }}
         >
           {props.posts.map((post, index) => {
-            return (
+            
+            return [post,(
               <>
                 <SwiperSlide key={index}>
                   <h2
@@ -204,8 +205,9 @@ const PostsInFrames = (props) => {
                   {typeFrame(post)}
                 </SwiperSlide>
               </>
-            );
-          })}
+            )];
+          }).filter(post=>post[0].title ==="Cuentos radiales").map(item=>{ console.log("ITEM -->", item[1]); return item[1]})}
+          {/* .filter(post => post.title === "Postal 30 años convención")} */}
         </Swiper>
       );
     } else {
