@@ -39,56 +39,48 @@
   font-size: 11vw;
   color: var(--color-blue);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #contigo {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-blue);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #camino {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-logo-yellow);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #manos {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-red);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #gestos {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-green) !important;
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #heridas {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-logo-yellow);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #ojo {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-yellow);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #palabras {
   font-family: "Club Type W01 Medium";
   font-size: 11vw;
   color: var(--color-blue);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
 #oido {
   font-family: "Club Type W01 Medium";
@@ -102,10 +94,7 @@
   font-size: 11vw;
   color: var(--color-green);
   text-shadow: 9px 9px 10px black;
-  /* padding: 0 5.8vw 0 15%; */
 }
-
-
 
 main p {
   font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
@@ -113,6 +102,7 @@ main p {
   top: 20%;
   font-size: 2vw;
 }
+
 /* Marco above the background */
 #marco {
   z-index: 100;
