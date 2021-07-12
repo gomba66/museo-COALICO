@@ -68,13 +68,13 @@ manage his location in screen */
 
 /* Each button and image background*/
 .swiper-button-prev {
-  background-image: url("../../../assets/botones/atrazar.png");
+  background-image: url("../../assets/botones/atrazar.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
 }
 .swiper-button-next {
-  background-image: url("../../../assets/botones/adelantar.png");
+  background-image: url("../../assets/botones/adelantar.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -183,6 +183,14 @@ manage his location in screen */
     width: 45%;
     height: 15%;
   }
+  .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    right: -0.1px;
+    left: auto;
+  }
+  .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    left: 0;
+    right: auto;
+}
 }
 
 /* Medium devices between 991.98px and 1199.98px */
