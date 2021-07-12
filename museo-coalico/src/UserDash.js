@@ -16,6 +16,9 @@ function UserDash() {
     fetchPosts();
     checkUser();
   }, []);
+  const refreshPosts = () => {
+    fetchPosts();
+  };
   async function fetchPosts() {
     // try {
     //   let postData = await API.graphql({
@@ -73,7 +76,13 @@ function UserDash() {
   return (
     <div className="container-fluid vh-100">
       <div className="container">
-        {showOverlay && <CreatePost updatePosts={setPostState} posts={posts} />}
+        {showOverlay && (
+          <CreatePost
+            refreshPosts={refreshPosts}
+            updatePosts={setPostState}
+            posts={posts}
+          />
+        )}
       </div>
       <h1 className="h1-heading">Inventario del museo ({posts.length})</h1>
       <hr />
@@ -95,7 +104,13 @@ function UserDash() {
         <tbody>
           {posts
             ? posts.map((post, index) => {
-                return <UpdateFiles {...post} index={index + 1} />;
+                return (
+                  <UpdateFiles
+                    {...post}
+                    refreshPosts={refreshPosts}
+                    index={index + 1}
+                  />
+                );
               })
             : null}
         </tbody>

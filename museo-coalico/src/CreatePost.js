@@ -24,7 +24,7 @@ const initialState = {
   file_list: [""],
 };
 
-export function CreatePost({ updatePosts, posts }) {
+export function CreatePost({ updatePosts, posts, refreshPosts }) {
   const [savingClient, setSavingClient] = useState(false);
   const [uploadingImages, setUploadingImages] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -208,6 +208,7 @@ export function CreatePost({ updatePosts, posts }) {
       .then((res) => {
         setIsSaving(false);
         updateFormState(initialState);
+        refreshPosts();
       })
       .catch((err) => {
         console.error(err);
