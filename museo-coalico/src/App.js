@@ -138,47 +138,47 @@ function Router() {
             <Footer />
           </Route>
           <Route exact path="/heridas-del-conflicto">
-            <HeridasDelConflicto posts={posts} />
+            <HeridasDelConflicto setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/aprendamos-en-paz">
-            <AprendamosEnPaz posts={posts} />
+            <AprendamosEnPaz setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/gestos-de-vida">
-            <GestosDeVida posts={posts} />
+            <GestosDeVida setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/para-oido">
-            <ParaOido posts={posts} />
+            <ParaOido setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/palabras-cruzadas">
-            <PalabrasCruzadas posts={posts} />
+            <PalabrasCruzadas setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/de-camino-a-la-justicia">
-            <DeCaminoALaJusticia posts={posts} />
+            <DeCaminoALaJusticia setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/piezas-para-aprender">
-            <PiezasParaAprender posts={posts} />
+            <PiezasParaAprender setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/ojo-a-los-derechos">
-            <OjoALosDerechos posts={posts} />
+            <OjoALosDerechos setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/dia-de-las-manos-rojas">
-            <DiaDeLasManosRojas posts={posts} />
+            <DiaDeLasManosRojas setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/a-viva-voz">
-            <AVivaVoz posts={posts} />
+            <AVivaVoz setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
           <Route exact path="/cuento-contigo">
-            <CuentoContigo posts={posts} />
+            <CuentoContigo setIsStart={setIsStart} posts={posts} />
             <Footer />
           </Route>
         </Switch>
