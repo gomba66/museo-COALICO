@@ -1,7 +1,12 @@
 import React from "react";
-import "../AVivaVoz/style/styleVoz.css";
-import "./style/swiper-bundle.min.css";
 import PostsInFrames from "../../components/PostsInFrames";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import "../style/styleCategory.css";
+import "../style/swiper-bundle.min.css";
+import "../../index.css";
+
+SwiperCore.use([Pagination, Navigation]);
+
 const AVivaVoz = (props) => {
   window.onload = function () {
     const url = window.location.href.indexOf("/a-viva-voz");
@@ -29,6 +34,12 @@ const AVivaVoz = (props) => {
             src={"assets/iconos/a-viva-voz.png"}
             alt="Logo categoría"
           />
+          <img
+            id="back-button"
+            src={"assets/botones/back.png"}
+            alt="Botón atrás"
+          />
+          <div className="hover-back"></div>
         </div>
         <div>
           <img
