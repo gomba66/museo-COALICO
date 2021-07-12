@@ -5,7 +5,6 @@ const PostsInFrames = (props) => {
   const [renderedPosts, setRenderedPosts] = useState(null);
   useEffect(() => {
     renderPosts();
-    console.log("PROPS --->", props.posts);
   }, [props.posts]);
 
   const returnFormat = (post) => {
@@ -190,10 +189,10 @@ const PostsInFrames = (props) => {
             prevEl: ".swiper-button-prev",
           }}
         >
-          {props.posts.map((post, index) => {
-            
-            return [post,(
-              <>
+          {props.posts
+            .map((post, index) => {
+              return [
+                post,
                 <SwiperSlide key={index}>
                   <h2
                     id="slider-title"
@@ -203,11 +202,17 @@ const PostsInFrames = (props) => {
                   </h2>
 
                   {typeFrame(post)}
-                </SwiperSlide>
-              </>
-            )];
-          }).filter(post=>post[0].title ==="Cuentos radiales").map(item=>{ console.log("ITEM -->", item[1]); return item[1]})}
-          {/* .filter(post => post.title === "Postal 30 años convención")} */}
+                </SwiperSlide>,
+              ];
+            })
+            .filter(function (item) {
+              let cat_list = item[0].category.split(",");
+              console.log("CATEGORIAS: ", cat_list);
+              return item[0].category === props.sala;
+            })
+            .map((it) => {
+              return it[1];
+            })}
         </Swiper>
       );
     } else {

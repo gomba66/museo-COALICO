@@ -7,7 +7,7 @@ import "../../index.css";
 
 SwiperCore.use([Pagination, Navigation]);
 const AprendamosEnPaz = (props) => {
-  const sala = "Aprendamos en paz"
+  const sala = "Aprendemos en paz";
   window.onload = function () {
     const url = window.location.href.indexOf("/aprendamos-en-paz");
     if (url) {

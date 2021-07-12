@@ -3,6 +3,7 @@ import PostsInFrames from "../../components/PostsInFrames";
 import "../DeCaminoALaJusticia/style/styleCamino.css";
 import "./style/swiper-bundle.min.css";
 const DeCaminoALaJusticia = (props) => {
+  const sala = "De camino a la justicia";
   window.onload = function () {
     const url = window.location.href.indexOf("/de-camino-a-la-justicia");
     if (url) {
@@ -89,7 +90,7 @@ const DeCaminoALaJusticia = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>

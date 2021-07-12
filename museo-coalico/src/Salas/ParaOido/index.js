@@ -3,6 +3,7 @@ import PostsInFrames from "../../components/PostsInFrames";
 import "../ParaOido/style/styleOido.css";
 import "./style/swiper-bundle.min.css";
 const ParaOido = (props) => {
+  const sala = "¡Para oído!";
   window.onload = function () {
     const url = window.location.href.indexOf("/para-oido");
     if (url) {
@@ -95,7 +96,7 @@ const ParaOido = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
             <script src="../../swiper-bundle.min.js"></script>
           </div>

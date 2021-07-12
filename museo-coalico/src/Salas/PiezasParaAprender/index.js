@@ -3,6 +3,7 @@ import PostsInFrames from "../../components/PostsInFrames";
 import "../PiezasParaAprender/style/stylePiezas.css";
 import "./style/swiper-bundle.min.css";
 const PiezasParaAprender = (props) => {
+  const sala = "Piezas para aprender";
   window.onload = function () {
     const url = window.location.href.indexOf("/piezas-para-aprender");
     if (url) {
@@ -95,7 +96,7 @@ const PiezasParaAprender = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
 
             <script src="../../swiper-bundle.min.js"></script>

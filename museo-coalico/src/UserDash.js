@@ -73,18 +73,9 @@ function UserDash() {
   return (
     <div className="container-fluid vh-100">
       <div className="container">
-        {/* <Button title="New Post" onClick={() => updateOverlayVisibility(true)} />
-        <AmplifySignOut />
-        <h1>Photo Album</h1>
-        <span>Add new image</span>
-        <input
-          type="file"
-          accept='image/png'
-          onChange={onChange}
-          /> */}
         {showOverlay && <CreatePost updatePosts={setPostState} posts={posts} />}
       </div>
-      <h1 className="h1-heading">Inventario del museo</h1>
+      <h1 className="h1-heading">Inventario del museo ({posts.length})</h1>
       <hr />
       <table className="table">
         <thead className="thead-dark">
@@ -103,8 +94,8 @@ function UserDash() {
         </thead>
         <tbody>
           {posts
-            ? posts.map((post) => {
-                return <UpdateFiles {...post} />;
+            ? posts.map((post, index) => {
+                return <UpdateFiles {...post} index={index + 1} />;
               })
             : null}
         </tbody>

@@ -11,6 +11,7 @@ export function UpdateFiles({
   subcategory,
   file_list,
   id,
+  index,
 }) {
   const [modal, setModal] = useState(false);
   const [posts, updatePosts] = useState([]);
@@ -22,7 +23,7 @@ export function UpdateFiles({
   return (
     <>
       <tr>
-        <th scope="row">1</th>
+        <th scope="row">{index}</th>
         <td>
           <i class="bi bi-pencil-square" onClick={() => setModal(!modal)}></i>
         </td>

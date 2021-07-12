@@ -2,7 +2,8 @@ import React from "react";
 import PostsInFrames from "../../components/PostsInFrames";
 import "../PalabrasCruzadas/style/stylePalabras.css";
 import "./style/swiper-bundle.min.css";
-const ParaOido = (props) => {
+const PalabrasCruzadas = (props) => {
+  const sala = "Palabras cruzadas";
   window.onload = function () {
     const url = window.location.href.indexOf("/palabras-cruzadas");
     if (url) {
@@ -89,7 +90,7 @@ const ParaOido = (props) => {
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
-              <PostsInFrames posts={props.posts} />
+              <PostsInFrames sala={sala} posts={props.posts} />
             </div>
             <script src="../../swiper-bundle.min.js"></script>
           </div>
@@ -99,4 +100,4 @@ const ParaOido = (props) => {
   );
 };
 
-export default ParaOido;
+export default PalabrasCruzadas;
