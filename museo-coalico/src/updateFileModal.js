@@ -414,6 +414,7 @@ export default function UpdateFileModal({
         </div>
       ) : null}
       <Button
+        disabled={isSaving}
         title={isSaving ? `Actualizando... ${progress}%` : "Actualizar Post"}
         onClick={(e) => {
           e.preventDefault();
