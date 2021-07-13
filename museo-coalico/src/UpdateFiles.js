@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { css } from "@emotion/css";
 import UpdateFileModal from "./updateFileModal";
 
 export function UpdateFiles({
@@ -12,6 +13,7 @@ export function UpdateFiles({
   file_list,
   id,
   index,
+  refreshPosts,
 }) {
   const [modal, setModal] = useState(false);
   const [posts, updatePosts] = useState([]);
@@ -29,15 +31,26 @@ export function UpdateFiles({
         </td>
         <td>{title}</td>
         <td>{published_year}</td>
-        <td>{link}</td>
+        <td>
+          <div style={{ height: "100px", width: "260px", overflow: "hidden" }}>
+            {link}
+          </div>
+        </td>
         <td>{origin_region}</td>
-        <td>{description}</td>
+        <td style={{ maxWidth: "100px" }}>{description}</td>
         <td>{category}</td>
         <td>{subcategory}</td>
-        <td>{file_list}</td>
+        <td>
+          <div
+            style={{ overflow: "scroll", height: "200px", overflowX: "hidden" }}
+          >
+            {file_list}
+          </div>
+        </td>
       </tr>
       {modal ? (
         <UpdateFileModal
+          refreshPosts={refreshPosts}
           {...{
             title,
             published_year,

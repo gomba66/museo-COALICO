@@ -25,9 +25,11 @@ export default function UpdateFileModal({
   subcategory,
   file_list,
   id,
+  refreshPosts,
 }) {
   /* Initial state to hold form input, saving state */
   useEffect(() => {
+    setFiles2({ length: file_list.length });
     setFormState({
       title,
       published_year,
@@ -55,11 +57,7 @@ export default function UpdateFileModal({
   const [showPreview, setShowPreview] = useState(false);
   const [locationFiles, setLocationFiles] = useState([]);
   const [progress, setProgress] = useState(0);
-  
-  useEffect(() => {
-    setFiles2({ length: file_list.length });
-  }, []);
-  
+
   const handleUpload = async (file) => {
     let newFileName = uuid();
     const ReactS3Client = new S3(config);
@@ -207,9 +205,6 @@ export default function UpdateFileModal({
     }
 
     setTimeout(async () => {
-      // setUploadingImages(false);
-      // setFiles({ length: 0 });
-
       setProgress(0);
     }, 500);
     if (file_list !== null) {
@@ -228,6 +223,9 @@ export default function UpdateFileModal({
       .then((res) => {
         console.log(res);
         setIsSaving(false);
+        refreshPosts();
+        setFiles({ length: 0 });
+        alert("Actualizado!");
       })
       .catch((err) => {
         console.error(err);
@@ -292,6 +290,11 @@ export default function UpdateFileModal({
         onChange={onChangeText}
         disabled={isSaving}
       />
+      <h6 className="modal-title" id="addNewGroupLabel">
+        Archivos ({files2.length})
+      </h6>
+      <br />
+
       <div
         style={{
           display: "flex",
@@ -411,16 +414,12 @@ export default function UpdateFileModal({
         </div>
       ) : null}
       <Button
-        title="Actualizar Post"
+        title={isSaving ? `Actualizando... ${progress}%` : "Actualizar Post"}
         onClick={(e) => {
           e.preventDefault();
           save();
         }}
       />
-      {/* <Button type="cancel" title="Cancel" onClick={() => updateOverlayVisibility(false)} /> */}
-      <h5 className="modal-title" id="addNewGroupLabel">
-        Archivos ({files2.length})
-      </h5>
       {isSaving ? (
         <p className={savingMessageStyle}>Guardando post...</p>
       ) : null}
