@@ -180,7 +180,7 @@ export function Post(props) {
   return (
     <>
       {loading ? null : (
-        <div id="body-post">
+        <div id="body-post" className="position-relative no-padding w-100">
           {/* <!--Marcos--> */}
           <div>
             <img
