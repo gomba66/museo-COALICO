@@ -143,7 +143,7 @@ const PostsInFrames = (props) => {
           <img
             className="position-absolute"
             id="img-ref"
-            src={"assets/img-ref/link-elemento.png"}
+            src={"assets/img-ref/web-elemento.png"}
             alt="Referencia a página web"
           />
         </>
