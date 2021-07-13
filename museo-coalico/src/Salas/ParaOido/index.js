@@ -35,7 +35,7 @@ const ParaOido = (props) => {
             src={"assets/iconos/para-oido.png"}
             alt="Logo categoría"
           />
-          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="https://mauricioconcha.com/output/output2/index.html">
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false); window.open("http://museo.coalico.co", "_self")}}>
               <img
                 id="back-button"
                 src={"assets/botones/back.png"}

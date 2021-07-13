@@ -21,7 +21,7 @@ export function Header({setIsStart}) {
   return (
     <div className={headerContainer}>
       <nav className={navHeight + " navbar navbar-expand-lg navbar-light bg-light"}>
-        <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; setIsStart(false)}} to="/">
+        <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; setIsStart(false); window.open("http://museo.coalico.co", "_self")}}>
           <img className="ml-3" src={"/assets/logos/logo-peque.png"} alt="Museo logo" width="140" height="45" />
         </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
