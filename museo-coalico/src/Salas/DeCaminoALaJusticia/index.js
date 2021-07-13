@@ -35,7 +35,7 @@ const DeCaminoALaJusticia = (props) => {
             src={"assets/iconos/de-camino-a-la-justicia.png"}
             alt="Logo categoría"
           />
-          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false); window.open("http://museo.coalico.co", "_self")}}>
               <img
                 id="back-button"
                 src={"assets/botones/back.png"}
