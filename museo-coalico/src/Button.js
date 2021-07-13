@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "@emotion/css";
 
-export default function Button({ title, onClick, type = "action" }) {
+export default function Button({ title, onClick, type = "action", disabled }) {
   return (
-    <button className={buttonStyle(type)} onClick={onClick}>
+    <button disabled={disabled} className={buttonStyle(type)} onClick={onClick}>
       {title}
     </button>
   );
