@@ -110,10 +110,8 @@ export function Post(props) {
       frame = (
         <>
           <img
-            className="position-absolute"
+            className="position-absolute image-format"
             src={`${url}`}
-            width="75%"
-            margin-top= "80%"
             alt="Imagen"
           />
         </>
@@ -143,11 +141,9 @@ export function Post(props) {
       );
     } else if (formatDocs.includes(format)) {
       frame = (
-        <>
-          <div style={{ overflow: "scroll", height: 600 }}>
+          <div className="PDF-format">
             <PDFReader url={url} />
           </div>
-        </>
       );
     } else {
       frame = (
@@ -221,6 +217,7 @@ export function Post(props) {
               <div className="scroll-p">
                 <p className="p-post">{post.description}</p>
               </div>
+              {/* <div className="col-7">{typeFile(post)}</div> */}
             </div>
           </div>
 
@@ -234,7 +231,7 @@ export function Post(props) {
                 <p className="p-post">{post.description}</p>
               </div>
             </div>
-            <div className="col">{typeFile(post)}</div>
+            <div className="col-md-7">{typeFile(post)}</div>
           </div>
         </div>
       )}
