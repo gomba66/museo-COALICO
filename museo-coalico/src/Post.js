@@ -228,7 +228,7 @@ export function Post(props) {
             <div className="col-12 d-md-block d-none">
               <h1 className="titulo-post ml-5">{post.title}</h1>
             </div>
-            <div className="col-5 d-md-block d-none ml-5">
+            <div className="col-4 d-md-block d-none ml-5">
               <div className="scroll-p">
                 <p className="p-post">{post.description}</p>
               </div>

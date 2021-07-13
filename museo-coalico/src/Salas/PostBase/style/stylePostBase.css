@@ -43,9 +43,8 @@
 }
 
 .scroll-p {
-    height: 48%;
-	width: 105%;
     overflow-y: scroll;
+    margin: 10px;
 }
 
 /* Container of the title and the character(background) */
@@ -72,7 +71,73 @@
     opacity: 0.3;
 }
 
-
+@media screen and (max-width: 575.98px)
+{
+    .p-post {
+        font-size: 4vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 120%;
+        max-height: 140px;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: normal;  
+    } 
+}
+@media screen and (min-width: 575.98px) and (max-width: 767.98px)
+{
+    .p-post {
+        font-size: 4vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 120%;
+        max-height: 230px;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: normal;  
+    }
+}
+@media screen and (min-width: 767.98px) and (max-width: 991.98px)
+{
+    .p-post {
+        font-size: 2vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 68%;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: 2.3vh;  
+    }
+}
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px)
+{
+    .p-post {
+        font-size: 2vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 68%;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: 2.8vh;  
+    }
+}
+@media screen and (min-width: 1199.98px)
+{
+    .p-post {
+        font-size: 2vw;
+        max-width: 95%;
+    }
+    .scroll-p {
+        height: 80%;
+        width: 90%;
+        overflow-y: scroll;
+        line-height: normal;  
+    }
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px)
@@ -80,36 +145,32 @@
     .titulo-post {
         font-size: 2.6vw;
     }
-    .p-post {
+    /* .p-post {
         font-size: 2vw;
         max-width: 95%;
-    }
-    .scroll-p {
+    } */
+    /* .scroll-p {
         height: 100%;
         width: 90%;
         overflow-y: scroll;
         line-height: 2.3vh;
         margin: 10px;
-    }
+    } */
 }
 
 @media screen and (min-width: 991.98px) {
-    #encabezado-p {
-        top: 25%;
-        left: 3%;
-        right: 0px;
-    }
-    .p-post {
+    
+    /* .p-post {
         font-size: 2vw;
         max-width: 95%;
-    }
-    .scroll-p {
+    } */
+    /* .scroll-p {
         height: 90%;
         width: 90%;
         overflow-y: scroll;
         line-height: 3vh;
         margin: 10px;
-    }
+    } */
     .titulo-post {
         margin-left: 3rem;
         margin-right: 3em;
@@ -123,25 +184,25 @@
         height: 4.5vw;
         left: 4.5%;
         top: 5.6%
-      }
+    }
+    #encabezado-p {
+        top: 15%;
+        left: 5%;
+        right: 5%;
+    }
 }
 @media screen and (max-width: 575.98px) {
-    #encabezado-p {
-        top: 22%;
-        left: 10%;
-        right: 10%;
-    }
-    .p-post {
+    /* .p-post {
         font-size: 3.5vw;
         max-width: 95%;
-    }
-    .scroll-p {
+    } */
+    /* .scroll-p {
         height: 70%;
         width: 90%;
         overflow-y: scroll;
         line-height: 2.3vh;
         margin: 10px;
-    }
+    } */
 }
 
 /* Medium devices until 767.98px and down (Cellphone and tablet)*/
@@ -151,45 +212,45 @@
         height: 15vw;
         left: 1.2%;
         top: 0.7%
-      }
+    }
+    #encabezado-p {
+        top: 10%;
+        left: 8%;
+        right: 8%;
+    }
 }
 
 /* Medium devices until 767.98px and down (Cellphone and tablet)*/
 @media screen and (min-width: 575.98px) and (max-width: 767.98px)
 {
-    .p-post {
+    /* .p-post {
         font-size: 4vw;
         max-width: 90%;
-    }
+    } */
     .titulo-post {
         max-width: 90%;
     }
-    #encabezado-p {
-        top: 25%;
-        left: 10%;
-        right: 0px;
-    }
-    .scroll-p {
+    /* .scroll-p {
         height: 60%;
         width: 90%;
         overflow-y: scroll;
         line-height: 3.4vh;
         margin: 10px;
-    }
+    } */
 }
 
 /* Medium devices between 767.98px and 991.98px */
 @media screen and (min-width: 767.98px) and (max-width: 991.98px) {
-    #encabezado-p {
-        top: 15%;
-        left: 3%;
-        right: 5%;
-    }
     .hover-back:hover {
         width: 4vw;
         height: 4vw;
         left: 4.5%;
         top: 5.5%
+    }
+    #encabezado-p {
+        top: 15%;
+        left: 3%;
+        right: 5%;
     }
 }
 
@@ -200,6 +261,11 @@
         height: 4.3vw;
         left: 4.5%;
         top: 6.4%
+    }
+    #encabezado-p {
+        top: 15%;
+        left: 3%;
+        right: 5%;
     }
 }
 
