@@ -108,9 +108,9 @@ manage his location in screen */
   }
   #img-ref {
     z-index: 150;
-    width: 40%;
-
-    bottom: 10px;
+    width: 34.5%;
+    left: 33%;
+    bottom: 10%;
   }
   #slider-title {
     width: 17vw;
@@ -132,8 +132,9 @@ manage his location in screen */
   #img-ref {
     z-index: 150;
     width: 40%;
+    max-width: 143px;
     left: 30%;
-    bottom: 10px;
+    bottom: 10%;
   }
 }
 @media screen and (max-width: 360px) {
@@ -149,7 +150,7 @@ manage his location in screen */
   #img-ref {
     z-index: 150;
     width: 40%;
-    bottom: 10px;
+    bottom: 10%;
   }
   .swiper-button-next,
   .swiper-button-prev {
@@ -175,8 +176,9 @@ manage his location in screen */
   }
   #img-ref {
     z-index: 150;
-    width: 40%;
-    bottom: 10px;
+    width: 29%;
+    left: 35%;
+    bottom: 10%;
   }
   .swiper-button-next,
   .swiper-button-prev {
@@ -255,9 +257,8 @@ manage his location in screen */
   }
   #img-ref {
     z-index: 150;
-    width: 40%;
-
-    bottom: 10px;
+    width: 36.5%;
+    bottom: 10%;
   }
 }
 
