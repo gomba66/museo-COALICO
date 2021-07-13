@@ -35,7 +35,7 @@ const HeridasDelConflicto = (props) => {
             src={"assets/iconos/heridas-del-conflicto.png"}
             alt="Logo categoría"
           />
-          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+          <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="https://mauricioconcha.com/output/output2/index.html">
               <img
                 id="back-button"
                 src={"assets/botones/back.png"}

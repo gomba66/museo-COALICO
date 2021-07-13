@@ -30,6 +30,7 @@ import AVivaVoz from "./Salas/AVivaVoz/index";
 import PostBase from "./Salas/PostBase/index";
 import QuienesSomos from "./QuienesSomos";
 import axios from "axios";
+import { PanellumComponent } from "./PanellumComponent";
 
 function Router() {
   /* create a couple of pieces of initial state */
@@ -117,6 +118,10 @@ function Router() {
           ) : null}
         </Route>
         <Switch>
+          <Route exact path="/panellum">
+            <PanellumComponent />
+            <Footer />
+          </Route>
           <Route exact path="/posts">
             <Posts posts={posts} />
             <Footer />
