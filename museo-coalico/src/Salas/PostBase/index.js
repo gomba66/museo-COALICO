@@ -10,7 +10,7 @@ const PostBase = (props) => {
         }
     };
     return (
-        <div id="body-post">
+        <div id="body-post" className="position-relative no-padding w-100">
            {/* <!--Marcos--> */}
             <div>
                 <img
@@ -22,7 +22,7 @@ const PostBase = (props) => {
                     width="100%"
                 />
 
-          <div className="hover-back"></div>
+                <div className="hover-back"></div>
             </div>
             <div>
                 <img
