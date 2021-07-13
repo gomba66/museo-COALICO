@@ -5,6 +5,7 @@ import { getPost } from "./graphql/queries";
 import axios from "axios";
 import { PDFReader } from "reactjs-pdf-reader";
 import { Link } from 'react-router-dom';
+import backButton from './assets/botones/back.png'
 
 export function Post(props) {
   const [loading, updateLoading] = useState(true);
@@ -201,14 +202,14 @@ export function Post(props) {
               height="100%"
               width="100%"
             />
-{/*             <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false)}} to="/">
+            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false); window.open("http://museo.coalico.co", "_self")}}>
               <img
-                id="back-button"
-                src={"assets/botones/back.png"}
-                alt="Botón atrás"
-              />
+                  id="back-button"
+                  src={backButton}
+                  alt="Botón atrás"
+                />
             </Link>
-            <div className="hover-back"></div> */}
+            <div className="hover-back"></div>
           </div>
 
           {/* <!--Mobile - Título y párrafo--> */}
