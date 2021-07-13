@@ -5,8 +5,12 @@
 
 #body {
     min-height: 100%;
-/*     background-image: url(./assets/fondos/fondo.png);*/
     flex-direction: column;
+}
+
+.h1 .h2 .h3 .h4{
+    font-family: "Club Type W01 Medium";
+    color: #010413;
 }
 
 .title {

@@ -43,53 +43,21 @@ const QuienesSomos = (props) => {
                 </div>
 
                 <div>
-                    <h2 className="title text-center mt-5">Colaboradores</h2>
-                    <div className="card-deck mt-2">
-                        <div className="card">
-                            <img className="card-img-top" src={nicolas} alt="Desarrollador" />
-                            <div className="card-body">
-                                <h5 className="card-title">Nicolás Morán</h5>
-                                <p className="card-text">Desarrollador</p>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <img className="card-img-top" src={doniben} alt="Desarrollador" />
-                            <div className="card-body">
-                                <h5 className="card-title">Doniben Jimenez</h5>
-                                <p className="card-text">Desarrollador</p>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <img className="card-img-top" src={joan} alt="Diseño web" />
-                            <div className="card-body">
-                                <h5 className="card-title">Joan Barbosa</h5>
-                                <p className="card-text">Diseño web</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card-deck mt-3">
-                        <div className="card">
-                            <img className="card-img-top" src={fernando} alt="Dirección del proyecto" />
-                            <div className="card-body">
-                                <h5 className="card-title">Fernando González Santos</h5>
-                                <p className="card-text">Dirección del proyecto</p>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <img className="card-img-top" src={katerin} alt="Dirección del proyecto" />
-                            <div className="card-body">
-                                <h5 className="card-title">Káterin de Alba Hernández Rodríguez</h5>
-                                <p className="card-text">Dirección del proyecto</p>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <img className="card-img-top" src={hilda} alt="Directora COALICO" />
-                            <div className="card-body">
-                                <h5 className="card-title">Hilda Molano</h5>
-                                <p className="card-text">Directora COALICO</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 className="title text-center mt-5">Créditos</h2>
+                    <h3 className="text-center">Dirección del proyecto: </h3>
+                    <p className="paragraph text-center">
+                        Káterin de Alba Hernández Rodríguez y Fernando González Santos
+                    </p>
+                    <br></br>
+                    <h3 className="text-center">Desarrolladores: </h3>
+                    <p className="paragraph text-center">
+                        Doniben Jiménez y Nicolás Morán
+                    </p>
+                    <br></br>
+                    <h3 className="text-center">Diseño web: </h3>
+                    <p className="paragraph text-center">
+                        Joan Barbosa
+                    </p>
                 </div>
             </div>
 
