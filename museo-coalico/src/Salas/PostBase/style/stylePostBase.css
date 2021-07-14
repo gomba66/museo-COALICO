@@ -79,36 +79,72 @@
     overflow: auto;
 }
 
+.iframe-format {
+    width: 100%;
+    height: 14em;
+}
+
 @media screen and (max-width: 575.98px)
 {
     .PDF-format {
-        width: 100%;
-        height: 10%;
-        margin-top: 110%;
+        width: 105%;
+        height: 15%;
+        left: 0;
+        margin-top: 95%;
+    }
+    .iframe-format {
+        width: 105%;
+        height: 14em;
+        left: 0;
+        margin-top: 95%;
     }
 }
 @media screen and (min-width: 575.98px) and (max-width: 767.98px)
 {
     .PDF-format {
-        height: 15%;
-        margin-top: 110%;
+        width: 105%;
+        height: 18%;
+        margin-top: 109%;
+    }
+    .iframe-format {
+        width: 105%;
+        height: 21em;
+        margin-top: 100%;
     }
 }
 @media screen and (min-width: 767.98px) and (max-width: 991.98px)
 {
     .PDF-format {
-        height: 12%;
-    }  
+        height: 16%;
+    }
+    .image-format {
+        max-height: 300px;
+    }
+    .iframe-format {
+        height: 16em;
+    }
 }
 @media screen and (min-width: 991.98px) and (max-width: 1199.98px)
 {
     .PDF-format {
-        height: 16%;
-    }  
+        height: 20.5%;
+    }
+    .image-format {
+        max-height: 360px;
+    }
+    .iframe-format {
+        height: 21em;
+    }
 }
 @media screen and (min-width: 1199.98px) {
     .PDF-format {
-        height: 20%;
+        height: 25%;
+    }
+    .image-format {
+        max-height: 430px;
+    }
+    .iframe-format {
+        height: 26em;
     }
 }
 
@@ -123,6 +159,7 @@
     }
     .image-format {
         width: 52%;
+        height: auto;
         margin-bottom: 8%;
         left: 10%;
     }

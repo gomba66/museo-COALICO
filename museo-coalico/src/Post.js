@@ -148,7 +148,7 @@ export function Post(props) {
     } else {
       frame = (
         <>
-          <iframe width="400px" src={post.link} />
+          <iframe className="iframe-format" src={post.link} />
         </>
       );
     }
@@ -226,12 +226,12 @@ export function Post(props) {
             <div className="col-12 d-md-block d-none">
               <h1 className="titulo-post ml-5">{post.title}</h1>
             </div>
-            <div className="col-4 d-md-block d-none ml-5">
+            <div className="col-3 d-md-block d-none ml-5">
               <div className="scroll-p">
                 <p className="p-post">{post.description}</p>
               </div>
             </div>
-            <div className="col-md-7">{typeFile(post)}</div>
+            <div className="col-md-8">{typeFile(post)}</div>
           </div>
         </div>
       )}
