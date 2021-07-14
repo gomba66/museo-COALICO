@@ -44,19 +44,24 @@ const QuienesSomos = (props) => {
 
                 <div>
                     <h2 className="title text-center mt-5">Créditos</h2>
-                    <h3 className="text-center">Dirección del proyecto: </h3>
+                    <h3 className="text-center">Dirección Pedagógica y Artística: </h3>
                     <p className="paragraph text-center">
                         Káterin de Alba Hernández Rodríguez y Fernando González Santos
                     </p>
                     <br></br>
                     <h3 className="text-center">Desarrolladores: </h3>
                     <p className="paragraph text-center">
-                        Doniben Jiménez y Nicolás Morán
+                        Doniben Jiménez, Nicolás Morán, Daniel Ramírez y Santiago Toquica
                     </p>
                     <br></br>
                     <h3 className="text-center">Diseño web: </h3>
                     <p className="paragraph text-center">
                         Joan Barbosa
+                    </p>
+                    <br></br>
+                    <h3 className="text-center">Implementadores de contenido: </h3>
+                    <p className="paragraph text-center">
+                        Daniel Alejandro Morán Pulido, Valentina Mayorga González, Paola Ximena Alarcón González, Vicente de Alba Hernández Rodríguez y Ricardo Lidemar Sánchez Verá
                     </p>
                 </div>
             </div>
