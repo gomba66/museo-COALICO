@@ -105,7 +105,7 @@ const PiezasParaAprender = (props) => {
 
         {/* <!-- Slider main container --> */}
         <div id="slider" className="position-absolute">
-          <div className="swiper-container">
+          <div className="swiper-container swiper-own-container">
             {/* <!-- Additional required wrapper --> */}
             <div className="swiper-wrapper">
               {/* <!-- Slides --> */}
