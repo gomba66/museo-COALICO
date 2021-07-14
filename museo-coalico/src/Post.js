@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { API, Storage } from "aws-amplify";
-import { getPost } from "./graphql/queries";
 import axios from "axios";
 import { PDFReader } from "reactjs-pdf-reader";
-import { Link } from 'react-router-dom';
-import backButton from './assets/botones/back.png'
+import { Link } from "react-router-dom";
+import backButton from "./assets/botones/back.png";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export function Post(props) {
   const [loading, updateLoading] = useState(true);
@@ -18,23 +17,6 @@ export function Post(props) {
   // Create Document Component
 
   async function fetchPost() {
-    //   try {
-    //     const postData = await API.graphql({
-    //       query: getPost,
-    //       variables: { id },
-    //     });
-    //     console.log(postData);
-    //     const currentPost = postData.data.getTodo;
-    //     const image = await Storage.get(currentPost.image);
-    //     console.log("====================================");
-    //     console.log(image);
-    //     console.log("====================================");
-    //     currentPost.image = image;
-    //     updatePost(currentPost);
-    //     updateLoading(false);
-    //   } catch (err) {
-    //     console.log("error: ", err);
-    //   }
     axios
       .get(
         "https://m6cet1alej.execute-api.us-east-2.amazonaws.com/dev/getposts"
@@ -42,13 +24,13 @@ export function Post(props) {
       .then((res) => {
         let posts = res.data;
         let pieza = posts.filter((item) => item.id === id);
-        console.log("PIEZA=>>", pieza);
+        console.log("pieza", pieza);
         updatePost(pieza[0]);
         updateLoading(false);
       });
   }
 
-  const typeFile = (post) => {
+  const typeFile = (file, post, index) => {
     let formatImages = ["png", "jpg", "jpeg", "bmp", "HEIF"];
     let formatAudios = [
       "3pg",
@@ -90,28 +72,26 @@ export function Post(props) {
       "wv",
       "8svx",
       "cda",
+      "mpeg",
     ];
     let formatVideos = ["flv", "ogg", "avi", "mov", "wmv", "mp4", "m4v"];
     let formatDocs = ["pdf"];
 
-    let format = returnFormat(post);
+    let format = returnFormat(post, index);
     let frame = "";
     let url = null;
     if (post.link === undefined) {
       return null;
     }
     if (!post.link) {
-      url = post.file_list[0];
-    }
-    if (url) {
-      url = url.replace(/['"]+/g, "");
+      url = file[index];
     }
     if (formatImages.includes(format)) {
       frame = (
         <>
           <img
             className="position-absolute image-format"
-            src={`${url}`}
+            src={`${file}`}
             alt="Imagen"
           />
         </>
@@ -119,31 +99,33 @@ export function Post(props) {
     } else if (formatAudios.includes(format)) {
       frame = (
         <>
-          <audio>
-            <source src={`${url}`} />
+          <audio controlsList="nodownload" controls>
+            <source
+              src="https://files-posts-museo.s3-us-east-2.amazonaws.com/coalico-files/faa9b204-68e9-48fb-830c-94462fe06b2b.mpeg"
+              type="audio/mpeg"
+            />
           </audio>
         </>
-      );
-    } else if (formatImages.includes(format)) {
-      frame = (
-        <img
-          id="marco-slides"
-          src={"assets/marcos/texto-preview.png"}
-          alt="marco-slide"
-        />
       );
     } else if (formatVideos.includes(format)) {
       frame = (
         <>
-          <h3 style={{ color: "white" }}>File:</h3>
-          <p style={{ color: "white" }}>{format}</p>
+          <video width="320" height="240" controls>
+            <source src={file} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </>
       );
     } else if (formatDocs.includes(format)) {
       frame = (
-          <div className="PDF-format">
-            <PDFReader url={url} />
+        <>
+          <div
+            style={{ height: "300px", backgroundColor: "red" }}
+            className="PDF-format"
+          >
+            <PDFReader url={file} />
           </div>
+        </>
       );
     } else {
       frame = (
@@ -152,28 +134,27 @@ export function Post(props) {
         </>
       );
     }
-    return frame;
+    return <SwiperSlide key={index}>{frame}</SwiperSlide>;
   };
 
-  const returnFormat = (post) => {
+  const returnFormat = (post, index) => {
     if (post.file_list === undefined) {
+      console.log("error undefined");
       return null;
     }
-    console.log('====================================');
-    console.log(post);
-    console.log('====================================');
-    if (post?.file_list[0]?.length === 0 || post?.link) {
+    if (post?.file_list[index]?.length === 0) {
+      console.log("file_list len 0");
       return null;
     }
-    let divided = post.file_list[0].split(".");
+    let divided = post.file_list[index].split(".");
     let format = divided[divided.length - 1];
     format = format.replace('"', "");
     if (format.includes("[")) {
       format = null;
     }
+    console.log("return format", format);
     return format;
   };
-  console.log("post: ", post);
   return (
     <>
       {loading ? null : (
@@ -198,12 +179,15 @@ export function Post(props) {
               height="100%"
               width="100%"
             />
-            <Link onClick={()=>{document.querySelectorAll('.container360')[0].style.display = 'block'; props.setIsStart(false); window.open("http://museo.coalico.co", "_self")}}>
-              <img
-                  id="back-button"
-                  src={backButton}
-                  alt="Botón atrás"
-                />
+            <Link
+              onClick={() => {
+                document.querySelectorAll(".container360")[0].style.display =
+                  "block";
+                props.setIsStart(false);
+                window.open("http://museo.coalico.co", "_self");
+              }}
+            >
+              <img id="back-button" src={backButton} alt="Botón atrás" />
             </Link>
             <div className="hover-back"></div>
           </div>
@@ -231,7 +215,41 @@ export function Post(props) {
                 <p className="p-post">{post.description}</p>
               </div>
             </div>
-            <div className="col-md-7">{typeFile(post)}</div>
+            <div className="col-md-7">
+              <Swiper
+                spaceBetween={30}
+                slidesPerView={1}
+                loopFillGroupWithBlank={true}
+                loop={true}
+                breakpoints={{
+                  1500: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 1,
+                  },
+                }}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+              >
+                {post?.file_list.length > 0 &&
+                typeof post?.file_list !== "string" ? (
+                  post?.file_list.map((file, index) =>
+                    typeFile(file, post, index)
+                  )
+                ) : post?.link ? (
+                  <SwiperSlide>
+                    <iframe width="400px" src={post.link} />
+                  </SwiperSlide>
+                ) : (
+                  <SwiperSlide>
+                    <p>Proximamente agregaremos nuevas piezas</p>
+                  </SwiperSlide>
+                )}
+              </Swiper>
+            </div>
           </div>
         </div>
       )}
