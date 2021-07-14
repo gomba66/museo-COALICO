@@ -73,7 +73,6 @@
 
 .PDF-format {
     width: 100%;
-    height: 15%;
     margin-bottom: 8%;
     left: 50%;
     overflow: auto;
@@ -88,7 +87,7 @@
 {
     .PDF-format {
         width: 105%;
-        height: 15%;
+        height: 14%;
         left: 0;
         margin-top: 95%;
     }
@@ -103,7 +102,7 @@
 {
     .PDF-format {
         width: 105%;
-        height: 18%;
+        height: 16%;
         margin-top: 109%;
     }
     .iframe-format {
@@ -115,7 +114,7 @@
 @media screen and (min-width: 767.98px) and (max-width: 991.98px)
 {
     .PDF-format {
-        height: 16%;
+        height: 17%;
     }
     .image-format {
         max-height: 300px;
@@ -127,7 +126,7 @@
 @media screen and (min-width: 991.98px) and (max-width: 1199.98px)
 {
     .PDF-format {
-        height: 20.5%;
+        height: 23%;
     }
     .image-format {
         max-height: 360px;
@@ -136,10 +135,8 @@
         height: 21em;
     }
 }
+
 @media screen and (min-width: 1199.98px) {
-    .PDF-format {
-        height: 25%;
-    }
     .image-format {
         max-height: 430px;
     }
@@ -148,6 +145,11 @@
     }
 }
 
+@media screen and (min-width: 1199.98px) {
+    .PDF-format {
+        height: 25%;
+    }
+}
 
 
 
