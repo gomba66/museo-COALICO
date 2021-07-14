@@ -1,209 +1,282 @@
 :root {
-    --swiper-theme-color: #000;
+  --swiper-theme-color: #000;
 }
 
 /* The general lides container */
-.swiper-container {
-    width: 100%;
-    height: 120px;
+/* .swiper-container {
+  max-width: 2048px;
+  width: 100%;
+  height: 120px;
+} */
+
+.swiper-own-container {
+  max-width: 2048px;
+  width: 100%;
+  height: 180px;
 }
 
 /* Each slide params */
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  text-align: center;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-
 
 /* Marco of slide against background */
 #marco-slides {
-    width: 100%;
-    height: 9em;
-    z-index: 200;
+  width: 100%;
+  height: 9em;
+  z-index: 200;
 }
 
 /* PNG Image inside the slides */
 #img-ref {
-    z-index: 150;
-    width: 50%;
+  z-index: 150;
+  width: 40%;
+  left: 30%;
+  bottom: 7%;
 }
 
 /* Container (<div>) for #slider-title */
 
-
 /* Title of the slide*/
 #slider-title {
-    font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
-    color: #333;
-    z-index: 250;
-    top: 6%;
-    right: 10%;
-    font-size: 1.3vw;
+  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+  color: #333;
+  z-index: 250;
+  top: 6%;
+  right: 10%;
+  font-weight: 550;
+  font-size: 1.1vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* Container for .swiper-container to
 manage his location in screen */
 #slider {
-    top: 50%;
-    left: 8vw;
-    right: 8vw;
+  top: 50%;
+  left: 8vw;
+  right: 8vw;
 }
 
 /* Each button and image background*/
 .swiper-button-prev {
-    background-image: url(/museo-coalico/src/assets/botones/atrazar.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
+  /* background-image: url("../../assets/botones/atrazar.png"); */
+  background-image: url("./assets/botones/atrazar.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
 }
 .swiper-button-next {
-    background-image: url(/museo-coalico/src/assets/botones/adelantar.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
+  /* background-image: url("../../assets/botones/adelantar.png"); */
+  background-image: url("./assets/botones/atrazar.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
 }
 
 /* Size buttons*/
-.swiper-button-next, .swiper-button-prev {
-    width: 3em !important;
-    height: 3em !important;
+.swiper-button-next,
+.swiper-button-prev {
+  width: 3em !important;
+  height: 3em !important;
 }
 
 /* Hide default swiper buttons */
 .swiper-button-next::after {
-    display: none;
+  display: none;
 }
 .swiper-button-prev::after {
-    display: none;
-}
-
-/* Extra small devices with 575.98px and down */
-@media screen and (max-width: 575.98px)
-{
-    .swiper-container {
-        width: 100%;
-        height: 12em;
-    }
-    #marco-slides {
-        width: 100%;
-        height: 10.4em;
-        z-index: 200;
-    }
-    #img-ref {
-        z-index: 150;
-        width: 50%;
-    }
-    .swiper-button-next, .swiper-button-prev {
-        width: 2em !important;
-        height: 2em !important;
-    }
-    #slider-title {
-        font-size: 0.3vw;
-    }
-}
-
-/* Medium devices between 575.98px and 767.98px */
-@media screen and (min-width: 575.98px) and (max-width: 767.98px)
-{
-    .swiper-container {
-        width: 100%;
-        height: 20em;
-    }
-    #marco-slides {
-        width: 100%;
-        height: 18em;
-        z-index: 200;
-    }
-    #img-ref {
-        z-index: 150;
-        width: 50%;
-    }
+  display: none;
 }
 
 /* Medium devices 767.98px and up */
-@media screen and (min-width: 767.98px) 
-{
-    .swiper-container {
-        width: 100%;
-        height: 8em;
-    }
-    #marco-slides {
-        width: 100%;
-        height: 7.2em;
-        z-index: 200;
-    } 
-    #img-ref {
-        z-index: 150;
-        width: 50%;
-    }
-}
-
-/* Medium devices 767.98px and down */
-@media screen and (max-width: 767.98px) 
-{
-    #slider {
-        top: 62%;
-        left: 8vw;
-        right: 8vw;
-    }
-    #slider-title {
-        font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
-        color: #333;
-        font-size: 1.2em;
-        left: 21%;
-    }
-    #p-mobile {
-        top: 40%;
-        left: 13%;
-        width: 45%;
-        height: 15%;
-    }
-}
-
-/* Medium devices between 991.98px and 1199.98px */
-@media screen and (min-width: 991.98px) and (max-width: 1199.98px)
-{
-    .swiper-container {
-        width: 100%;
-        height: 10em;
-    }
-    #marco-slides {
-        width: 100%;
-        height: 9em;
-        z-index: 200;
-    }
-    #img-ref {
-        z-index: 150;
-        width: 50%;
-    }
+@media screen and (min-width: 767.98px) {
+  /* .swiper-container {
+    width: 100%;
+    height: 8em;
+  } */
+  .swiper-own-container {
+    width: 100%;
+    height: 8em;
+  }
+  #marco-slides {
+    width: 100%;
+    height: 7.2em;
+    z-index: 200;
+  }
+  #img-ref {
+    z-index: 150;
+    width: 34.5%;
+    left: 33%;
+    bottom: 10%;
+  }
+  #slider-title {
+    width: 17vw;
+    right: 8%;
+  }
 }
 
 /* Extra large devices with 1199.98px and up */
-@media screen and (min-width: 1199.98px)
-{
-    .swiper-container {
-        width: 100%;
-        height: 13em;
-    }
-    #marco-slides {
-        width: 100%;
-        height: 11.7em;
-        z-index: 200;
-    }
-    #img-ref {
-        z-index: 150;
-        width: 30%;
-    }
+@media screen and (min-width: 1199.98px) {
+  .swiper-container {
+    width: 100%;
+    height: 13em;
+  }
+  #marco-slides {
+    width: 100%;
+    height: 11.7em;
+    z-index: 200;
+  }
+  #img-ref {
+    z-index: 150;
+    width: 40%;
+    max-width: 143px;
+    left: 30%;
+    bottom: 10%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .swiper-container {
+    width: 100%;
+    height: 11.5em;
+  }
+  #marco-slides {
+    width: 100%;
+    height: 10em;
+    z-index: 200;
+  }
+  #img-ref {
+    z-index: 150;
+    width: 40%;
+    bottom: 10%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 2em !important;
+    height: 2em !important;
+  }
+  #slider-title {
+    font-size: 2.8vw;
+    top: 8%;
+    width: 57vw;
+  }
+}
+/* Extra small devices with 575.98px and down */
+@media screen and (min-width: 360px) and (max-width: 575.98px) {
+  .swiper-container {
+    width: 100%;
+    height: 12.5em;
+  }
+  #marco-slides {
+    width: 100%;
+    height: 11em;
+    z-index: 200;
+  }
+  #img-ref {
+    z-index: 150;
+    width: 29%;
+    left: 35%;
+    bottom: 10%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 2em !important;
+    height: 2em !important;
+  }
+  #slider-title {
+    font-size: 2.8vw;
+    top: 8%;
+    width: 57vw;
+  }
+}
+
+/* Medium devices 767.98px and down */
+@media screen and (max-width: 767.98px) {
+  #slider {
+    top: 62%;
+    left: 8vw;
+    right: 8vw;
+  }
+  #slider-title {
+    font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+    color: #333;
+    left: 21%;
+  }
+  #p-mobile {
+    top: 40%;
+    left: 13%;
+    width: 45%;
+    height: 15%;
+  }
+  .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    right: -0.1px;
+    left: auto;
+  }
+  .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    left: 0;
+    right: auto;
+  }
+}
+
+/* Medium devices between 575.98px and 767.98px */
+@media screen and (min-width: 575.98px) and (max-width: 767.98px) {
+  .swiper-container {
+    width: 100%;
+    height: 20em;
+  }
+  #marco-slides {
+    width: 100%;
+    height: 18em;
+    z-index: 200;
+  }
+  #img-ref {
+    z-index: 150;
+    width: 30%;
+    left: 35%;
+    bottom: 10%;
+  }
+  #slider-title {
+    width: 55vw;
+    font-size: 2.8vw;
+    top: 7%;
+  }
+}
+
+/* Medium devices between 991.98px and 1199.98px */
+@media screen and (min-width: 991.98px) and (max-width: 1199.98px) {
+  .swiper-container {
+    width: 100%;
+    height: 10em;
+  }
+  #marco-slides {
+    width: 100%;
+    height: 9em;
+    z-index: 200;
+  }
+  #img-ref {
+    z-index: 150;
+    width: 36.5%;
+    bottom: 10%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  #slider-title {
+    width: 13vw;
+    font-size: 1vw;
+  }
 }

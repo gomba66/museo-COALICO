@@ -5,6 +5,8 @@ import { PDFReader } from "reactjs-pdf-reader";
 import { Link } from "react-router-dom";
 import backButton from "./assets/botones/back.png";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "../src/swiper-bundle.min.css";
+import { css } from '@emotion/css';
 
 export function Post(props) {
   const [loading, updateLoading] = useState(true);
@@ -90,7 +92,7 @@ export function Post(props) {
       frame = (
         <>
           <img
-            className="position-absolute image-format"
+            className="position-absolute image-format justify-content-center"
             src={`${file}`}
             alt="Imagen"
           />
@@ -216,39 +218,40 @@ export function Post(props) {
               </div>
             </div>
             <div className="col-md-8">
-              <Swiper
-                spaceBetween={30}
-                slidesPerView={1}
-                loopFillGroupWithBlank={true}
-                loop={true}
-                breakpoints={{
-                  1500: {
-                    slidesPerView: 1,
-                  },
-                  768: {
-                    slidesPerView: 1,
-                  },
-                }}
-                navigation={{
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                }}
-              >
-                {post?.file_list.length > 0 &&
-                typeof post?.file_list !== "string" ? (
-                  post?.file_list.map((file, index) =>
-                    typeFile(file, post, index)
-                  )
-                ) : post?.link ? (
-                  <SwiperSlide>
-                    <iframe width="400px" src={post.link} />
-                  </SwiperSlide>
-                ) : (
-                  <SwiperSlide>
-                    <p>Proximamente agregaremos nuevas piezas</p>
-                  </SwiperSlide>
-                )}
-              </Swiper>
+              <prevEl>
+                <div className="swiper-button-prev"></div>
+              </prevEl>
+              <nextEl>
+                <div className="swiper-button-next"></div>
+              </nextEl>
+              <div className={containerPost}>
+                <Swiper
+                  slidesPerView={1}
+                  pagination={true}
+                  loop={true}
+                  navigation={{
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  }}
+                >
+                  {post?.file_list.length > 0 &&
+                  typeof post?.file_list !== "string" ? (
+                    post?.file_list.map((file, index) =>
+                      typeFile(file, post, index)
+                    )
+                  ) : post?.link ? (
+                    <SwiperSlide>
+                      <div className={containerPost}>
+                        <iframe src={post.link} />
+                      </div>
+                    </SwiperSlide>
+                  ) : (
+                    <SwiperSlide>
+                      <p>Proximamente agregaremos nuevas piezas</p>
+                    </SwiperSlide>
+                  )}
+                </Swiper>
+              </div>
             </div>
 
           </div>
@@ -257,3 +260,11 @@ export function Post(props) {
     </>
   );
 }
+
+const headerContainer = css`
+  padding-top: 0px;
+`
+
+const containerPost = css`
+  height: 400px !important;
+`
